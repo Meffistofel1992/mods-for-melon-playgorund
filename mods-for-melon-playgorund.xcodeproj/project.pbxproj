@@ -71,6 +71,8 @@
 		53FE80932B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80922B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift */; };
 		53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80942B27A0E100AAD9B6 /* HTTP_MMP.swift */; };
 		53FE80992B27A20200AAD9B6 /* Font_MMP+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80982B27A20200AAD9B6 /* Font_MMP+Ext.swift */; };
+		53FE809B2B27A34B00AAD9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE809A2B27A34B00AAD9B6 /* AppDelegate.swift */; };
+		53FE809E2B27A3AA00AAD9B6 /* BaseVM_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE809D2B27A3AA00AAD9B6 /* BaseVM_MMP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,8 @@
 		53FE80922B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataAPI_MMP.swift; sourceTree = "<group>"; };
 		53FE80942B27A0E100AAD9B6 /* HTTP_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP_MMP.swift; sourceTree = "<group>"; };
 		53FE80982B27A20200AAD9B6 /* Font_MMP+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font_MMP+Ext.swift"; sourceTree = "<group>"; };
+		53FE809A2B27A34B00AAD9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53FE809D2B27A3AA00AAD9B6 /* BaseVM_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM_MMP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 		53FE7FDE2B2790B700AAD9B6 /* mods-for-melon-playgorund */ = {
 			isa = PBXGroup;
 			children = (
+				53FE809F2B27A3C200AAD9B6 /* Flow_MMP */,
+				53FE809C2B27A38E00AAD9B6 /* Base+MMP */,
 				53FE808F2B279FE300AAD9B6 /* APIs_MMP */,
 				53FE80842B279F0000AAD9B6 /* Manager_MMP */,
 				53FE807F2B279E6100AAD9B6 /* Navigation_MMP */,
@@ -222,6 +228,7 @@
 				53FE7FE52B2790B800AAD9B6 /* Preview Content */,
 				53FE80672B279C1600AAD9B6 /* app_MMP+Resolver.swift */,
 				53FE808D2B279F6800AAD9B6 /* AppConstants_MMP.swift */,
+				53FE809A2B27A34B00AAD9B6 /* AppDelegate.swift */,
 			);
 			path = "mods-for-melon-playgorund";
 			sourceTree = "<group>";
@@ -416,6 +423,21 @@
 			path = Font_MMP;
 			sourceTree = "<group>";
 		};
+		53FE809C2B27A38E00AAD9B6 /* Base+MMP */ = {
+			isa = PBXGroup;
+			children = (
+				53FE809D2B27A3AA00AAD9B6 /* BaseVM_MMP.swift */,
+			);
+			path = "Base+MMP";
+			sourceTree = "<group>";
+		};
+		53FE809F2B27A3C200AAD9B6 /* Flow_MMP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flow_MMP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -550,6 +572,7 @@
 				53FE80932B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift in Sources */,
 				53FE80512B27972C00AAD9B6 /* DeviceFrameAspectModifier_MMP.swift in Sources */,
 				53FE80502B27972C00AAD9B6 /* CornerRadius_MMP+Corner.swift in Sources */,
+				53FE809E2B27A3AA00AAD9B6 /* BaseVM_MMP.swift in Sources */,
 				53FE804C2B27972C00AAD9B6 /* UserDefaults_MMP+Ext.swift in Sources */,
 				53FE80532B27972C00AAD9B6 /* DeviceAspectRatioModifier_MMP.swift in Sources */,
 				53FE80622B27972C00AAD9B6 /* CustomSheet_MMP.swift in Sources */,
@@ -565,6 +588,7 @@
 				53FE80552B27972C00AAD9B6 /* DevicePaddingModifier_MMP.swift in Sources */,
 				53FE80722B279C6100AAD9B6 /* Logger_MMP.swift in Sources */,
 				53FE807E2B279E1800AAD9B6 /* CoreDataStoreMock_MMP.swift in Sources */,
+				53FE809B2B27A34B00AAD9B6 /* AppDelegate.swift in Sources */,
 				53FE80742B279C6100AAD9B6 /* SlimLogglyDestination_MMP.swift in Sources */,
 				53FE7FEC2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld in Sources */,
 				53FE80442B27972C00AAD9B6 /* Closure_MMP+Ext.swift in Sources */,
