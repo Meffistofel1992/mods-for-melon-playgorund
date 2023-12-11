@@ -13,7 +13,39 @@
 		53FE7FE72B2790B800AAD9B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FE7FE62B2790B800AAD9B6 /* Preview Assets.xcassets */; };
 		53FE7FE92B2790B800AAD9B6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FE82B2790B800AAD9B6 /* Persistence.swift */; };
 		53FE7FEC2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FEA2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld */; };
+		53FE7FF42B27925B00AAD9B6 /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE7FF32B27925B00AAD9B6 /* SwiftyDropbox */; };
+		53FE7FF72B27926700AAD9B6 /* DataCache in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE7FF62B27926700AAD9B6 /* DataCache */; };
+		53FE7FFA2B27927D00AAD9B6 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE7FF92B27927D00AAD9B6 /* Resolver */; };
+		53FE7FFD2B27928B00AAD9B6 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE7FFC2B27928B00AAD9B6 /* FlowStacks */; };
+		53FE80002B2792AB00AAD9B6 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE7FFF2B2792AA00AAD9B6 /* Adjust */; };
+		53FE80032B2792BC00AAD9B6 /* Pushwoosh in Frameworks */ = {isa = PBXBuildFile; productRef = 53FE80022B2792BC00AAD9B6 /* Pushwoosh */; };
+		53FE800D2B27953500AAD9B6 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE800C2B27953500AAD9B6 /* NotificationService.swift */; };
+		53FE80112B27953500AAD9B6 /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53FE800A2B27953500AAD9B6 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53FE800F2B27953500AAD9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FE7FD42B2790B700AAD9B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FE80092B27953500AAD9B6;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53FE80152B27953500AAD9B6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				53FE80112B27953500AAD9B6 /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mods-for-melon-playgorund.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,10 +55,29 @@
 		53FE7FE62B2790B800AAD9B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53FE7FE82B2790B800AAD9B6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		53FE7FEB2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mods_for_melon_playgorund.xcdatamodel; sourceTree = "<group>"; };
+		53FE80042B2794F100AAD9B6 /* mods-for-melon-playgorund.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mods-for-melon-playgorund.entitlements"; sourceTree = "<group>"; };
+		53FE80052B2794F900AAD9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53FE800A2B27953500AAD9B6 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FE800C2B27953500AAD9B6 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		53FE800E2B27953500AAD9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53FE80162B27957F00AAD9B6 /* NotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationService.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		53FE7FD92B2790B700AAD9B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FE80002B2792AB00AAD9B6 /* Adjust in Frameworks */,
+				53FE7FFA2B27927D00AAD9B6 /* Resolver in Frameworks */,
+				53FE7FF42B27925B00AAD9B6 /* SwiftyDropbox in Frameworks */,
+				53FE7FF72B27926700AAD9B6 /* DataCache in Frameworks */,
+				53FE7FFD2B27928B00AAD9B6 /* FlowStacks in Frameworks */,
+				53FE80032B2792BC00AAD9B6 /* Pushwoosh in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FE80072B27953500AAD9B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				53FE7FDE2B2790B700AAD9B6 /* mods-for-melon-playgorund */,
+				53FE800B2B27953500AAD9B6 /* NotificationService */,
 				53FE7FDD2B2790B700AAD9B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */,
+				53FE800A2B27953500AAD9B6 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +108,8 @@
 		53FE7FDE2B2790B700AAD9B6 /* mods-for-melon-playgorund */ = {
 			isa = PBXGroup;
 			children = (
+				53FE80052B2794F900AAD9B6 /* Info.plist */,
+				53FE80042B2794F100AAD9B6 /* mods-for-melon-playgorund.entitlements */,
 				53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */,
 				53FE7FE12B2790B700AAD9B6 /* ContentView.swift */,
 				53FE7FE32B2790B800AAD9B6 /* Assets.xcassets */,
@@ -73,6 +128,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		53FE800B2B27953500AAD9B6 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				53FE80162B27957F00AAD9B6 /* NotificationService.entitlements */,
+				53FE800C2B27953500AAD9B6 /* NotificationService.swift */,
+				53FE800E2B27953500AAD9B6 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,15 +148,42 @@
 				53FE7FD82B2790B700AAD9B6 /* Sources */,
 				53FE7FD92B2790B700AAD9B6 /* Frameworks */,
 				53FE7FDA2B2790B700AAD9B6 /* Resources */,
+				53FE80152B27953500AAD9B6 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53FE80102B27953500AAD9B6 /* PBXTargetDependency */,
+			);
+			name = "mods-for-melon-playgorund";
+			packageProductDependencies = (
+				53FE7FF32B27925B00AAD9B6 /* SwiftyDropbox */,
+				53FE7FF62B27926700AAD9B6 /* DataCache */,
+				53FE7FF92B27927D00AAD9B6 /* Resolver */,
+				53FE7FFC2B27928B00AAD9B6 /* FlowStacks */,
+				53FE7FFF2B2792AA00AAD9B6 /* Adjust */,
+				53FE80022B2792BC00AAD9B6 /* Pushwoosh */,
+			);
+			productName = "mods-for-melon-playgorund";
+			productReference = 53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53FE80092B27953500AAD9B6 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FE80122B27953500AAD9B6 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				53FE80062B27953500AAD9B6 /* Sources */,
+				53FE80072B27953500AAD9B6 /* Frameworks */,
+				53FE80082B27953500AAD9B6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "mods-for-melon-playgorund";
-			productName = "mods-for-melon-playgorund";
-			productReference = 53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */;
-			productType = "com.apple.product-type.application";
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 53FE800A2B27953500AAD9B6 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -106,6 +198,9 @@
 					53FE7FDB2B2790B700AAD9B6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					53FE80092B27953500AAD9B6 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 				};
 			};
 			buildConfigurationList = 53FE7FD72B2790B700AAD9B6 /* Build configuration list for PBXProject "mods-for-melon-playgorund" */;
@@ -117,11 +212,20 @@
 				Base,
 			);
 			mainGroup = 53FE7FD32B2790B700AAD9B6;
+			packageReferences = (
+				53FE7FF22B27925B00AAD9B6 /* XCRemoteSwiftPackageReference "SwiftyDropbox" */,
+				53FE7FF52B27926700AAD9B6 /* XCRemoteSwiftPackageReference "DataCache" */,
+				53FE7FF82B27927D00AAD9B6 /* XCRemoteSwiftPackageReference "Resolver" */,
+				53FE7FFB2B27928B00AAD9B6 /* XCRemoteSwiftPackageReference "FlowStacks" */,
+				53FE7FFE2B2792AA00AAD9B6 /* XCRemoteSwiftPackageReference "ios_sdk" */,
+				53FE80012B2792BC00AAD9B6 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
+			);
 			productRefGroup = 53FE7FDD2B2790B700AAD9B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				53FE7FDB2B2790B700AAD9B6 /* mods-for-melon-playgorund */,
+				53FE80092B27953500AAD9B6 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +237,13 @@
 			files = (
 				53FE7FE72B2790B800AAD9B6 /* Preview Assets.xcassets in Resources */,
 				53FE7FE42B2790B800AAD9B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FE80082B27953500AAD9B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +261,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FE80062B27953500AAD9B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FE800D2B27953500AAD9B6 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53FE80102B27953500AAD9B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FE80092B27953500AAD9B6 /* NotificationService */;
+			targetProxy = 53FE800F2B27953500AAD9B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		53FE7FED2B2790B800AAD9B6 /* Debug */ = {
@@ -275,25 +402,28 @@
 		53FE7FF02B2790B800AAD9B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "mods-for-melon-playgorund/mods-for-melon-playgorund.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mods-for-melon-playgorund/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LMH8QQN35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mods-for-melon-playgorund/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.demax.mods-for-melon-playgorund";
+				PRODUCT_BUNDLE_IDENTIFIER = com.demax.digital.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -304,26 +434,85 @@
 		53FE7FF12B2790B800AAD9B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "mods-for-melon-playgorund/mods-for-melon-playgorund.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mods-for-melon-playgorund/Preview Content\"";
 				DEVELOPMENT_TEAM = 4LMH8QQN35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mods-for-melon-playgorund/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.demax.mods-for-melon-playgorund";
+				PRODUCT_BUNDLE_IDENTIFIER = com.demax.digital.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53FE80132B27953500AAD9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LMH8QQN35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demax.digital.development.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53FE80142B27953500AAD9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4LMH8QQN35;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demax.digital.development.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,7 +540,100 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		53FE80122B27953500AAD9B6 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FE80132B27953500AAD9B6 /* Debug */,
+				53FE80142B27953500AAD9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53FE7FF22B27925B00AAD9B6 /* XCRemoteSwiftPackageReference "SwiftyDropbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dropbox/SwiftyDropbox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
+		53FE7FF52B27926700AAD9B6 /* XCRemoteSwiftPackageReference "DataCache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huynguyencong/DataCache";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		53FE7FF82B27927D00AAD9B6 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+		53FE7FFB2B27928B00AAD9B6 /* XCRemoteSwiftPackageReference "FlowStacks" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/FlowStacks";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
+		53FE7FFE2B2792AA00AAD9B6 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adjust/ios_sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		53FE80012B2792BC00AAD9B6 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53FE7FF32B27925B00AAD9B6 /* SwiftyDropbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE7FF22B27925B00AAD9B6 /* XCRemoteSwiftPackageReference "SwiftyDropbox" */;
+			productName = SwiftyDropbox;
+		};
+		53FE7FF62B27926700AAD9B6 /* DataCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE7FF52B27926700AAD9B6 /* XCRemoteSwiftPackageReference "DataCache" */;
+			productName = DataCache;
+		};
+		53FE7FF92B27927D00AAD9B6 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE7FF82B27927D00AAD9B6 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		53FE7FFC2B27928B00AAD9B6 /* FlowStacks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE7FFB2B27928B00AAD9B6 /* XCRemoteSwiftPackageReference "FlowStacks" */;
+			productName = FlowStacks;
+		};
+		53FE7FFF2B2792AA00AAD9B6 /* Adjust */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE7FFE2B2792AA00AAD9B6 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = Adjust;
+		};
+		53FE80022B2792BC00AAD9B6 /* Pushwoosh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FE80012B2792BC00AAD9B6 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = Pushwoosh;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		53FE7FEA2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld */ = {
