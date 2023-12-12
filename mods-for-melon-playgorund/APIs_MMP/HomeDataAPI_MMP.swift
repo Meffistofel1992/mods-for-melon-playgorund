@@ -8,43 +8,6 @@
 import Foundation
 import Resolver
 
-struct LocalModel {
-    var title: String?
-    var description: String?
-    var imagePath: String?
-    var downloadPath: String?
-
-    init(modsObject: [String: Any]) {
-        title = modsObject[ModsJsonKeys.title] as? String
-        description = modsObject[ModsJsonKeys.description] as? String
-        imagePath = modsObject[ModsJsonKeys.imagePath] as? String
-        downloadPath = modsObject[ModsJsonKeys.downloadPath] as? String
-    }
-
-    init(categoriesObject: [String: Any]) {
-        title = categoriesObject[CategoriesJsonKeys.title] as? String
-        imagePath = categoriesObject[CategoriesJsonKeys.imagePath] as? String
-    }
-
-    init(editorObject: [String: Any]) {
-        imagePath = editorObject[EditorJsonKeys.imagePath] as? String
-    }
-
-    init(itemObject: [String: Any]) {
-        title = itemObject[ItemsJsonKeys.title] as? String
-        description = itemObject[ItemsJsonKeys.description] as? String
-        imagePath = itemObject[ItemsJsonKeys.imagePath] as? String
-        downloadPath = itemObject[ItemsJsonKeys.downloadPath] as? String
-    }
-
-    init(skinObject: [String: Any]) {
-        title = skinObject[SkinsJsonKeys.title] as? String
-        description = skinObject[SkinsJsonKeys.description] as? String
-        imagePath = skinObject[SkinsJsonKeys.imagePath] as? String
-        downloadPath = skinObject[SkinsJsonKeys.downloadPath] as? String
-    }
-}
-
 class HomeDataAPI_MMP {
     @Injected private var dropBoxManager: Dropbox_MMP
     @Injected private var coreDataStore: CoreDataStore_MMP
@@ -53,12 +16,12 @@ class HomeDataAPI_MMP {
 // MARK: - API Methods
 extension HomeDataAPI_MMP {
 
-    func getObjectsFromDict(json: [String : Any], type: ContentType_MMP) throws -> [LocalModel] {
+    func getObjectsFromDict(json: [String : Any], type: ContentType_MMP) throws -> [LocalModel_MMP] {
         guard let structJson = json[type.mainKey] as? [String: Any] else {
             throw APIError_MMP.parseError(type)
         }
 
-        var models: [LocalModel] = []
+        var models: [LocalModel_MMP] = []
 
         for key in structJson.keys {
             if let model = structJson[key] as? [[String: Any]] {
@@ -78,15 +41,13 @@ extension HomeDataAPI_MMP {
     func getObjectsFromArrayDict(
         json: [String : Any],
         type: ContentType_MMP
-    ) throws -> [LocalModel] {
+    ) throws -> [LocalModel_MMP] {
         guard let structJson = json[type.mainKey] as? [[String: String]] else {
             throw APIError_MMP.parseError(type)
         }
+        let objects = structJson.map { LocalModel_MMP(modsObject: $0) }
 
-        var models: [LocalModel] = []
-        let objects = structJson.map { LocalModel(modsObject: $0) }
-
-        return models
+        return objects
     }
 
     func getMods_MMP(type: ContentType_MMP = .mods) async throws {
@@ -97,6 +58,8 @@ extension HomeDataAPI_MMP {
         }
         let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
         let mods = try getObjectsFromDict(json: json, type: type)
+        await saveModels(type: type, data: mods)
+
         Logger.debug_MMP("Maps get success")
 
     }
@@ -110,6 +73,7 @@ extension HomeDataAPI_MMP {
 
         let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
         let categories = try getObjectsFromArrayDict(json: json, type: type)
+        await saveModels(type: type, data: categories)
 
         Logger.debug_MMP("Category get success")
 
@@ -124,6 +88,7 @@ extension HomeDataAPI_MMP {
 
         let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
         let editors = try getObjectsFromDict(json: json, type: type)
+        await saveModels(type: type, data: editors)
 
         Logger.debug_MMP("Editor get success")
 
@@ -138,6 +103,7 @@ extension HomeDataAPI_MMP {
 
         let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
         let items = try getObjectsFromArrayDict(json: json, type: type)
+        await saveModels(type: type, data: items)
 
         Logger.debug_MMP("Items get success")
     }
@@ -151,6 +117,7 @@ extension HomeDataAPI_MMP {
 
         let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
         let skins = try getObjectsFromArrayDict(json: json, type: type)
+        await saveModels(type: type, data: skins)
 
         Logger.debug_MMP("Skins get success")
     }
@@ -167,11 +134,32 @@ extension HomeDataAPI_MMP {
 //        }
 //    }
 //
-    private func saveModels() async {
+    private func saveModels(type: ContentType_MMP, data: [LocalModel_MMP]) async {
         await coreDataStore.viewContext.perform {
-//            let dataMO = LocalDataMO(context: self.coreDataStore.viewContext)
+
+            self.coreDataStore.delete_MMP(entityName: type.entityName)
+            
+            data.forEach { object in
+                let dataMO: ParentMO = switch type {
+                case .mods:
+                    ModsMO(context: self.coreDataStore.viewContext)
+                case .category:
+                    CategoriesMO(context: self.coreDataStore.viewContext)
+                case .editor:
+                    EditorMO(context: self.coreDataStore.viewContext)
+                case .items:
+                    ItemsMO(context: self.coreDataStore.viewContext)
+                case .skins:
+                    SkinsMO(context: self.coreDataStore.viewContext)
+                }
+
+                dataMO.title = object.title
+                dataMO.desctiptionn = object.description
+                dataMO.downloadPath = object.downloadPath
+                dataMO.imagePath = object.imagePath
+            }
             self.coreDataStore.saveChanges_MMP()
-            Logger.debug_MMP("Add favourite success")
+            Logger.debug_MMP("\(type) wtire to CoreData success")
         }
     }
 //

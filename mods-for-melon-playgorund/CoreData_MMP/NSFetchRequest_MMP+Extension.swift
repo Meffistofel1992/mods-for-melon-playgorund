@@ -6,9 +6,9 @@
 //
 
 import CoreData
-//
-//extension NSFetchRequest where ResultType == LocalDataMO {
-//    static func getFavouriteItem(with menu: MenuItem_MMP) -> NSFetchRequest<LocalDataMO> {
+
+//extension NSFetchRequest where ResultType == ModsMO {
+//    static func getFavouriteItem() -> NSFetchRequest<LocalDataMO> {
 //        let request: NSFetchRequest<LocalDataMO> = LocalDataMO.fetchRequest()
 //        let menuPredicate: String = "ANY \(#keyPath(LocalDataMO.menu)) == %@"
 //        let predicate = NSPredicate(format: menuPredicate, menu.rawValue)

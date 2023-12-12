@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>PW_APP_GROUPS_NAME</key>
+	<string>com.demax.digital.development</string>
+	<key>Pushwoosh_APPID</key>
+	<string>12117-6D63D</string>
+	<key>Pushwoosh_LOG_LEVEL</key>
+	<string>NONE</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

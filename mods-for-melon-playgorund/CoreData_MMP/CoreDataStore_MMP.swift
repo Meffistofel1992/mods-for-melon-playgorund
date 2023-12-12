@@ -49,7 +49,7 @@ extension CoreDataStore_MMP {
         viewContext.delete(object)
     }
 
-    private func delete_MMP(entityName: String) {
+    func delete_MMP(entityName: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 

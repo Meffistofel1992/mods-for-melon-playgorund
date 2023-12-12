@@ -51,4 +51,19 @@ enum ContentType_MMP: String, CaseIterable {
             return SkinsJsonKeys.main
         }
     }
+
+    var entityName: String {
+        switch self {
+        case .mods:
+            return "ModsMO"
+        case .category:
+            return "CategoriesMO"
+        case .editor:
+            return "EditorMO"
+        case .items:
+            return "ItemsMO"
+        case .skins:
+            return "SkinsMO"
+        }
+    }
 }

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoriesMO" representedClassName="CategoriesMO" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="EditorMO" representedClassName="EditorMO" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="ItemsMO" representedClassName="ItemsMO" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="ModsMO" representedClassName="ModsMO" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="ParentMO" representedClassName="ParentMO" syncable="YES">
+        <attribute name="desctiptionn" optional="YES" attributeType="String"/>
+        <attribute name="downloadPath" optional="YES" attributeType="String"/>
+        <attribute name="imagePath" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="SkinsMO" representedClassName="SkinsMO" parentEntity="ParentMO" syncable="YES"/>
 </model>

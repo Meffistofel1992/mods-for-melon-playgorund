@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
+		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
+		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
+		53ED78912B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78852B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift */; };
+		53ED78922B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78862B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift */; };
+		53ED78932B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78872B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift */; };
+		53ED78942B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78882B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift */; };
+		53ED78952B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78892B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift */; };
+		53ED78962B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED788A2B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift */; };
+		53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED788C2B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift */; };
+		53ED789C2B28F9C300952BA8 /* LocalModel_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */; };
+		53ED789F2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789D2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift */; };
+		53ED78A02B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789E2B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift */; };
 		53FE7FE02B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */; };
 		53FE7FE22B2790B700AAD9B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FE12B2790B700AAD9B6 /* ContentView.swift */; };
 		53FE7FE42B2790B800AAD9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FE7FE32B2790B800AAD9B6 /* Assets.xcassets */; };
@@ -104,6 +117,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53ED78852B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53ED78862B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53ED78872B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53ED78882B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53ED78892B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53ED788A2B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53ED788C2B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModsMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModel_MMP.swift; sourceTree = "<group>"; };
+		53ED789D2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		53ED789E2B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mods-for-melon-playgorund.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mods_for_melon_playgorundApp.swift; sourceTree = "<group>"; };
 		53FE7FE12B2790B700AAD9B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -199,6 +225,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53ED78812B28F8DE00952BA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53ED789D2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift */,
+				53ED789E2B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift */,
+				53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */,
+				53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */,
+				53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */,
+				53ED78852B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift */,
+				53ED78862B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift */,
+				53ED78872B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift */,
+				53ED78882B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift */,
+				53ED78892B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift */,
+				53ED788A2B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift */,
+				53ED788C2B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53ED789A2B28F9BB00952BA8 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		53FE7FD32B2790B700AAD9B6 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +316,7 @@
 		53FE80172B2796E900AAD9B6 /* CoreData_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				53ED78812B28F8DE00952BA8 /* Models */,
 				53FE7FEA2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld */,
 				53FE80792B279DB700AAD9B6 /* CoreDataStore_MMP.swift */,
 				53FE807B2B279DFE00AAD9B6 /* NSFetchRequest_MMP+Extension.swift */,
@@ -453,6 +507,7 @@
 		53FE80A22B27ABA000AAD9B6 /* Models_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				53ED789A2B28F9BB00952BA8 /* Local */,
 				53FE80A32B27ABAB00AAD9B6 /* Response */,
 			);
 			path = Models_MMP;
@@ -582,15 +637,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53ED78932B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift in Sources */,
 				53FE804F2B27972C00AAD9B6 /* ReadSize_MMP.swift in Sources */,
 				53FE80892B279F1500AAD9B6 /* AVAudioPlayerManager_MMP.swift in Sources */,
+				53ED78922B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift in Sources */,
+				53ED78942B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift in Sources */,
 				53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */,
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
+				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,
 				53FE80632B27972C00AAD9B6 /* BarProgress_MMP+Style.swift in Sources */,
 				53FE808C2B279F1500AAD9B6 /* ImageSaverManager_MMP.swift in Sources */,
 				53FE80732B279C6100AAD9B6 /* SlimLogglyDestinationConfig_MMP.swift in Sources */,
+				53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */,
+				53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */,
 				53FE80752B279C6100AAD9B6 /* SlimLogger_MMP.swift in Sources */,
 				53FE80AF2B27B33F00AAD9B6 /* SplashScreen_MMP.swift in Sources */,
 				53FE80812B279E7400AAD9B6 /* MainRoute_MMP+DeepLink.swift in Sources */,
@@ -604,6 +665,7 @@
 				53FE809E2B27A3AA00AAD9B6 /* BaseVM_MMP.swift in Sources */,
 				53FE804C2B27972C00AAD9B6 /* UserDefaults_MMP+Ext.swift in Sources */,
 				53FE80532B27972C00AAD9B6 /* DeviceAspectRatioModifier_MMP.swift in Sources */,
+				53ED789C2B28F9C300952BA8 /* LocalModel_MMP.swift in Sources */,
 				53FE80622B27972C00AAD9B6 /* CustomSheet_MMP.swift in Sources */,
 				53FE80762B279C6100AAD9B6 /* SlimLoggerConfig_MMP.swift in Sources */,
 				53FE808E2B279F6800AAD9B6 /* AppConstants_MMP.swift in Sources */,
@@ -613,10 +675,13 @@
 				53FE80652B27972C00AAD9B6 /* Shape_MMP+Ext.swift in Sources */,
 				53FE80832B279E9C00AAD9B6 /* MainNavigationStore_MMP.swift in Sources */,
 				53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */,
+				53ED78952B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift in Sources */,
 				53FE80482B27972C00AAD9B6 /* FileManager_MMP+Ext.swift in Sources */,
 				53FE80912B279FF400AAD9B6 /* APIError_MMP.swift in Sources */,
+				53ED789F2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift in Sources */,
 				53FE80552B27972C00AAD9B6 /* DevicePaddingModifier_MMP.swift in Sources */,
 				53FE80722B279C6100AAD9B6 /* Logger_MMP.swift in Sources */,
+				53ED78962B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift in Sources */,
 				53FE807E2B279E1800AAD9B6 /* CoreDataStoreMock_MMP.swift in Sources */,
 				53FE809B2B27A34B00AAD9B6 /* AppDelegate.swift in Sources */,
 				53FE80742B279C6100AAD9B6 /* SlimLogglyDestination_MMP.swift in Sources */,
@@ -628,6 +693,7 @@
 				53FE80612B27972C00AAD9B6 /* AsyncLoadingImage_MMP.swift in Sources */,
 				53FE80462B27972C00AAD9B6 /* ForEach_MMP+Ext.swift in Sources */,
 				53FE804D2B27972C00AAD9B6 /* Optional_MMP+Ext.swift in Sources */,
+				53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */,
 				53FE807A2B279DB700AAD9B6 /* CoreDataStore_MMP.swift in Sources */,
 				53FE805A2B27972C00AAD9B6 /* RectangleShadow_MMP.swift in Sources */,
 				53FE80662B27972C00AAD9B6 /* LargeButton_MMP.swift in Sources */,
@@ -636,9 +702,11 @@
 				53FE807C2B279DFE00AAD9B6 /* NSFetchRequest_MMP+Extension.swift in Sources */,
 				53FE7FE22B2790B700AAD9B6 /* ContentView.swift in Sources */,
 				53FE805B2B27972C00AAD9B6 /* BottomSheetView_MMP.swift in Sources */,
+				53ED78912B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift in Sources */,
 				53FE7FE02B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift in Sources */,
 				53FE80782B279C6100AAD9B6 /* NetworkMonitor_MMP.swift in Sources */,
 				53FE80572B27972C00AAD9B6 /* ContentWithSpacer_MMP.swift in Sources */,
+				53ED78A02B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift in Sources */,
 				53FE80682B279C1600AAD9B6 /* app_MMP+Resolver.swift in Sources */,
 				53FE805F2B27972C00AAD9B6 /* CustomSheetView_MMP.swift in Sources */,
 				53FE80B12B27B75900AAD9B6 /* Codable_MMP+Ext.swift in Sources */,
@@ -797,6 +865,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "mods-for-melon-playgorund/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -829,6 +899,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "mods-for-melon-playgorund/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
