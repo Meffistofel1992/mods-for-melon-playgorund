@@ -73,6 +73,10 @@
 		53FE80992B27A20200AAD9B6 /* Font_MMP+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80982B27A20200AAD9B6 /* Font_MMP+Ext.swift */; };
 		53FE809B2B27A34B00AAD9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE809A2B27A34B00AAD9B6 /* AppDelegate.swift */; };
 		53FE809E2B27A3AA00AAD9B6 /* BaseVM_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE809D2B27A3AA00AAD9B6 /* BaseVM_MMP.swift */; };
+		53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80A02B27AB5000AAD9B6 /* ContentType_MMP.swift */; };
+		53FE80AF2B27B33F00AAD9B6 /* SplashScreen_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */; };
+		53FE80B12B27B75900AAD9B6 /* Codable_MMP+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80B02B27B75900AAD9B6 /* Codable_MMP+Ext.swift */; };
+		53FE80B32B27B7F400AAD9B6 /* RepsponseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE80B22B27B7F400AAD9B6 /* RepsponseKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +169,10 @@
 		53FE80982B27A20200AAD9B6 /* Font_MMP+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font_MMP+Ext.swift"; sourceTree = "<group>"; };
 		53FE809A2B27A34B00AAD9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FE809D2B27A3AA00AAD9B6 /* BaseVM_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM_MMP.swift; sourceTree = "<group>"; };
+		53FE80A02B27AB5000AAD9B6 /* ContentType_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType_MMP.swift; sourceTree = "<group>"; };
+		53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen_MMP.swift; sourceTree = "<group>"; };
+		53FE80B02B27B75900AAD9B6 /* Codable_MMP+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable_MMP+Ext.swift"; sourceTree = "<group>"; };
+		53FE80B22B27B7F400AAD9B6 /* RepsponseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsponseKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +220,8 @@
 		53FE7FDE2B2790B700AAD9B6 /* mods-for-melon-playgorund */ = {
 			isa = PBXGroup;
 			children = (
-				53FE809F2B27A3C200AAD9B6 /* Flow_MMP */,
+				53FE80A22B27ABA000AAD9B6 /* Models_MMP */,
+				53FE809F2B27A3C200AAD9B6 /* Flows_MMP */,
 				53FE809C2B27A38E00AAD9B6 /* Base+MMP */,
 				53FE808F2B279FE300AAD9B6 /* APIs_MMP */,
 				53FE80842B279F0000AAD9B6 /* Manager_MMP */,
@@ -298,6 +307,7 @@
 				53FE80212B27972C00AAD9B6 /* Task_MMP+Ext.swift */,
 				53FE80222B27972C00AAD9B6 /* Data_MMP+Ext .swift */,
 				53FE80232B27972C00AAD9B6 /* UserDefaults_MMP+Ext.swift */,
+				53FE80B02B27B75900AAD9B6 /* Codable_MMP+Ext.swift */,
 			);
 			path = "Logic+Ext_MMP";
 			sourceTree = "<group>";
@@ -411,6 +421,7 @@
 				53FE80902B279FF400AAD9B6 /* APIError_MMP.swift */,
 				53FE80922B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift */,
 				53FE80942B27A0E100AAD9B6 /* HTTP_MMP.swift */,
+				53FE80A02B27AB5000AAD9B6 /* ContentType_MMP.swift */,
 			);
 			path = APIs_MMP;
 			sourceTree = "<group>";
@@ -431,11 +442,28 @@
 			path = "Base+MMP";
 			sourceTree = "<group>";
 		};
-		53FE809F2B27A3C200AAD9B6 /* Flow_MMP */ = {
+		53FE809F2B27A3C200AAD9B6 /* Flows_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */,
 			);
-			path = Flow_MMP;
+			path = Flows_MMP;
+			sourceTree = "<group>";
+		};
+		53FE80A22B27ABA000AAD9B6 /* Models_MMP */ = {
+			isa = PBXGroup;
+			children = (
+				53FE80A32B27ABAB00AAD9B6 /* Response */,
+			);
+			path = Models_MMP;
+			sourceTree = "<group>";
+		};
+		53FE80A32B27ABAB00AAD9B6 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				53FE80B22B27B7F400AAD9B6 /* RepsponseKeys.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,6 +592,7 @@
 				53FE808C2B279F1500AAD9B6 /* ImageSaverManager_MMP.swift in Sources */,
 				53FE80732B279C6100AAD9B6 /* SlimLogglyDestinationConfig_MMP.swift in Sources */,
 				53FE80752B279C6100AAD9B6 /* SlimLogger_MMP.swift in Sources */,
+				53FE80AF2B27B33F00AAD9B6 /* SplashScreen_MMP.swift in Sources */,
 				53FE80812B279E7400AAD9B6 /* MainRoute_MMP+DeepLink.swift in Sources */,
 				53FE805E2B27972C00AAD9B6 /* CustomSheetModel_MMP.swift in Sources */,
 				53FE805D2B27972C00AAD9B6 /* ZStackWithBackground_MMP.swift in Sources */,
@@ -583,6 +612,7 @@
 				53FE80992B27A20200AAD9B6 /* Font_MMP+Ext.swift in Sources */,
 				53FE80652B27972C00AAD9B6 /* Shape_MMP+Ext.swift in Sources */,
 				53FE80832B279E9C00AAD9B6 /* MainNavigationStore_MMP.swift in Sources */,
+				53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */,
 				53FE80482B27972C00AAD9B6 /* FileManager_MMP+Ext.swift in Sources */,
 				53FE80912B279FF400AAD9B6 /* APIError_MMP.swift in Sources */,
 				53FE80552B27972C00AAD9B6 /* DevicePaddingModifier_MMP.swift in Sources */,
@@ -593,6 +623,7 @@
 				53FE7FEC2B2790B800AAD9B6 /* mods_for_melon_playgorund.xcdatamodeld in Sources */,
 				53FE80442B27972C00AAD9B6 /* Closure_MMP+Ext.swift in Sources */,
 				53FE808A2B279F1500AAD9B6 /* DropBoxManager_MMP.swift in Sources */,
+				53FE80B32B27B7F400AAD9B6 /* RepsponseKeys.swift in Sources */,
 				53FE80522B27972C00AAD9B6 /* DeviceFrameModifier_MMP.swift in Sources */,
 				53FE80612B27972C00AAD9B6 /* AsyncLoadingImage_MMP.swift in Sources */,
 				53FE80462B27972C00AAD9B6 /* ForEach_MMP+Ext.swift in Sources */,
@@ -610,6 +641,7 @@
 				53FE80572B27972C00AAD9B6 /* ContentWithSpacer_MMP.swift in Sources */,
 				53FE80682B279C1600AAD9B6 /* app_MMP+Resolver.swift in Sources */,
 				53FE805F2B27972C00AAD9B6 /* CustomSheetView_MMP.swift in Sources */,
+				53FE80B12B27B75900AAD9B6 /* Codable_MMP+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

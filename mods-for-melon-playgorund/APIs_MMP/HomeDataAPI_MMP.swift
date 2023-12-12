@@ -8,12 +8,42 @@
 import Foundation
 import Resolver
 
-//private let mapsJsonPath       = "\(MenuItem_MMP.maps.path)maps.json"
-//private let modsJsonPath       = "\(MenuItem_MMP.mods.path)mods.json"
-//private let wallpapersJsonPath = "\(MenuItem_MMP.wallpapers.path)wallpapers.json"
-//private let soundsJsonPath     = "\(MenuItem_MMP.sounds.path)sounds.json"
-//private let guidesJsonPath     = "\(MenuItem_MMP.guides.path)guides.json"
-//private let setsJsonPath       = "\(MenuItem_MMP.sets.path)sets.json"
+struct LocalModel {
+    var title: String?
+    var description: String?
+    var imagePath: String?
+    var downloadPath: String?
+
+    init(modsObject: [String: Any]) {
+        title = modsObject[ModsJsonKeys.title] as? String
+        description = modsObject[ModsJsonKeys.description] as? String
+        imagePath = modsObject[ModsJsonKeys.imagePath] as? String
+        downloadPath = modsObject[ModsJsonKeys.downloadPath] as? String
+    }
+
+    init(categoriesObject: [String: Any]) {
+        title = categoriesObject[CategoriesJsonKeys.title] as? String
+        imagePath = categoriesObject[CategoriesJsonKeys.imagePath] as? String
+    }
+
+    init(editorObject: [String: Any]) {
+        imagePath = editorObject[EditorJsonKeys.imagePath] as? String
+    }
+
+    init(itemObject: [String: Any]) {
+        title = itemObject[ItemsJsonKeys.title] as? String
+        description = itemObject[ItemsJsonKeys.description] as? String
+        imagePath = itemObject[ItemsJsonKeys.imagePath] as? String
+        downloadPath = itemObject[ItemsJsonKeys.downloadPath] as? String
+    }
+
+    init(skinObject: [String: Any]) {
+        title = skinObject[SkinsJsonKeys.title] as? String
+        description = skinObject[SkinsJsonKeys.description] as? String
+        imagePath = skinObject[SkinsJsonKeys.imagePath] as? String
+        downloadPath = skinObject[SkinsJsonKeys.downloadPath] as? String
+    }
+}
 
 class HomeDataAPI_MMP {
     @Injected private var dropBoxManager: Dropbox_MMP
@@ -23,42 +53,112 @@ class HomeDataAPI_MMP {
 // MARK: - API Methods
 extension HomeDataAPI_MMP {
 
-//    @discardableResult
-//    func getMaps_MMP() async throws -> [LocalData] {
-//
-//        let models: EndPointResponse<[MapsModel_MMP]> = try await dropBoxManager.downloadModel_MMP(filePath: mapsJsonPath)
-//        Logger.debug_MMP("Maps get success")
-//
-//        guard let maps = models.data.first else {
-//            return []
-//        }
-//
-//        var localData = maps.list.map(LocalData.init)
-//
-//        let favouriteData = await fetchFavouriteElement_MMP(menu: .maps)
-//
-//        if !favouriteData.isEmpty {
-//            modifyArray_MMP(&localData, with: favouriteData)
-//        }
-//
-//        self.maps = localData
-//
-//        return localData
-//    }
+    func getObjectsFromDict(json: [String : Any], type: ContentType_MMP) throws -> [LocalModel] {
+        guard let structJson = json[type.mainKey] as? [String: Any] else {
+            throw APIError_MMP.parseError(type)
+        }
+
+        var models: [LocalModel] = []
+
+        for key in structJson.keys {
+            if let model = structJson[key] as? [[String: Any]] {
+                model.forEach { object in
+                    models.append(.init(modsObject: object))
+                }
+            } else {
+                if type != .editor {
+                    throw APIError_MMP.parseError(type)
+                }
+            }
+        }
+
+        return models
+    }
+
+    func getObjectsFromArrayDict(
+        json: [String : Any],
+        type: ContentType_MMP
+    ) throws -> [LocalModel] {
+        guard let structJson = json[type.mainKey] as? [[String: String]] else {
+            throw APIError_MMP.parseError(type)
+        }
+
+        var models: [LocalModel] = []
+        let objects = structJson.map { LocalModel(modsObject: $0) }
+
+        return models
+    }
+
+    func getMods_MMP(type: ContentType_MMP = .mods) async throws {
+
+        guard try await dropBoxManager.getMetaData_MMP(type: type) else {
+            Logger.debug_MMP("Mods already getted")
+            return
+        }
+        let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
+        let mods = try getObjectsFromDict(json: json, type: type)
+        Logger.debug_MMP("Maps get success")
+
+    }
+
+    func getCategories_MMP(type: ContentType_MMP = .category) async throws {
+
+        guard try await dropBoxManager.getMetaData_MMP(type: type) else {
+            Logger.debug_MMP("Category already getted")
+            return
+        }
+
+        let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
+        let categories = try getObjectsFromArrayDict(json: json, type: type)
+
+        Logger.debug_MMP("Category get success")
+
+    }
+
+    func getEditor_MMP(type: ContentType_MMP = .editor) async throws {
+
+        guard try await dropBoxManager.getMetaData_MMP(type: type) else {
+            Logger.debug_MMP("Editor already getted")
+            return
+        }
+
+        let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
+        let editors = try getObjectsFromDict(json: json, type: type)
+
+        Logger.debug_MMP("Editor get success")
+
+    }
+
+    func getItems_MMP(type: ContentType_MMP = .items) async throws {
+
+        guard try await dropBoxManager.getMetaData_MMP(type: type) else {
+            Logger.debug_MMP("Items already getted")
+            return
+        }
+
+        let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
+        let items = try getObjectsFromArrayDict(json: json, type: type)
+
+        Logger.debug_MMP("Items get success")
+    }
+
+    func getSkins_MMP(type: ContentType_MMP = .skins) async throws {
+
+        guard try await dropBoxManager.getMetaData_MMP(type: type) else {
+            Logger.debug_MMP("Items already getted")
+            return
+        }
+
+        let json = try await dropBoxManager.downloadData_MMP(filePath: type.downloadPath).json()
+        let skins = try getObjectsFromArrayDict(json: json, type: type)
+
+        Logger.debug_MMP("Skins get success")
+    }
 }
 
 // MARK: - CoreData methods
 extension HomeDataAPI_MMP {
-//    func fetchFavouriteElement_MMP(menu: MenuItem_MMP) async -> [LocalDataMO] {
-//        await coreDataStore.viewContext.perform {
-//            guard let items = self.coreDataStore.fetch_MMP(request: .getFavouriteItem(with: menu)) else {
-//                return []
-//            }
-//            Logger.debug_MMP("Fetch favourite success")
-//            return items
-//        }
-//    }
-//
+
 //    func updateFavourite_MMP(menu: MenuItem_MMP, data: LocalData) async {
 //        if data.isFavourite {
 //            await saveFavourite_MMP(menu: menu, data: data)
@@ -67,15 +167,13 @@ extension HomeDataAPI_MMP {
 //        }
 //    }
 //
-//    private func saveFavourite_MMP(menu: MenuItem_MMP, data: LocalData) async {
-//        await coreDataStore.viewContext.perform {
+    private func saveModels() async {
+        await coreDataStore.viewContext.perform {
 //            let dataMO = LocalDataMO(context: self.coreDataStore.viewContext)
-//            dataMO.uidMMP = data.uidMMP
-//            dataMO.menu = menu.rawValue
-//            self.coreDataStore.saveChanges_MMP()
-//            Logger.debug_MMP("Add favourite success")
-//        }
-//    }
+            self.coreDataStore.saveChanges_MMP()
+            Logger.debug_MMP("Add favourite success")
+        }
+    }
 //
 //
 //    private func deleteFavourite_MMP(menu: MenuItem_MMP, data: LocalData) async {

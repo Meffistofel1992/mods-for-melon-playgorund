@@ -13,18 +13,18 @@ import DataCache
 
 
 struct DropBoxKeys_MMP {
-    static let appkey = "oqke6e57o2y8k27"
-    static let appSecret = "fhozcio2qck3d9d"
-    static let authCode = "czHFetFkAxAAAAAAAAAEUfK83mIrCV2vIo1fzNu0Uhs"
-
+    static let appkey = "oxgt0xv8z7rqum7"
+    static let appSecret = "g8al018czh6g4jt"
+    static let authCode = "czHFetFkAxAAAAAAAAAERnze66OpFiUfZlyS02t6IJY"
     static let apiLink = "https://api.dropboxapi.com/oauth2/token"
-    static let refreshToken = "WA-6Bnz00KUAAAAAAAAAAXRwzEzbX3u_gCuBgKM6QGKPNMwp3KkektWQ0N6G7kjG"
+    static let refreshToken = "Kft8R7EcAJIAAAAAAAAAASrZri6M8FFxFglkitUDX625v1T3zD0Dyj2ZbeE2cHwl"
 }
 
 
 final class Dropbox_MMP : NSObject {
 
     public var client : DropboxClient?
+    private let userDefaults = UserDefaults.standard
 
     func initDropBox_MMP() {
         DropboxClientsManager.setupWithAppKey(DropBoxKeys_MMP.appkey)
@@ -96,6 +96,12 @@ extension Dropbox_MMP {
             DataCache.instance.write(data: data, forKey: path)
             return data
         }
+    }
+
+    func getMetaData_MMP(type: ContentType_MMP) async throws -> Bool {
+        let client = try await getAuthorizedClient_MMP()
+
+        return try await getMetaData_MMP(client: client, type: type)
     }
 
     func writeToCash_MMP(forPath path: String) async throws{
@@ -192,6 +198,42 @@ private extension Dropbox_MMP {
                 return completion(.failure(APIError_MMP.error(error.description)))
             }
         }
+    }
+
+    // MARK: - MetaData
+    func getMetaData_MMP(client: DropboxClient, type: ContentType_MMP) async throws -> Bool {
+        try await withCheckedThrowingContinuation { continuation in
+            self.getMetaData(client: client, type: type) { result in
+                switch result {
+                case .success(let data):
+                    continuation.resume(returning: data)
+                    return
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                    return
+                }
+            }
+        }
+    }
+    func getMetaData(
+        client: DropboxClient,
+        type: ContentType_MMP,
+        completion: @escaping ValueClosure_MMP<Result<Bool, Error>>
+    ) {
+        client.files.getMetadata(path: type.downloadPath).response(completionHandler: { data, error in
+            if let data = data as? Files.FileMetadata {
+                if data.size == self.userDefaults.integer(forKey: "bytes\(type.rawValue)") {
+                    completion(.success(false))
+                } else {
+                    self.userDefaults.set(Int(data.size), forKey: "bytes\(type.rawValue)")
+                    completion(.success(true))
+                }
+            } else if let error = error {
+                completion(.failure(APIError_MMP.checkUpdateError(type: type, errorDescription: error.description)))
+            } else {
+                completion(.failure(APIError_MMP.error("unknownError")))
+            }
+        })
     }
 }
 

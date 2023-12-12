@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FAC3E53F-973B-4EA5-81C3-7861910BCC1C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8436B766-C2CB-4066-84CC-1133346FA6E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Extension_MMP/Logic+Ext_MMP/Codable_MMP+Ext.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "dictionary(using:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55D61BCE-ED1B-4E59-B320-241A172537D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getObjectsFromDict(json:type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55D61BCE-ED1B-4E59-B320-241A172537D8 - df01e583eae9035"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromArrayDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "55D61BCE-ED1B-4E59-B320-241A172537D8 - fea726091ce8fe02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1236">
+               </Location>
+               <Location
+                  uuid = "55D61BCE-ED1B-4E59-B320-241A172537D8 - fea726091ce8fe02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getObjectsFromDict(json:type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6 - 8f772d9e3c7a90d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjects(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+               <Location
+                  uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6 - 8f772d9e3c7a90d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjects(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6 - fea726091ce8f1d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6 - fea726091ce8f1d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1292">
+               </Location>
+               <Location
+                  uuid = "838329F0-88F6-4110-A439-5B439B3D2BE6 - fea726091ce8f1d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mods_for_melon_playgorund.HomeDataAPI_MMP.getObjectsFromDict(json: Swift.Dictionary&lt;Swift.String, Any&gt;, type: mods_for_melon_playgorund.ContentType_MMP) throws -&gt; Swift.Array&lt;mods_for_melon_playgorund.LocalModel&gt;"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
