@@ -9,6 +9,7 @@ import SwiftUI
 
 extension UIFont {
     enum Style_MMP: String {
+        case black = "-Black"
         case bold = "-Bold"
         case demiBold = "-Demibold"
         case demiBoldItalic = "-DemiboldItalic"

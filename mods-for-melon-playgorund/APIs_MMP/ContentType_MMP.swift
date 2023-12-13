@@ -7,12 +7,15 @@
 
 import Foundation
 
-enum ContentType_MMP: String, CaseIterable {
+enum ContentType_MMP: String, CaseIterable, Identifiable {
+    var id: Self { self }
     case mods = "Mods"
     case category = "Category"
     case editor = "Editor"
     case items = "Items"
     case skins = "Skins"
+
+    static var home: [ContentType_MMP] = [.mods, .skins, .items]
 
     // paths to json file
     var downloadPath: String {

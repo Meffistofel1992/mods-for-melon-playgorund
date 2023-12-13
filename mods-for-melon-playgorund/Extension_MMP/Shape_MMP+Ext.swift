@@ -11,7 +11,11 @@ typealias MMP_Shape = Shape
 typealias MMP_InsettableShape = InsettableShape
 
 extension MMP_Shape {
-    func customfill_MMP<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+    func customfill_MMP<Fill: ShapeStyle, Stroke: ShapeStyle>(
+        _ fillStyle: Fill = .blackOpacity,
+        strokeBorder strokeStyle: Stroke = .cE9E9E9,
+        lineWidth: Double = isIPad ? 2 : 1
+    ) -> some View {
         self
             .stroke(strokeStyle, lineWidth: lineWidth)
             .background(self.fill(fillStyle))
@@ -19,7 +23,11 @@ extension MMP_Shape {
 }
 
 extension MMP_InsettableShape {
-    func customfill_MMP<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+    func customfill_MMP<Fill: ShapeStyle, Stroke: ShapeStyle>(
+        _ fillStyle: Fill = .blackOpacity,
+        strokeBorder strokeStyle: Stroke = .cE9E9E9,
+        lineWidth: Double = isIPad ? 2 : 1
+    ) -> some View {
         self
             .strokeBorder(strokeStyle, lineWidth: lineWidth)
             .background(self.fill(fillStyle))

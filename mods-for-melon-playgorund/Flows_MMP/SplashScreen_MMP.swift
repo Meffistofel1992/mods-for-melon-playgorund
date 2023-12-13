@@ -51,27 +51,27 @@ private extension SplashScreen_MMP {
                         switch menu {
                         case .mods:
                             await Utilities_MMP.shared.retrowThrowsFunction_MMP {
-                                try await apiManager.getMods_MMP()
+                                try await apiManager.getModels(type: menu)
                                 continuation.yield()
                             }
                         case .category:
                             await Utilities_MMP.shared.retrowThrowsFunction_MMP {
-                                try await apiManager.getCategories_MMP()
+                                try await apiManager.getModels(type: menu)
                                 continuation.yield()
                             }
                         case .editor:
                             await Utilities_MMP.shared.retrowThrowsFunction_MMP {
-                                try await apiManager.getEditor_MMP()
+                                try await apiManager.getModels(type: menu)
                                 continuation.yield()
                             }
                         case .items:
                             await Utilities_MMP.shared.retrowThrowsFunction_MMP {
-                                try await apiManager.getItems_MMP()
+                                try await apiManager.getModels(type: menu)
                                 continuation.yield()
                             }
                         case .skins:
                             await Utilities_MMP.shared.retrowThrowsFunction_MMP {
-                                try await apiManager.getSkins_MMP()
+                                try await apiManager.getModels(type: menu)
                                 continuation.yield()
                             }
                         }

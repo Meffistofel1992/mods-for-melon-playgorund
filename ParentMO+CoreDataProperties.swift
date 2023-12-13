@@ -20,6 +20,7 @@ extension ParentMO {
     @NSManaged public var desctiptionn: String?
     @NSManaged public var imagePath: String?
     @NSManaged public var downloadPath: String?
+    @NSManaged public var category: String?
     @NSManaged public var uuid: UUID?
 
 }

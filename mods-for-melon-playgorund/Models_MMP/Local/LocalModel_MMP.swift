@@ -12,12 +12,14 @@ struct LocalModel_MMP {
     var description: String?
     var imagePath: String?
     var downloadPath: String?
+    var category: String?
 
-    init(modsObject: [String: Any]) {
+    init(modsObject: [String: Any], category: String?) {
         title = modsObject[ModsJsonKeys.title] as? String
         description = modsObject[ModsJsonKeys.description] as? String
         imagePath = modsObject[ModsJsonKeys.imagePath] as? String
         downloadPath = modsObject[ModsJsonKeys.downloadPath] as? String
+        self.category = category
     }
 
     init(categoriesObject: [String: Any]) {

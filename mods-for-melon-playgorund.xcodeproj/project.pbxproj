@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532092C72B2A2BCB0001BB8F /* HomeView_GMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */; };
+		532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */; };
+		533AFD8C2B2A3E7500CC63E4 /* SearchTextField_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */; };
+		533AFD8E2B2A473700CC63E4 /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 533AFD8D2B2A473700CC63E4 /* SF-Pro-Display-Black.otf */; };
+		533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */; };
+		533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD912B2A4BE700CC63E4 /* SectionButton.swift */; };
+		533AFD942B2A4CA600CC63E4 /* CategoryGrid_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */; };
 		53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */; };
 		53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */; };
 		53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */; };
@@ -124,6 +131,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_GMT.swift; sourceTree = "<group>"; };
+		532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewFitContent.swift; sourceTree = "<group>"; };
+		533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField_MMP.swift; sourceTree = "<group>"; };
+		533AFD8D2B2A473700CC63E4 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
+		533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle_MMP.swift; sourceTree = "<group>"; };
+		533AFD912B2A4BE700CC63E4 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
+		533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGrid_MMP.swift; sourceTree = "<group>"; };
 		53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView_MMP+Appearance.swift"; sourceTree = "<group>"; };
 		53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -242,6 +256,7 @@
 		53AA0CA82B290ED100382D92 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
+				532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -368,6 +383,9 @@
 				53FE803F2B27972C00AAD9B6 /* Style_MMP */,
 				53FE80422B27972C00AAD9B6 /* Shape_MMP+Ext.swift */,
 				53FE80432B27972C00AAD9B6 /* LargeButton_MMP.swift */,
+				533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */,
+				533AFD912B2A4BE700CC63E4 /* SectionButton.swift */,
+				533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -390,6 +408,7 @@
 		53FE80252B27972C00AAD9B6 /* Modifier_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */,
 				53FE80262B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift */,
 				53FE80272B27972C00AAD9B6 /* ReadSize_MMP.swift */,
 				53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */,
@@ -418,6 +437,7 @@
 				53FE80372B27972C00AAD9B6 /* ZStackWithBackground_MMP.swift */,
 				53FE80382B27972C00AAD9B6 /* CustomSheet_MMP */,
 				53FE803C2B27972C00AAD9B6 /* AsyncLoadingImage_MMP.swift */,
+				532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */,
 			);
 			path = CustomUI_MMP;
 			sourceTree = "<group>";
@@ -505,6 +525,7 @@
 		53FE80972B27A1F100AAD9B6 /* Font_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				533AFD8D2B2A473700CC63E4 /* SF-Pro-Display-Black.otf */,
 				53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */,
 				53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */,
 				53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */,
@@ -650,6 +671,7 @@
 				53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */,
 				53AA0CA52B290ACB00382D92 /* SF-Pro-Display-Light.otf in Resources */,
 				53AA0CA62B290ACB00382D92 /* SF-Pro-Display-Bold.otf in Resources */,
+				533AFD8E2B2A473700CC63E4 /* SF-Pro-Display-Black.otf in Resources */,
 				53AA0CA72B290ACB00382D92 /* SF-Pro-Display-Semibold.otf in Resources */,
 				53FE7FE72B2790B800AAD9B6 /* Preview Assets.xcassets in Resources */,
 				53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */,
@@ -674,16 +696,19 @@
 				53ED78932B28F8DE00952BA8 /* SkinsMO+CoreDataProperties.swift in Sources */,
 				53FE804F2B27972C00AAD9B6 /* ReadSize_MMP.swift in Sources */,
 				53FE80892B279F1500AAD9B6 /* AVAudioPlayerManager_MMP.swift in Sources */,
+				533AFD942B2A4CA600CC63E4 /* CategoryGrid_MMP.swift in Sources */,
 				53ED78922B28F8DE00952BA8 /* CategoriesMO+CoreDataProperties.swift in Sources */,
 				53ED78942B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift in Sources */,
 				53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */,
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
 				53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */,
+				532092C72B2A2BCB0001BB8F /* HomeView_GMT.swift in Sources */,
 				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,
 				53FE80632B27972C00AAD9B6 /* BarProgress_MMP+Style.swift in Sources */,
 				53FE808C2B279F1500AAD9B6 /* ImageSaverManager_MMP.swift in Sources */,
+				533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */,
 				53FE80732B279C6100AAD9B6 /* SlimLogglyDestinationConfig_MMP.swift in Sources */,
 				53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */,
 				53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */,
@@ -700,6 +725,7 @@
 				53FE809E2B27A3AA00AAD9B6 /* BaseVM_MMP.swift in Sources */,
 				53FE804C2B27972C00AAD9B6 /* UserDefaults_MMP+Ext.swift in Sources */,
 				53FE80532B27972C00AAD9B6 /* DeviceAspectRatioModifier_MMP.swift in Sources */,
+				533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */,
 				53ED789C2B28F9C300952BA8 /* LocalModel_MMP.swift in Sources */,
 				53FE80622B27972C00AAD9B6 /* CustomSheet_MMP.swift in Sources */,
 				53FE80762B279C6100AAD9B6 /* SlimLoggerConfig_MMP.swift in Sources */,
@@ -709,6 +735,7 @@
 				53FE80992B27A20200AAD9B6 /* Font_MMP+Ext.swift in Sources */,
 				53FE80652B27972C00AAD9B6 /* Shape_MMP+Ext.swift in Sources */,
 				53FE80832B279E9C00AAD9B6 /* MainNavigationStore_MMP.swift in Sources */,
+				532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */,
 				53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */,
 				53ED78952B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift in Sources */,
 				53FE80482B27972C00AAD9B6 /* FileManager_MMP+Ext.swift in Sources */,
@@ -746,6 +773,7 @@
 				53FE80682B279C1600AAD9B6 /* app_MMP+Resolver.swift in Sources */,
 				53FE805F2B27972C00AAD9B6 /* CustomSheetView_MMP.swift in Sources */,
 				53FE80B12B27B75900AAD9B6 /* Codable_MMP+Ext.swift in Sources */,
+				533AFD8C2B2A3E7500CC63E4 /* SearchTextField_MMP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

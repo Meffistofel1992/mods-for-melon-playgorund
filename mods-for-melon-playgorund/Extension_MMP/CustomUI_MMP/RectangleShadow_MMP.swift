@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ShadowConfig_MMP {
-    var shadowColor: Color = .black.opacity(0.15)
-    var shadowRadius: CGFloat = 0
-    var offSet: (x: CGFloat, y: CGFloat) = (0, isIPad ? 6 : 4)
+    var shadowColor: Color = .black.opacity(0.25)
+    var shadowRadius: CGFloat = 2
+    var offSet: (x: CGFloat, y: CGFloat) = (0, isIPad ? 6 : 3)
 
     static var clear: ShadowConfig_MMP {
         return ShadowConfig_MMP(shadowColor: .clear, shadowRadius: 0)

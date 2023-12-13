@@ -41,14 +41,10 @@ struct TabFlowView: View {
         VStack(spacing: 0) {
             TabView(selection: $activeTab) {
                 ZStackWithBackground_MMP {
-                    Button {
-                        navigationStore.routes.push(.second)
-                    } label: {
-                        Text("Push")
-                    }
-
+                   HomeView_MMP()
                 }
                 .tag(Tab.home)
+                
                 Text("2")
                     .tag(Tab.editor)
                 Text("3")

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "image_mock.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -7,15 +7,42 @@
 
 import CoreData
 
-//extension NSFetchRequest where ResultType == ModsMO {
-//    static func getFavouriteItem() -> NSFetchRequest<LocalDataMO> {
-//        let request: NSFetchRequest<LocalDataMO> = LocalDataMO.fetchRequest()
-//        let menuPredicate: String = "ANY \(#keyPath(LocalDataMO.menu)) == %@"
-//        let predicate = NSPredicate(format: menuPredicate, menu.rawValue)
-//
-//        request.sortDescriptors = []
-//        request.predicate = predicate
-//
-//        return request
-//    }
-//}
+extension NSFetchRequest where ResultType == ModsMO {
+    static func mods(category: String) -> NSFetchRequest<ModsMO> {
+        let request: NSFetchRequest<ModsMO> = ModsMO.fetchRequest()
+        let format: String = "ANY \(#keyPath(ModsMO.category)) == %@"
+        let predicate = NSPredicate(format: format, category)
+
+        request.sortDescriptors = []
+        request.predicate = predicate
+
+        return request
+    }
+}
+
+extension NSFetchRequest where ResultType == SkinsMO {
+    static func skins() -> NSFetchRequest<SkinsMO> {
+        let request: NSFetchRequest<SkinsMO> = SkinsMO.fetchRequest()
+        request.sortDescriptors = []
+
+        return request
+    }
+}
+
+extension NSFetchRequest where ResultType == ItemsMO {
+    static func items() -> NSFetchRequest<ItemsMO> {
+        let request: NSFetchRequest<ItemsMO> = ItemsMO.fetchRequest()
+        request.sortDescriptors = []
+
+        return request
+    }
+}
+
+extension NSFetchRequest where ResultType == CategoriesMO {
+    static func categories() -> NSFetchRequest<CategoriesMO> {
+        let request: NSFetchRequest<CategoriesMO> = CategoriesMO.fetchRequest()
+        request.sortDescriptors = []
+
+        return request
+    }
+}
