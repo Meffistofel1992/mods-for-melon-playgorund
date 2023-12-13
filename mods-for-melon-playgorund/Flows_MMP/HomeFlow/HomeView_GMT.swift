@@ -42,14 +42,16 @@ struct HomeView_MMP: View {
                     }
                 }
 
-                DynamicFetchView(fetchRequest: .mods(category: selectedCategories?.title ?? "")) { mods in
+                DynamicFetchView(predicate: modsPredicate) { mods in
                     gridView(data: mods)
                 }
             }
             .animation(.default, value: selectedMenu)
         }
         .onViewDidLoad(action: {
-            selectedCategories = categoriesMO[0]
+            if !categoriesMO.isEmpty {
+                selectedCategories = categoriesMO[0]
+            }
         })
     }
 }
@@ -106,25 +108,11 @@ private extension HomeView_MMP {
     }
 }
 
-// MARK: - Previews
+// MARK: - Previews`
 
 #Preview {
-    HomeView_MMP()
-}
+    let moc = CoreDataMockService_MMP.preview
 
-import CoreData
-
-struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
-    @FetchRequest var fetchRequest: FetchedResults<T>
-
-    let content: (FetchedResults<T>) -> Content
-
-    init(fetchRequest: NSFetchRequest<T>, content: @escaping (FetchedResults<T>) -> Content) {
-        _fetchRequest = FetchRequest<T>(fetchRequest: fetchRequest)
-        self.content = content
-    }
-
-    var body: some View {
-        content(fetchRequest)
-    }
+    return HomeView_MMP()
+        .environment(\.managedObjectContext, moc)
 }

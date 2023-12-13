@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		532092C72B2A2BCB0001BB8F /* HomeView_GMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */; };
 		532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */; };
+		5334E0CD2B2A630900FF8650 /* DynamicFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334E0CC2B2A630900FF8650 /* DynamicFetchView.swift */; };
 		533AFD8C2B2A3E7500CC63E4 /* SearchTextField_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */; };
 		533AFD8E2B2A473700CC63E4 /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 533AFD8D2B2A473700CC63E4 /* SF-Pro-Display-Black.otf */; };
 		533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */; };
@@ -133,6 +134,7 @@
 /* Begin PBXFileReference section */
 		532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_GMT.swift; sourceTree = "<group>"; };
 		532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewFitContent.swift; sourceTree = "<group>"; };
+		5334E0CC2B2A630900FF8650 /* DynamicFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFetchView.swift; sourceTree = "<group>"; };
 		533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField_MMP.swift; sourceTree = "<group>"; };
 		533AFD8D2B2A473700CC63E4 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle_MMP.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				533AFD8B2B2A3E7500CC63E4 /* SearchTextField_MMP.swift */,
 				533AFD912B2A4BE700CC63E4 /* SectionButton.swift */,
 				533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */,
+				5334E0CC2B2A630900FF8650 /* DynamicFetchView.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				53FE80652B27972C00AAD9B6 /* Shape_MMP+Ext.swift in Sources */,
 				53FE80832B279E9C00AAD9B6 /* MainNavigationStore_MMP.swift in Sources */,
 				532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */,
+				5334E0CD2B2A630900FF8650 /* DynamicFetchView.swift in Sources */,
 				53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */,
 				53ED78952B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift in Sources */,
 				53FE80482B27972C00AAD9B6 /* FileManager_MMP+Ext.swift in Sources */,

@@ -7,6 +7,11 @@
 
 import CoreData
 
+var modsPredicate: NSPredicate {
+    let format: String = "ANY \(#keyPath(ModsMO.category)) == %@"
+    return NSPredicate(format: format, "Animals")
+}
+
 extension NSFetchRequest where ResultType == ModsMO {
     static func mods(category: String) -> NSFetchRequest<ModsMO> {
         let request: NSFetchRequest<ModsMO> = ModsMO.fetchRequest()

@@ -23,84 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0614E3C8-A693-4EB0-A925-3A19E22F2A64"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "0614E3C8-A693-4EB0-A925-3A19E22F2A64 - db051dc85379dd8c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mods_for_melon_playgorund.DynamicFetchView.body.getter : some"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "492">
-               </Location>
-               <Location
-                  uuid = "0614E3C8-A693-4EB0-A925-3A19E22F2A64 - db051dc85379ddaf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mods_for_melon_playgorund.DynamicFetchView.body.getter : some"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "244">
-               </Location>
-               <Location
-                  uuid = "0614E3C8-A693-4EB0-A925-3A19E22F2A64 - db051dc85379dd42"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mods_for_melon_playgorund.DynamicFetchView.body.getter : some"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "244">
-               </Location>
-               <Location
-                  uuid = "0614E3C8-A693-4EB0-A925-3A19E22F2A64 - db051dc85379dff9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mods_for_melon_playgorund.DynamicFetchView.body.getter : some"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "244">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "093B38FA-ED95-4DAD-B708-7BC1AC5EDE55"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -207,22 +129,6 @@
                   offsetFromSymbolStart = "136">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4F005376-FAA9-4881-A9C3-20A11ACEDE7E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_GMT.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
