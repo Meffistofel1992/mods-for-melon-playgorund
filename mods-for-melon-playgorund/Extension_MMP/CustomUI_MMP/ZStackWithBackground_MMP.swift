@@ -22,11 +22,12 @@ struct ZStackWithBackground_MMP<Content: View>: View {
     var body: some View {
         ZStack(alignment: alignment) {
             LinearGradient(
-                colors: [
-                    .black
+                stops: [
+                    Gradient.Stop(color: Color(red: 0.57, green: 0.32, blue: 0.89), location: 0.00),
+                    Gradient.Stop(color: Color(red: 0.16, green: 0, blue: 0.36), location: 1.00),
                 ],
-                startPoint: .top,
-                endPoint: .bottom
+                startPoint: UnitPoint(x: 0.5, y: 0),
+                endPoint: UnitPoint(x: 0.5, y: 1)
             )
             .ignoresSafeArea()
             content

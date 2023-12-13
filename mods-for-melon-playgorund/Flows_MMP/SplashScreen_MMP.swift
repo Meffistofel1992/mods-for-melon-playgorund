@@ -15,7 +15,7 @@ struct SplashScreen_MMP: View {
     @Binding var splashScreenIsShow: Bool
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color.black.ignoresSafeArea()
             .task {
                 await firstDownloading()
             }

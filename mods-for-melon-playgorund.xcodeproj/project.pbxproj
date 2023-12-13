@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */; };
+		53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */; };
+		53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */; };
+		53AA0CA52B290ACB00382D92 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */; };
+		53AA0CA62B290ACB00382D92 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */; };
+		53AA0CA72B290ACB00382D92 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */; };
 		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
 		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
 		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
@@ -20,6 +26,7 @@
 		53ED789C2B28F9C300952BA8 /* LocalModel_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */; };
 		53ED789F2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789D2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift */; };
 		53ED78A02B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED789E2B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift */; };
+		53ED78A22B29028D00952BA8 /* TabFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78A12B29028D00952BA8 /* TabFlowView.swift */; };
 		53FE7FE02B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */; };
 		53FE7FE22B2790B700AAD9B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FE12B2790B700AAD9B6 /* ContentView.swift */; };
 		53FE7FE42B2790B800AAD9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FE7FE32B2790B800AAD9B6 /* Assets.xcassets */; };
@@ -117,6 +124,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView_MMP+Appearance.swift"; sourceTree = "<group>"; };
+		53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -130,6 +143,7 @@
 		53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModel_MMP.swift; sourceTree = "<group>"; };
 		53ED789D2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		53ED789E2B28FB6E00952BA8 /* ParentMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentMO+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		53ED78A12B29028D00952BA8 /* TabFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFlowView.swift; sourceTree = "<group>"; };
 		53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mods-for-melon-playgorund.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mods_for_melon_playgorundApp.swift; sourceTree = "<group>"; };
 		53FE7FE12B2790B700AAD9B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -225,6 +239,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53AA0CA82B290ED100382D92 /* HomeFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeFlow;
+			sourceTree = "<group>";
+		};
 		53ED78812B28F8DE00952BA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +392,7 @@
 			children = (
 				53FE80262B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift */,
 				53FE80272B27972C00AAD9B6 /* ReadSize_MMP.swift */,
+				53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */,
 			);
 			path = Modifier_MMP;
 			sourceTree = "<group>";
@@ -483,6 +505,11 @@
 		53FE80972B27A1F100AAD9B6 /* Font_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */,
+				53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */,
+				53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */,
+				53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */,
+				53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */,
 				53FE80982B27A20200AAD9B6 /* Font_MMP+Ext.swift */,
 			);
 			path = Font_MMP;
@@ -499,7 +526,9 @@
 		53FE809F2B27A3C200AAD9B6 /* Flows_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				53AA0CA82B290ED100382D92 /* HomeFlow */,
 				53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */,
+				53ED78A12B29028D00952BA8 /* TabFlowView.swift */,
 			);
 			path = Flows_MMP;
 			sourceTree = "<group>";
@@ -618,7 +647,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */,
+				53AA0CA52B290ACB00382D92 /* SF-Pro-Display-Light.otf in Resources */,
+				53AA0CA62B290ACB00382D92 /* SF-Pro-Display-Bold.otf in Resources */,
+				53AA0CA72B290ACB00382D92 /* SF-Pro-Display-Semibold.otf in Resources */,
 				53FE7FE72B2790B800AAD9B6 /* Preview Assets.xcassets in Resources */,
+				53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */,
 				53FE7FE42B2790B800AAD9B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,6 +678,7 @@
 				53ED78942B28F8DE00952BA8 /* EditorMO+CoreDataClass.swift in Sources */,
 				53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */,
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
+				53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */,
 				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,
@@ -677,6 +712,7 @@
 				53FE80A12B27AB5000AAD9B6 /* ContentType_MMP.swift in Sources */,
 				53ED78952B28F8DE00952BA8 /* ItemsMO+CoreDataProperties.swift in Sources */,
 				53FE80482B27972C00AAD9B6 /* FileManager_MMP+Ext.swift in Sources */,
+				53ED78A22B29028D00952BA8 /* TabFlowView.swift in Sources */,
 				53FE80912B279FF400AAD9B6 /* APIError_MMP.swift in Sources */,
 				53ED789F2B28FB6E00952BA8 /* ParentMO+CoreDataClass.swift in Sources */,
 				53FE80552B27972C00AAD9B6 /* DevicePaddingModifier_MMP.swift in Sources */,

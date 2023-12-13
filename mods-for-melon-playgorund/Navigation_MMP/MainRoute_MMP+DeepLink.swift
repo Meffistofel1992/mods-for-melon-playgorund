@@ -8,5 +8,6 @@
 import Foundation
 
 enum MainRoute_MMP: Hashable {
-    case home
+    case tabView
+    case second
 }

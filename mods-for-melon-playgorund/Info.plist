@@ -8,6 +8,14 @@
 	<string>12117-6D63D</string>
 	<key>Pushwoosh_LOG_LEVEL</key>
 	<string>NONE</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Display-Light.otf</string>
+		<string>SF-Pro-Display-Semibold.otf</string>
+		<string>SF-Pro-Display-Regular.otf</string>
+		<string>SF-Pro-Display-Medium.otf</string>
+		<string>SF-Pro-Display-Bold.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
