@@ -25,7 +25,8 @@ struct HomeView_MMP: View {
     @State private var menus: [ContentType_MMP] = ContentType_MMP.home
     @State private var selectedMenu: ContentType_MMP = .mods
     @State private var searchText: String = ""
-
+    @State private var filterIsShowing: Bool = false
+    @State private var isAppear: Bool = false
 
     // MARK: - body View
 
@@ -33,7 +34,6 @@ struct HomeView_MMP: View {
         ZStackWithBackground_MMP {
             VStack(spacing: 0) {
                 categoriesView
-
                     .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
 
                 VStack(spacing: 0) {
@@ -51,6 +51,22 @@ struct HomeView_MMP: View {
             }
             .animation(.default, value: selectedMenu)
         }
+        .presentModelWithUIKit(element: $filterIsShowing,
+                               presentationStyle: .overCurrentContext,
+                               transitionStyle: .crossDissolve,
+                               backgroundColor: .clear,
+                               content: {
+            BottomSheetView_MMP(
+                isShowing: $filterIsShowing,
+                isAppear: $isAppear,
+                content: FilterView_MMP(
+                    selectedCategories: $selectedCategories,
+                    filterIsShowing: $filterIsShowing,
+                    isAppear: $isAppear
+                )
+            )
+            .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
+        })
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
                 selectedCategories = categoriesMO[0]
@@ -72,7 +88,7 @@ private extension HomeView_MMP {
         HStack(spacing: isIPad ? 24 : 12) {
             SearchTextField_MMP(searchText: $searchText)
             Button {
-
+                filterIsShowing.toggle()
             } label: {
                 Image(.iconFilter)
                     .resizable()
@@ -129,4 +145,50 @@ private extension HomeView_MMP {
 
     return HomeView_MMP()
         .environment(\.managedObjectContext, moc)
+}
+
+fileprivate final class PresentedHostingController<Content>:
+    UIHostingController<Content> where Content: View
+{
+    /*dummy*/
+}
+
+extension View {
+    func presentModelWithUIKit<ContentView>(
+        element: Binding<Bool>,
+        presentationStyle: UIModalPresentationStyle = .pageSheet,
+        transitionStyle: UIModalTransitionStyle? = nil,
+        backgroundColor: UIColor? = nil,
+        content: BuilderClosure_MMP<ContentView>
+    ) -> some View where ContentView: View {
+        let presentingController = Utilities_MMP.shared.topViewController_MMP() as? PresentedHostingController<ContentView>
+
+        if element.wrappedValue {
+            let isViewControllerAlreadyPresented = presentingController != nil
+            if isViewControllerAlreadyPresented {
+                // this prevent from presenting one more instance of controller
+                // when SwiftUI View redraw body during presentation of this controller
+                return self
+            }
+
+            let presentableContent = PresentedHostingController<ContentView>(
+                rootView: content()
+            )
+            presentableContent.modalPresentationStyle = presentationStyle
+            if let transitionStyle {
+                presentableContent.modalTransitionStyle = transitionStyle
+            }
+            if let backgroundColor {
+                presentableContent.view.backgroundColor = backgroundColor
+            }
+
+            Utilities_MMP.shared.topViewController_MMP()?.present(presentableContent, animated: true)
+        } else {
+            if let controller = presentingController {
+                controller.dismiss(animated: true)
+            }
+        }
+
+        return self
+    }
 }

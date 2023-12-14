@@ -34,5 +34,10 @@ struct mods_for_melon_playgorundApp: App {
         UIView.appearance().isExclusiveTouch = true
 
         UIRefreshControl.appearance().tintColor = UIColor.black
+
+//        UIFont.familyNames.forEach({ familyName in
+//                    let fontNames = UIFont.fontNames(forFamilyName: familyName)
+//                    print(familyName, fontNames)
+//                })
     }
 }

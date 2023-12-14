@@ -16,6 +16,7 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
     private let iOsColumns: [GridItem]
     private let iPadColumns: [GridItem]
     private let vStackSpacing: CGFloat
+    private let isFitHeight: Bool
 
     init(
         data: Data,
@@ -27,12 +28,14 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
             trailing: isIPad ? 85 : 20
         ),
         vStackSpacing: CGFloat = isIPad ? Utilities_MMP.shared.widthAspectRatioDevice_MMP(width: 24) : 14,
+        isFitHeight: Bool = false,
         content: @escaping BuilderClosureValue_MMP<Data.Element, Content>
     ) {
         self.containerPadding = containerPadding
         self.data = data
         self.content = content
         self.vStackSpacing = vStackSpacing
+        self.isFitHeight = isFitHeight
 
         iOsColumns = [
             GridItem(.flexible(), spacing: gridiPadSpacing),
@@ -45,6 +48,8 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
             GridItem(.flexible())
         ]
     }
+
+    @State private var size: CGSize = .zero
 
     var body: some View {
         let columns = isIPad ? iPadColumns : iOsColumns
@@ -79,7 +84,9 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
                 iPadPadding: containerPadding.bottom,
                 iPadIsAspect: true
             )
+            .readSize($size)
         }
+        .frame(maxHeight: isFitHeight ? size.height : nil)
     }
 }
 

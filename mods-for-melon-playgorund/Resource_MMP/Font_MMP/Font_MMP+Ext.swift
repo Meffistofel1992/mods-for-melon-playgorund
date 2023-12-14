@@ -34,6 +34,7 @@ extension UIFont {
     }
 
     enum Name_MMP: String {
+        case mitr = "Mitr"
         case gluten = "Gluten"
         case sfProDisplay = "SFProDisplay"
         case inter = "Inter"

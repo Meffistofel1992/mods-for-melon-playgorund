@@ -43,7 +43,7 @@ struct LargeButton_MMP<Content: View>: View {
         borderColor: Color = .white,
         isValid: Bool = true,
         buttonHorizontalMargins: CGFloat = 0,
-        fontStyle: Font = isIPad ? .fontWithName_MMP(.sfProDisplay, style: .black, size: 40) : .fontWithName_MMP(.sfProDisplay, style: .black, size: 120),
+        fontStyle: Font = isIPad ? .fontWithName_MMP(.sfProDisplay, style: .black, size: 40) : .fontWithName_MMP(.sfProDisplay, style: .black, size: 20),
         backgroundColor: Color = .blue,
         foregroundColor: Color = .white,
         cornerRadius: CGFloat = isIPad ? 16 : 12,
