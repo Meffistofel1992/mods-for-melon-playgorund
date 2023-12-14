@@ -7,8 +7,12 @@
 
 import CoreData
 
-func modsPredicate(with category: String) -> NSPredicate {
-    NSPredicate(format: "%K == %@", #keyPath(ModsMO.category), category)
+func modsPredicate(with category: String, searchText: String) -> NSPredicate {
+    let categoryPredicate = NSPredicate(format: "%K == %@", #keyPath(ModsMO.category), category)
+    let searchPredicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+    let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate] + (searchText.isEmpty ? [] : [searchPredicate]) )
+
+    return compoundPredicate
 }
 
 extension NSFetchRequest where ResultType == ModsMO {

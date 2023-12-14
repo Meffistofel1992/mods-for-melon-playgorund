@@ -46,10 +46,22 @@ struct HomeView_MMP: View {
                 }
 
                 DynamicFetchView(
-                    predicate: modsPredicate(with: selectedCategories?.title ?? ""),
+                    predicate: modsPredicate(with: selectedCategories?.title ?? "", searchText: searchText),
                     sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
-                ) { mods in
-                    gridView(data: mods)
+                ) { (mods: FetchedResults<ModsMO>) in
+                    VStack {
+                        if mods.isEmpty && !searchText.isEmpty {
+                            Text("No found results")
+                                .frame(maxHeight: .infinity)
+                                .foregroundStyle(Color.white)
+                                .iosDeviceTypeFont_mmp(
+                                    iOS: .init(name: .sfProDisplay, style: .medium, size: 20),
+                                    iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
+                                )
+                        } else {
+                            gridView(data: mods)
+                        }
+                    }
                 }
             }
             .animation(.default, value: selectedMenu)
