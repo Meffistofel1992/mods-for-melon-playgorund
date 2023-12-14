@@ -45,7 +45,10 @@ struct HomeView_MMP: View {
                     }
                 }
 
-                DynamicFetchView(predicate: modsPredicate) { mods in
+                DynamicFetchView(
+                    predicate: modsPredicate(with: selectedCategories?.title ?? ""),
+                    sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
+                ) { mods in
                     gridView(data: mods)
                 }
             }
@@ -65,7 +68,7 @@ struct HomeView_MMP: View {
                     isAppear: $isAppear
                 )
             )
-            .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
+            .environment(\.managedObjectContext, coreDataStore.viewContext)
         })
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
@@ -145,50 +148,4 @@ private extension HomeView_MMP {
 
     return HomeView_MMP()
         .environment(\.managedObjectContext, moc)
-}
-
-fileprivate final class PresentedHostingController<Content>:
-    UIHostingController<Content> where Content: View
-{
-    /*dummy*/
-}
-
-extension View {
-    func presentModelWithUIKit<ContentView>(
-        element: Binding<Bool>,
-        presentationStyle: UIModalPresentationStyle = .pageSheet,
-        transitionStyle: UIModalTransitionStyle? = nil,
-        backgroundColor: UIColor? = nil,
-        content: BuilderClosure_MMP<ContentView>
-    ) -> some View where ContentView: View {
-        let presentingController = Utilities_MMP.shared.topViewController_MMP() as? PresentedHostingController<ContentView>
-
-        if element.wrappedValue {
-            let isViewControllerAlreadyPresented = presentingController != nil
-            if isViewControllerAlreadyPresented {
-                // this prevent from presenting one more instance of controller
-                // when SwiftUI View redraw body during presentation of this controller
-                return self
-            }
-
-            let presentableContent = PresentedHostingController<ContentView>(
-                rootView: content()
-            )
-            presentableContent.modalPresentationStyle = presentationStyle
-            if let transitionStyle {
-                presentableContent.modalTransitionStyle = transitionStyle
-            }
-            if let backgroundColor {
-                presentableContent.view.backgroundColor = backgroundColor
-            }
-
-            Utilities_MMP.shared.topViewController_MMP()?.present(presentableContent, animated: true)
-        } else {
-            if let controller = presentingController {
-                controller.dismiss(animated: true)
-            }
-        }
-
-        return self
-    }
 }

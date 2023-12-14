@@ -19,7 +19,7 @@ struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
         animation: Animation? = nil,
         content: @escaping (FetchedResults<T>) -> Content
     ) {
-        _fetchRequest = FetchRequest<T>(sortDescriptors: [])
+        _fetchRequest = FetchRequest<T>(sortDescriptors: sortDescriptors, predicate: predicate, animation: animation)
         self.content = content
     }
 

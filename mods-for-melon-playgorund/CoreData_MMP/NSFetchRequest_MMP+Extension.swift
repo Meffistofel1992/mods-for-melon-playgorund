@@ -7,9 +7,8 @@
 
 import CoreData
 
-var modsPredicate: NSPredicate {
-    let format: String = "ANY \(#keyPath(ModsMO.category)) == %@"
-    return NSPredicate(format: format, "Animals")
+func modsPredicate(with category: String) -> NSPredicate {
+    NSPredicate(format: "%K == %@", #keyPath(ModsMO.category), category)
 }
 
 extension NSFetchRequest where ResultType == ModsMO {
@@ -46,7 +45,7 @@ extension NSFetchRequest where ResultType == ItemsMO {
 extension NSFetchRequest where ResultType == CategoriesMO {
     static func categories() -> NSFetchRequest<CategoriesMO> {
         let request: NSFetchRequest<CategoriesMO> = CategoriesMO.fetchRequest()
-        request.sortDescriptors = []
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
 
         return request
     }

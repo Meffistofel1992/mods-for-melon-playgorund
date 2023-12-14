@@ -2,7 +2,7 @@
 //  ParentMO+CoreDataProperties.swift
 //  mods-for-melon-playgorund
 //
-//  Created by Александр Ковалев on 12.12.2023.
+//  Created by Александр Ковалев on 14.12.2023.
 //
 //
 
@@ -16,13 +16,13 @@ extension ParentMO {
         return NSFetchRequest<ParentMO>(entityName: "ParentMO")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var desctiptionn: String?
-    @NSManaged public var imagePath: String?
-    @NSManaged public var downloadPath: String?
     @NSManaged public var category: String?
-    @NSManaged public var uuid: UUID?
+    @NSManaged public var desctiptionn: String?
+    @NSManaged public var downloadPath: String?
+    @NSManaged public var imagePath: String?
     @NSManaged public var isFavourite: Bool
+    @NSManaged public var title: String?
+    @NSManaged public var uuid: UUID?
 
 }
 

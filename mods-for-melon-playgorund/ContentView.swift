@@ -13,11 +13,11 @@ struct ContentView: View {
     @State private var splashScreenIsShow: Bool = false
 
     var body: some View {
-        if splashScreenIsShow {
+//        if splashScreenIsShow {
             TabFlowView()
-        } else {
-            SplashScreen_MMP(splashScreenIsShow: $splashScreenIsShow)
-        }
+//        } else {
+//            SplashScreen_MMP(splashScreenIsShow: $splashScreenIsShow)
+//        }
     }
 }
 

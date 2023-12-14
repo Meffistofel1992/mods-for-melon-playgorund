@@ -23,11 +23,11 @@ class CoreDataMockService_MMP {
     @discardableResult
     static func createMods(with moc: NSManagedObjectContext) -> [ModsMO] {
 
-        let objectsMO = (1...2).map { index in
+        let objectsMO = (1...20).map { index in
             let object = ModsMO(context: moc)
             object.title = "TMBP T15 Armata"
             object.desctiptionn = "For melon playground"
-            object.category = "Animals"
+            object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
             object.imagePath = ""
             object.downloadPath = ""
             object.uuid = UUID()
@@ -41,11 +41,13 @@ class CoreDataMockService_MMP {
     @discardableResult
     static func createCategories(with moc: NSManagedObjectContext) -> [CategoriesMO] {
 
-        let objectsMO = (1...10).map { index in
+        let categories = ["Animals", "Cat", "Tank"]
+
+        let objectsMO = (0...2).map { index in
             let object = CategoriesMO(context: moc)
-            object.title = "Animals"
+            object.title = categories[index]
             object.desctiptionn = "For melon playground"
-            object.category = "Animals"
+            object.category = categories[index]
             object.imagePath = ""
             object.downloadPath = ""
             object.uuid = UUID()
