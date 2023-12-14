@@ -31,6 +31,7 @@ class CoreDataMockService_MMP {
             object.imagePath = ""
             object.downloadPath = ""
             object.uuid = UUID()
+            object.isFavourite = false
 
             return object
         }
@@ -48,6 +49,7 @@ class CoreDataMockService_MMP {
             object.imagePath = ""
             object.downloadPath = ""
             object.uuid = UUID()
+            object.isFavourite = false
 
             return object
         }

@@ -7,12 +7,15 @@
 //
 
 import SwiftUI
+import Resolver
 
 // MARK: - HomeView
 
 struct HomeView_MMP: View {
 
     // MARK: - Wrapped Properties
+
+    @Injected private var coreDataStore: CoreDataStore_MMP
 
     @FetchRequest<CategoriesMO>(fetchRequest: .categories())
     private var categoriesMO
@@ -104,6 +107,17 @@ private extension HomeView_MMP {
             .frame(maxWidth: .infinity)
             .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24)
             .addRoundedModifier_MMP(radius: isIPad ? 24 : 12, isNeeedShadow: false)
+            .overlay(alignment: .topTrailing) {
+                Button {
+                    item.isFavourite.toggle()
+                    coreDataStore.saveChanges_MMP()
+                } label: {
+                    Image(item.isFavourite ? .iconBookmarkFill : .iconBookmark)
+                        .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 4, iPadPadding: 8)
+                        .addRoundedModifier_MMP(radius: 8, isNeeedShadow: false)
+                        .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 14)
+                }
+            }
         }
     }
 }

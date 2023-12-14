@@ -22,6 +22,7 @@ extension ParentMO {
     @NSManaged public var downloadPath: String?
     @NSManaged public var category: String?
     @NSManaged public var uuid: UUID?
+    @NSManaged public var isFavourite: Bool
 
 }
 
