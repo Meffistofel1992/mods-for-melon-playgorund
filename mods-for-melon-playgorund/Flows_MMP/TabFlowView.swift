@@ -41,7 +41,7 @@ struct TabFlowView: View {
         VStack(spacing: 0) {
             TabView(selection: $activeTab) {
                 ZStackWithBackground_MMP {
-                   HomeView_MMP()
+                    ModsView_MMP()
                 }
                 .tag(Tab.home)
                 

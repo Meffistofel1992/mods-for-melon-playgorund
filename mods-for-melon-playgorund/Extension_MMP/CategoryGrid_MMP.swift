@@ -84,12 +84,12 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
                 iPadPadding: containerPadding.bottom,
                 iPadIsAspect: true
             )
-            .readSize($size)
+            .readSize($size.animation())
         }
         .frame(maxHeight: isFitHeight ? size.height : nil)
     }
 }
 
 #Preview {
-    HomeView_MMP()
+    ModsView_MMP()
 }

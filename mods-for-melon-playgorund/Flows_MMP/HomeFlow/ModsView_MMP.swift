@@ -11,7 +11,7 @@ import Resolver
 
 // MARK: - HomeView
 
-struct HomeView_MMP: View {
+struct ModsView_MMP: View {
 
     // MARK: - Wrapped Properties
 
@@ -39,7 +39,7 @@ struct HomeView_MMP: View {
                 VStack(spacing: 0) {
                     if selectedMenu == .mods {
                         searchAndFilerView
-                            .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 21, iPadPadding: 40)
+                            .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 21, iPadPadding: 40, iPadIsAspect: true)
                             .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
                             .transition(.asymmetric(insertion: .opacity, removal: .identity))
                     }
@@ -65,6 +65,7 @@ struct HomeView_MMP: View {
                 }
             }
             .animation(.default, value: selectedMenu)
+            .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 19, iPadPadding: 38)
         }
         .presentModelWithUIKit(element: $filterIsShowing,
                                presentationStyle: .overCurrentContext,
@@ -81,6 +82,7 @@ struct HomeView_MMP: View {
                 )
             )
             .environment(\.managedObjectContext, coreDataStore.viewContext)
+//            .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
         })
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
@@ -91,7 +93,7 @@ struct HomeView_MMP: View {
 }
 
 // MARK: - Child View
-private extension HomeView_MMP {
+private extension ModsView_MMP {
     var categoriesView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
             ForEach(menus) { menu in
@@ -107,9 +109,9 @@ private extension HomeView_MMP {
             } label: {
                 Image(.iconFilter)
                     .resizable()
-                    .iosDeviceTypeFrame_mmp(iOSWidth: 24, iOSHeight: 24, iPadWidth: 48, iPadHeight: 48)
+                    .iosDeviceTypeFrameAspec_mmp(iOSWidth: 24, iOSHeight: 24, iPadWidth: 48, iPadHeight: 48)
             }
-            .iosDeviceTypeFrame_mmp(iOSWidth: 48, iOSHeight: 48, iPadWidth: 96, iPadHeight: 96)
+            .iosDeviceTypeFrameAspec_mmp(iOSWidth: 48, iOSHeight: 48, iPadWidth: 92, iPadHeight: 92)
             .addRoundedModifier_MMP(radius: isIPad ? 16 : 8)
         }
     }
@@ -118,23 +120,30 @@ private extension HomeView_MMP {
         CategoryList_MMP(data: data) { item in
             VStack(spacing: 0) {
                 Image(.imageMock)
+                    .resizable()
+                    .aspectRatio(144/96, contentMode: .fill)
                     .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
 
                 Text("TMBP T15 Armata")
                     .iosDeviceTypeFont_mmp(
                         iOS: .init(name: .sfProDisplay, style: .bold, size: 16),
-                        iPad: .init(name: .sfProDisplay, style: .bold, size: 24)
+                        iPad: .init(name: .sfProDisplay, style: .bold, size: 26)
                     )
                     .foregroundStyle(.white)
                     .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 8, iPadPadding: 8)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
 
                 Text("For melon playground")
                     .iosDeviceTypeFont_mmp(
                         iOS: .init(name: .sfProDisplay, style: .regular, size: 12),
-                        iPad: .init(name: .sfProDisplay, style: .regular, size: 20)
+                        iPad: .init(name: .sfProDisplay, style: .regular, size: 22)
                     )
                     .foregroundStyle(.white)
+                    .lineLimit(1)
             }
+            .minimumScaleFactor(0.8)
+            .iosDeviceTypePadding_MMP(edge: [.horizontal, .top], iOSPadding: 12, iPadPadding: 12)
             .frame(maxWidth: .infinity)
             .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24)
             .addRoundedModifier_MMP(radius: isIPad ? 24 : 12, isNeeedShadow: false)
@@ -144,10 +153,13 @@ private extension HomeView_MMP {
                     coreDataStore.saveChanges_MMP()
                 } label: {
                     Image(item.isFavourite ? .iconBookmarkFill : .iconBookmark)
-                        .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 4, iPadPadding: 8)
-                        .addRoundedModifier_MMP(radius: 8, isNeeedShadow: false)
-                        .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 14)
+                        .resizable()
+                        .iosDeviceTypeFrameAspec_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: 40, iPadHeight: 40)
                 }
+                .iosDeviceTypeFrameAspec_mmp(iOSWidth: 28, iOSHeight: 28, iPadWidth: 50, iPadHeight: 50)
+                .addRoundedModifier_MMP(radius: 8, isNeeedShadow: false)
+                .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 16, iPadIsAspect: true)
+
             }
         }
     }
@@ -158,6 +170,6 @@ private extension HomeView_MMP {
 #Preview {
     let moc = CoreDataMockService_MMP.preview
 
-    return HomeView_MMP()
+    return ModsView_MMP()
         .environment(\.managedObjectContext, moc)
 }

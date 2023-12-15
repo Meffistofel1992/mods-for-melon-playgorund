@@ -21,16 +21,16 @@ struct SearchTextField_MMP: View {
             Image(.iconSearch)
                 .renderingMode(.template)
                 .resizable()
-                .iosDeviceTypeFrame_mmp(
+                .iosDeviceTypeFrameAspec_mmp(
                     iOSWidth: 24,
                     iOSHeight: 24,
                     iPadWidth: 48,
                     iPadHeight: 48
                 )
                 .foregroundStyle(Color.white)
-                .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24)
-                .iosDeviceTypePadding_MMP(edge: .leading, iOSPadding: 12, iPadPadding: 24)
-                .iosDeviceTypePadding_MMP(edge: .trailing, iOSPadding: 8, iPadPadding: 16)
+                .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
+                .iosDeviceTypePadding_MMP(edge: .leading, iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
+                .iosDeviceTypePadding_MMP(edge: .trailing, iOSPadding: 8, iPadPadding: 16, iPadIsAspect: true)
                 .onTapGesture {
                     focusedField = .field
                 }
@@ -65,7 +65,7 @@ struct SearchTextField_MMP: View {
                 }
             }
             .animation(.default, value: focusedField)
-            .iosDeviceTypePadding_MMP(edge: .trailing, iOSPadding: 12, iPadPadding: 24)
+            .iosDeviceTypePadding_MMP(edge: .trailing, iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
         }
         .background {
             RoundedRectangle(cornerRadius: isIPad ? 24 : 12)

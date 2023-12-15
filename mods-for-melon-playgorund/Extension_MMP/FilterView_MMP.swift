@@ -46,7 +46,7 @@ struct FilterView_MMP: View {
                 .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
                 .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
 
-            CategoryList_MMP(data: categories) { category in
+            CategoryList_MMP(data: categories, isFitHeight: true) { category in
                 LargeButton_MMP(
                     text: category.title ?? "",
                     borderColor: borderColor(type: category),
@@ -64,7 +64,6 @@ struct FilterView_MMP: View {
                 .addShadowToRectangle_mmp()
             }
         }
-        .iosDeviceTypeFrameAspec_mmp(iOSHeight: 347 , iPadHeight: 326)
         .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
         .background(Color.blackMmp)
         .MMP_cornerRadius_MMP(isIPad ? 32 : 20, corners: [.topLeft, .topRight])
@@ -104,4 +103,3 @@ private extension FilterView_MMP {
         .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
     )
 }
-

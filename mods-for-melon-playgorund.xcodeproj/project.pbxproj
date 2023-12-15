@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		532092C72B2A2BCB0001BB8F /* HomeView_GMT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */; };
+		532092C72B2A2BCB0001BB8F /* ModsView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */; };
 		532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */; };
 		5334C1F02B2B1293002A7E40 /* Mitr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5334C1EF2B2B1293002A7E40 /* Mitr-Medium.ttf */; };
 		5334C1F22B2B2450002A7E40 /* OverFullScreenUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334C1F12B2B2450002A7E40 /* OverFullScreenUIKit.swift */; };
@@ -135,7 +135,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_GMT.swift; sourceTree = "<group>"; };
+		532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsView_MMP.swift; sourceTree = "<group>"; };
 		532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewFitContent.swift; sourceTree = "<group>"; };
 		5334C1EF2B2B1293002A7E40 /* Mitr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Medium.ttf"; sourceTree = "<group>"; };
 		5334C1F12B2B2450002A7E40 /* OverFullScreenUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverFullScreenUIKit.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 		53AA0CA82B290ED100382D92 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
-				532092C62B2A2BCB0001BB8F /* HomeView_GMT.swift */,
+				532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -715,7 +715,7 @@
 				53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */,
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
 				53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */,
-				532092C72B2A2BCB0001BB8F /* HomeView_GMT.swift in Sources */,
+				532092C72B2A2BCB0001BB8F /* ModsView_MMP.swift in Sources */,
 				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,

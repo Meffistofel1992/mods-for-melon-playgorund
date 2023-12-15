@@ -41,9 +41,9 @@ class CoreDataMockService_MMP {
     @discardableResult
     static func createCategories(with moc: NSManagedObjectContext) -> [CategoriesMO] {
 
-        let categories = ["Animals", "Cat", "Tank"]
+        let categories = ["Animals", "Cat", "Tank", "Animals", "Cat", "Tank", "Animals", "Cat", "Tank", "Animals", "Cat", "Tank"]
 
-        let objectsMO = (0...2).map { index in
+        let objectsMO = (0...11).map { index in
             let object = CategoriesMO(context: moc)
             object.title = categories[index]
             object.desctiptionn = "For melon playground"

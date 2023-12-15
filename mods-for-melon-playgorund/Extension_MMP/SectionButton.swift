@@ -25,7 +25,7 @@ struct SectionButton: View {
                     iPad: .init(name: .sfProDisplay, style: .bold, size: 32)
                 )
                 .foregroundStyle(foregroundColor(type: type))
-                .iosDeviceTypeFrame_mmp(iOSHeight: 40, iPadHeight: 80)
+                .iosDeviceTypeFrameAspec_mmp(iOSHeight: 40, iPadHeight: 80)
                 .addRoundedModifier_MMP(
                     radius: isIPad ? 24 : 12,
                     bgColor: bgColor(type: type),

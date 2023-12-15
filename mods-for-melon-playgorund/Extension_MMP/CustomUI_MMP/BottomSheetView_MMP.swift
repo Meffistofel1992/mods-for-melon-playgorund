@@ -32,7 +32,6 @@ struct BottomSheetView_MMP<Content: View>: View {
                     }
                 if isAppear {
                     content
-                        .transition(.move(edge: .bottom))
                         .zIndex(1000)
                 }
             }
