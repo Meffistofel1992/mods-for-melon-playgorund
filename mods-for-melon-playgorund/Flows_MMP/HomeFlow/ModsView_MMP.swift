@@ -119,10 +119,19 @@ private extension ModsView_MMP {
     func gridView(data: FetchedResults<ModsMO>) -> some View {
         CategoryList_MMP(data: data) { item in
             VStack(spacing: 0) {
-                Image(.imageMock)
-                    .resizable()
-                    .aspectRatio(144/96, contentMode: .fill)
-                    .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
+                let width = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 220/1024 : 145/390)
+                let height = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 168/1024 : 93/390)
+
+                AsyncLoadingImage_MMP(
+                    path: "/Content/\(item.imagePath ?? "")",
+                    size: .init(
+                        width: width,
+                        height: height
+                    )
+                )
+                .clipShape(RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
+                .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
+
 
                 Text("TMBP T15 Armata")
                     .iosDeviceTypeFont_mmp(
@@ -142,10 +151,10 @@ private extension ModsView_MMP {
                     .foregroundStyle(.white)
                     .lineLimit(1)
             }
-            .minimumScaleFactor(0.8)
-            .iosDeviceTypePadding_MMP(edge: [.horizontal, .top], iOSPadding: 12, iPadPadding: 12)
+            .minimumScaleFactor(0.7)
+            .iosDeviceTypePadding_MMP(edge: [.horizontal], iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
             .frame(maxWidth: .infinity)
-            .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24)
+            .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
             .addRoundedModifier_MMP(radius: isIPad ? 24 : 12, isNeeedShadow: false)
             .overlay(alignment: .topTrailing) {
                 Button {

@@ -28,7 +28,7 @@ class CoreDataMockService_MMP {
             object.title = "TMBP T15 Armata"
             object.desctiptionn = "For melon playground"
             object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
-            object.imagePath = ""
+            object.imagePath = "prod/616333896911092982764dcb7d6253e15.93342556.png"
             object.downloadPath = ""
             object.uuid = UUID()
             object.isFavourite = false
@@ -48,7 +48,7 @@ class CoreDataMockService_MMP {
             object.title = categories[index]
             object.desctiptionn = "For melon playground"
             object.category = categories[index]
-            object.imagePath = ""
+            object.imagePath = "prod/616333896911092982764dcb7d6253e15.93342556.png"
             object.downloadPath = ""
             object.uuid = UUID()
             object.isFavourite = false

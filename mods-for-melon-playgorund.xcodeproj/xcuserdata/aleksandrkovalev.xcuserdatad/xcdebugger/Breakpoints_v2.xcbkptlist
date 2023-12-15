@@ -147,5 +147,98 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "getImage(path:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9 - fc640ce0b42f8ef3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor @Sendable () -&gt; () in mods_for_melon_playgorund.AsyncLoadingImage_MMP.getImage(path: Swift.Optional&lt;Swift.String&gt;) async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9 - 199dfebf5196c505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for mods_for_melon_playgorund.AsyncLoadingImage_MMP.getImage(path: Swift.Optional&lt;Swift.String&gt;) async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9 - c62945017bee0107"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for mods_for_melon_playgorund.AsyncLoadingImage_MMP.getImage(path: Swift.Optional&lt;Swift.String&gt;) async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9 - e2b6ab4b0dc74d01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for mods_for_melon_playgorund.AsyncLoadingImage_MMP.getImage(path: Swift.Optional&lt;Swift.String&gt;) async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "FB6EAF51-AA8A-4B9E-9338-538C13FED6B9 - 7623a28f85f61819"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(11) suspend resume partial function for mods_for_melon_playgorund.AsyncLoadingImage_MMP.getImage(path: Swift.Optional&lt;Swift.String&gt;) async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Extension_MMP/CustomUI_MMP/AsyncLoadingImage_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

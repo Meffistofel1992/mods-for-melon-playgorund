@@ -30,11 +30,18 @@ struct AsyncLoadingImage_MMP: View {
             if let image {
                 image
                     .resizable()
+                    .iosDeviceTypeFrame_mmp(
+                        iOSWidth: size.width,
+                        iOSHeight: size.height,
+                        iPadWidth: size.width,
+                        iPadHeight: size.height
+                    )
                     .aspectRatio(contentMode: .fill)
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)
                     .tint(.gray)
+
             }
         }
         .onChange(of: path, perform: { newValue in
@@ -59,7 +66,6 @@ struct AsyncLoadingImage_MMP: View {
             iPadHeight: size.height
         )
         .onViewDidLoad(action: {
-
             task = Task.detached {
                 await getImage(path: path)
             }
