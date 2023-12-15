@@ -20,6 +20,8 @@
 		533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */; };
 		533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD912B2A4BE700CC63E4 /* SectionButton.swift */; };
 		533AFD942B2A4CA600CC63E4 /* CategoryGrid_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */; };
+		53793E032B2CC4B100FC161E /* ModDetailView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */; };
+		53793E052B2CC70500FC161E /* RectangleButton_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */; };
 		53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */; };
 		53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */; };
 		53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */; };
@@ -148,6 +150,8 @@
 		533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle_MMP.swift; sourceTree = "<group>"; };
 		533AFD912B2A4BE700CC63E4 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGrid_MMP.swift; sourceTree = "<group>"; };
+		53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDetailView_MMP.swift; sourceTree = "<group>"; };
+		53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton_MMP.swift; sourceTree = "<group>"; };
 		53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView_MMP+Appearance.swift"; sourceTree = "<group>"; };
 		53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */,
+				53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */,
 				5334E0CC2B2A630900FF8650 /* DynamicFetchView.swift */,
 				5334E0CE2B2B00F500FF8650 /* FilterView_MMP.swift */,
+				53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
 				53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */,
 				532092C72B2A2BCB0001BB8F /* ModsView_MMP.swift in Sources */,
+				53793E032B2CC4B100FC161E /* ModDetailView_MMP.swift in Sources */,
 				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,
@@ -731,6 +738,7 @@
 				53FE805E2B27972C00AAD9B6 /* CustomSheetModel_MMP.swift in Sources */,
 				53FE805D2B27972C00AAD9B6 /* ZStackWithBackground_MMP.swift in Sources */,
 				53FE804A2B27972C00AAD9B6 /* Task_MMP+Ext.swift in Sources */,
+				53793E052B2CC70500FC161E /* RectangleButton_MMP.swift in Sources */,
 				53FE80602B27972C00AAD9B6 /* CustomSheet_MMP+Modifier.swift in Sources */,
 				53FE80932B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift in Sources */,
 				53FE80512B27972C00AAD9B6 /* DeviceFrameAspectModifier_MMP.swift in Sources */,

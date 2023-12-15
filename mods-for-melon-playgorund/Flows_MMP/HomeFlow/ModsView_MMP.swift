@@ -66,6 +66,7 @@ struct ModsView_MMP: View {
             }
             .animation(.default, value: selectedMenu)
             .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 19, iPadPadding: 38)
+            .blur(radius: filterIsShowing ? 5 : 0)
         }
         .presentModelWithUIKit(element: $filterIsShowing,
                                presentationStyle: .overCurrentContext,
@@ -104,6 +105,7 @@ private extension ModsView_MMP {
     var searchAndFilerView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
             SearchTextField_MMP(searchText: $searchText)
+
             Button {
                 filterIsShowing.toggle()
             } label: {
@@ -133,7 +135,7 @@ private extension ModsView_MMP {
                 .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
 
 
-                Text("TMBP T15 Armata")
+                Text(item.title ?? "")
                     .iosDeviceTypeFont_mmp(
                         iOS: .init(name: .sfProDisplay, style: .bold, size: 16),
                         iPad: .init(name: .sfProDisplay, style: .bold, size: 26)
@@ -143,7 +145,7 @@ private extension ModsView_MMP {
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
 
-                Text("For melon playground")
+                Text(item.desctiptionn ?? "")
                     .iosDeviceTypeFont_mmp(
                         iOS: .init(name: .sfProDisplay, style: .regular, size: 12),
                         iPad: .init(name: .sfProDisplay, style: .regular, size: 22)
@@ -170,6 +172,7 @@ private extension ModsView_MMP {
                 .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 16, iPadIsAspect: true)
 
             }
+            .addShadowToRectangle_mmp()
         }
     }
 }

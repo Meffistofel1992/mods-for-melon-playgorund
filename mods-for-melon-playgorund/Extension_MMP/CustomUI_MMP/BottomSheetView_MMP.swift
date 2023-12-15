@@ -18,8 +18,8 @@ struct BottomSheetView_MMP<Content: View>: View {
 
         ZStack(alignment: .bottom) {
             if isShowing {
-                Color.black
-                    .opacity(0.2)
+                Color.blackMmp
+                    .opacity(0.6)
                     .ignoresSafeArea()
                     .onTapGesture {
                         withAnimation {
