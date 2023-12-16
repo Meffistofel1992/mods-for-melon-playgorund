@@ -1,9 +1,8 @@
 //
-//  HomeView_GMT.swift
+//  FavoritesView.swift
 //  mods-for-melon-playgorund
 //
-//  Created by Александр Ковалев on 13.12.2023.
-//  
+//  Created by Александр Ковалев on 16.12.2023.
 //
 
 import SwiftUI
@@ -11,7 +10,7 @@ import Resolver
 
 // MARK: - HomeView
 
-struct HomeView_MMP: View {
+struct FavoritesView_MMP: View {
 
     // MARK: - Wrapped Properties
 
@@ -81,20 +80,29 @@ struct HomeView_MMP: View {
             HomeListView_MMP<ModsMO>(
                 searchText: searchText,
                 contentType: .mods,
-                predicate: homePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
-                sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
+                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)],
+                isFavourite: true
             )
         case .items:
-            HomeListView_MMP<ItemsMO>(contentType: .items)
+            HomeListView_MMP<ItemsMO>(
+                contentType: .items,
+                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                isFavourite: true
+            )
         case .skins:
-            SkinsListView_MMP<SkinsMO>(contentType: .skins)
+            SkinsListView_MMP<SkinsMO>(
+                contentType: .skins,
+                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                isFavourite: true
+            )
         default: EmptyView()
         }
     }
 }
 
 // MARK: - Mods View
-private extension HomeView_MMP {
+private extension FavoritesView_MMP {
     var categoriesView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
             ForEach(menus) { menu in
@@ -124,6 +132,6 @@ private extension HomeView_MMP {
 #Preview {
     let moc = CoreDataMockService_MMP.preview
 
-    return HomeView_MMP()
+    return FavoritesView_MMP()
         .environment(\.managedObjectContext, moc)
 }

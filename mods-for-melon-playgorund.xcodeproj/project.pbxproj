@@ -21,6 +21,8 @@
 		533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */; };
 		533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD912B2A4BE700CC63E4 /* SectionButton.swift */; };
 		533AFD942B2A4CA600CC63E4 /* CategoryGrid_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */; };
+		5362C64E2B2E3E7E000FD37B /* FavoritesView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5362C64D2B2E3E7E000FD37B /* FavoritesView_MMP.swift */; };
+		5362C6502B2E3E8B000FD37B /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5362C64F2B2E3E8B000FD37B /* FavoritesDetailView.swift */; };
 		53793E032B2CC4B100FC161E /* HomeDetailView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */; };
 		53793E052B2CC70500FC161E /* RectangleButton_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */; };
 		53793E082B2CCE9A00FC161E /* HomeListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */; };
@@ -154,6 +156,8 @@
 		533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle_MMP.swift; sourceTree = "<group>"; };
 		533AFD912B2A4BE700CC63E4 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGrid_MMP.swift; sourceTree = "<group>"; };
+		5362C64D2B2E3E7E000FD37B /* FavoritesView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView_MMP.swift; sourceTree = "<group>"; };
+		5362C64F2B2E3E8B000FD37B /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView_MMP.swift; sourceTree = "<group>"; };
 		53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton_MMP.swift; sourceTree = "<group>"; };
 		53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView_MMP.swift; sourceTree = "<group>"; };
@@ -271,6 +275,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5362C64C2B2E3E68000FD37B /* FavoritesFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5362C64D2B2E3E7E000FD37B /* FavoritesView_MMP.swift */,
+				5362C64F2B2E3E8B000FD37B /* FavoritesDetailView.swift */,
+			);
+			path = FavoritesFlow;
+			sourceTree = "<group>";
+		};
 		53AA0CA82B290ED100382D92 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +587,7 @@
 		53FE809F2B27A3C200AAD9B6 /* Flows_MMP */ = {
 			isa = PBXGroup;
 			children = (
+				5362C64C2B2E3E68000FD37B /* FavoritesFlow */,
 				53AA0CA82B290ED100382D92 /* HomeFlow */,
 				53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */,
 				53ED78A12B29028D00952BA8 /* TabFlowView.swift */,
@@ -790,6 +804,7 @@
 				53FE80522B27972C00AAD9B6 /* DeviceFrameModifier_MMP.swift in Sources */,
 				53FE80612B27972C00AAD9B6 /* AsyncLoadingImage_MMP.swift in Sources */,
 				53FE80462B27972C00AAD9B6 /* ForEach_MMP+Ext.swift in Sources */,
+				5362C6502B2E3E8B000FD37B /* FavoritesDetailView.swift in Sources */,
 				53FE804D2B27972C00AAD9B6 /* Optional_MMP+Ext.swift in Sources */,
 				53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */,
 				53FE807A2B279DB700AAD9B6 /* CoreDataStore_MMP.swift in Sources */,
@@ -801,6 +816,7 @@
 				53FE807C2B279DFE00AAD9B6 /* NSFetchRequest_MMP+Extension.swift in Sources */,
 				53FE7FE22B2790B700AAD9B6 /* ContentView.swift in Sources */,
 				53FE805B2B27972C00AAD9B6 /* BottomSheetView_MMP.swift in Sources */,
+				5362C64E2B2E3E7E000FD37B /* FavoritesView_MMP.swift in Sources */,
 				53ED78912B28F8DE00952BA8 /* ItemsMO+CoreDataClass.swift in Sources */,
 				53FE7FE02B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift in Sources */,
 				53FE80782B279C6100AAD9B6 /* NetworkMonitor_MMP.swift in Sources */,

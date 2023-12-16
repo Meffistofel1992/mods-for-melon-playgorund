@@ -19,6 +19,7 @@ struct SkinsListView_MMP<T: ParentMO>: View {
     let contentType: ContentType_MMP
     var predicate: NSPredicate?
     var sortDescriptors: [NSSortDescriptor] = []
+    var isFavourite: Bool = false
 
     var body: some View {
         DynamicFetchView(
@@ -26,7 +27,18 @@ struct SkinsListView_MMP<T: ParentMO>: View {
             sortDescriptors: sortDescriptors
         ) { (mods: FetchedResults<T>) in
             VStack {
-                gridView(data: mods)
+                if mods.isEmpty && isFavourite {
+                    Text("You haven't added\nanything to favorites yet")
+                        .frame(maxHeight: .infinity)
+                        .foregroundStyle(Color.white)
+                        .iosDeviceTypeFont_mmp(
+                            iOS: .init(name: .sfProDisplay, style: .medium, size: 20),
+                            iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
+                        )
+                        .multilineTextAlignment(.center)
+                } else {
+                    gridView(data: mods)
+                }
             }
         }
     }
