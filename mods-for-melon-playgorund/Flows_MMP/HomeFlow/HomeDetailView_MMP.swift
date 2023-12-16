@@ -194,7 +194,7 @@ private extension HomeDetailView_MMP {
             case .success:
                 item.isLoadedToPhone = true
                 coreDataStore.saveChanges_MMP()
-                
+
                 createSheet_mmp?(.init(type: .loaded, firstAction: { _ in }, secondAction: { _ in }))
                 try? await Task.sleep_MMP(seconds: 1)
                 createSheet_mmp?(nil)

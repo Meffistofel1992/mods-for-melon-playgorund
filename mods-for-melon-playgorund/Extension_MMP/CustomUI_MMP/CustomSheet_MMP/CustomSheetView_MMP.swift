@@ -84,6 +84,7 @@ struct CustomSheetView_MMP {
         }
         .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 16, iPadPadding: 32)
         .addRoundedModifier_MMP(radius: 12)
+        .frame(maxWidth: 700)
     }
 
     static func removeMods_MMP(
@@ -139,6 +140,6 @@ struct CustomSheetView_MMP {
 }
 
 #Preview {
-    CustomSheetView_MMP.removeMods_MMP(title: "TMBP T15 ARMATA")
+    CustomSheetView_MMP.removeFavourite_MMP(contentType: .skins)
         .preferredColorScheme(.dark)
 }

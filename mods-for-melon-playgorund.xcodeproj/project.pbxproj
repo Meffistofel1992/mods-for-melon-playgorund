@@ -30,6 +30,7 @@
 		53AA0CA52B290ACB00382D92 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */; };
 		53AA0CA62B290ACB00382D92 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */; };
 		53AA0CA72B290ACB00382D92 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */; };
+		53B713B52B2DFE8500F10F56 /* SkinsListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */; };
 		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
 		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
 		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
@@ -162,6 +163,7 @@
 		53AA0CA02B290ACB00382D92 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsListView_MMP.swift; sourceTree = "<group>"; };
 		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */,
 				532092C62B2A2BCB0001BB8F /* HomeView_MMP.swift */,
 				53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */,
+				53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				53FE80782B279C6100AAD9B6 /* NetworkMonitor_MMP.swift in Sources */,
 				53FE80572B27972C00AAD9B6 /* ContentWithSpacer_MMP.swift in Sources */,
 				53FE80682B279C1600AAD9B6 /* app_MMP+Resolver.swift in Sources */,
+				53B713B52B2DFE8500F10F56 /* SkinsListView_MMP.swift in Sources */,
 				53FE805F2B27972C00AAD9B6 /* CustomSheetView_MMP.swift in Sources */,
 				53FE80B12B27B75900AAD9B6 /* Codable_MMP+Ext.swift in Sources */,
 				533AFD8C2B2A3E7500CC63E4 /* SearchTextField_MMP.swift in Sources */,

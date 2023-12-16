@@ -24,7 +24,7 @@ struct HomeView_MMP: View {
     @State private var searchText: String = ""
 
     @State private var menus: [ContentType_MMP] = ContentType_MMP.home
-    @State private var selectedMenu: ContentType_MMP = .mods
+    @State private var selectedMenu: ContentType_MMP = .skins
     @State private var filterIsShowing: Bool = false
     @State private var isAppear: Bool = false
 
@@ -87,7 +87,7 @@ struct HomeView_MMP: View {
         case .items:
             HomeListView_MMP<ItemsMO>(contentType: .items)
         case .skins:
-            HomeListView_MMP<SkinsMO>(contentType: .skins)
+            SkinsListView_MMP<SkinsMO>(contentType: .skins)
         default: EmptyView()
         }
     }
