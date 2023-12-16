@@ -11,6 +11,7 @@ import FlowStacks
 
 struct HomeListView_MMP<T: ParentMO>: View {
 
+    @Environment(\.createSheet_mmp) private var createSheet_mmp
     @EnvironmentObject var navigator: FlowNavigator<MainRoute_MMP>
     @Injected private var coreDataStore: CoreDataStore_MMP
 
@@ -84,8 +85,7 @@ struct HomeListView_MMP<T: ParentMO>: View {
             .addRoundedModifier_MMP(radius: isIPad ? 24 : 12, isNeeedShadow: false)
             .overlay(alignment: .topTrailing) {
                 Button {
-                    item.isFavourite.toggle()
-                    coreDataStore.saveChanges_MMP()
+                    didTapToBookmark(item: item)
                 } label: {
                     Image(item.isFavourite ? .iconBookmarkFill : .iconBookmark)
                         .resizable()
@@ -97,6 +97,30 @@ struct HomeListView_MMP<T: ParentMO>: View {
 
             }
             .addShadowToRectangle_mmp()
+        }
+    }
+}
+
+// MARK: - Methods
+extension HomeListView_MMP {
+    func didTapToBookmark(item: ParentMO) {
+        if item.isFavourite {
+            createSheet_mmp?(
+                .init(
+                    type: .removeFavoutire(contentType),
+                    firstAction: { _ in
+                        createSheet_mmp?(nil)
+                    },
+                    secondAction: { _ in
+                        item.isFavourite.toggle()
+                        coreDataStore.saveChanges_MMP()
+                        createSheet_mmp?(nil)
+                    }
+                )
+            )
+        } else {
+            item.isFavourite.toggle()
+            coreDataStore.saveChanges_MMP()
         }
     }
 }

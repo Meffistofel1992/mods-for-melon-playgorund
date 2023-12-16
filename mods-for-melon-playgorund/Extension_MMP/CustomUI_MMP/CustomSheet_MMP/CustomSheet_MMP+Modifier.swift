@@ -18,7 +18,7 @@ struct CustomSheetModifier_MMP: ViewModifier {
             .ignoresSafeArea()
             .overlay {
                 if !sheetType.isNil {
-                    Color.black.opacity(0.2)
+                    Color.c232323
                         .ignoresSafeArea()
                 }
             }
@@ -26,6 +26,7 @@ struct CustomSheetModifier_MMP: ViewModifier {
                 VStack {
                     if let sheetType {
                         sheet(with: sheetType)
+                            .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 40)
                             .transition(.opacity)
                     }
                 }
@@ -36,13 +37,20 @@ struct CustomSheetModifier_MMP: ViewModifier {
     private func sheet(with model: CustomSheetModel_MMP) -> some View {
         switch model.type {
         case .loading:
-            EmptyView()
-//            CustomSheetView.loading_MMP()
-            //        case .proceedWithCaution:
-            //            CustomSheetView.processWithCaution(
-            //                firstAction: { model.firstAction(.cancel) },
-            //                secondAction: { model.secondAction(.delete) }
-            //            )
+            CustomSheetView_MMP.loading_MMP()
+        case .removeFavoutire(let type):
+            CustomSheetView_MMP.removeFavourite_MMP(
+                contentType: type,
+                firstAction: { model.firstAction(.cancel) },
+                secondAction: { model.secondAction(.remove) }
+            )
+        case .removeMOds(let title):
+            CustomSheetView_MMP.removeMods_MMP(
+                title: title,
+                firstAction: { model.firstAction(.cancel) },
+                secondAction: { model.secondAction(.mods) }
+            )
+
         }
     }
 }

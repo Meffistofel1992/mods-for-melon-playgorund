@@ -51,19 +51,18 @@ private extension HomeDetailView_MMP {
             HStack(spacing: isIPad ? 40 : 20) {
                 if contentType != .skins {
                     RectangleButton_MMP(image: .iconShare) {
-
+                        didTaspToShare()
                     }
                     .disableWithOpacity_MMP(!saveManager.checkIfFileExistInDirectory_MMP(apkFileName: path))
                 }
 
                 if contentType == .mods {
                     RectangleButton_MMP(image: .iconPencil) {
-
+                        didTapToEditor()
                     }
                 }
-                RectangleButton_MMP(image: item.isFavourite ? .iconBookmarkFill : .iconBookmark) {
-                    item.isFavourite.toggle()
-                    coreDataStore.saveChanges_MMP()
+                RectangleButton_MMP(image: favouriteIcon) {
+                    didTapToBookmark()
                 }
             }
         }
@@ -137,6 +136,38 @@ private extension HomeDetailView_MMP {
     }
 }
 
+// MARK: - Methods
+private extension HomeDetailView_MMP {
+    func didTapToBookmark() {
+        if item.isFavourite {
+            createSheet_mmp?(
+                .init(
+                    type: .removeFavoutire(contentType),
+                    firstAction: { _ in
+                        createSheet_mmp?(nil)
+                    },
+                    secondAction: { _ in
+                        item.isFavourite.toggle()
+                        coreDataStore.saveChanges_MMP()
+                        createSheet_mmp?(nil)
+                    }
+                )
+            )
+        } else {
+            item.isFavourite.toggle()
+            coreDataStore.saveChanges_MMP()
+        }
+    }
+
+    func didTapToEditor() {
+
+    }
+
+    func didTaspToShare() {
+
+    }
+}
+
 // MARK: - computed property
 extension HomeDetailView_MMP {
     var imageHeight: CGFloat {
@@ -165,13 +196,17 @@ extension HomeDetailView_MMP {
             )
         }
     }
+
+    var favouriteIcon: ImageResource {
+        item.isFavourite ? .iconBookmarkFill : .iconBookmark
+    }
 }
 
 #Preview {
 
     let moc = CoreDataMockService_MMP.preview
-    let mod = CoreDataMockService_MMP.createItems(with: moc)[0]
+    let mod = CoreDataMockService_MMP.createMods(with: moc)[0]
 
-    return HomeDetailView_MMP(item: mod, contentType: .items)
+    return HomeDetailView_MMP(item: mod, contentType: .mods)
         .environment(\.managedObjectContext, moc)
 }
