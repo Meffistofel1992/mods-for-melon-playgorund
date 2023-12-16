@@ -23,7 +23,7 @@ extension ParentMO {
     @NSManaged public var isFavourite: Bool
     @NSManaged public var title: String?
     @NSManaged public var uuid: UUID?
-
+    @NSManaged public var isLoadedToPhone: Bool
 }
 
 extension ParentMO : Identifiable {
@@ -45,5 +45,13 @@ extension ParentMO : Identifiable {
 
     var uuidOrEmpty: UUID {
         uuid ?? UUID()
+    }
+
+    var apkFileName: String {
+        if let name = downloadPath?.split(separator: "/").last {
+            return String(name)
+        } else {
+            return ""
+        }
     }
 }

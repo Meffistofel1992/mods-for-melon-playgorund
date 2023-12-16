@@ -10,6 +10,20 @@ import SwiftUI
 struct CustomSheetView_MMP {
     static func loading_MMP() -> some View {
         LargeButton_MMP(
+            text: "Downloading",
+            borderColor: .cE9E9E9,
+            fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 38 : 19),
+            backgroundColor: .blackOpacity,
+            foregroundColor: .white,
+            height: isIPad ? 72 : 50,
+            lineWidth: 1
+        )
+        .iosDeviceTypeFrameAspec_mmp(iOSWidth: 208, isiOsAspec: true, iPadWidth: 416, isiPadAspec: true)
+        .disabled(true)
+    }
+
+    static func loaded_MMP() -> some View {
+        LargeButton_MMP(
             text: "Downloaded",
             borderColor: .cE9E9E9,
             fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 38 : 19),

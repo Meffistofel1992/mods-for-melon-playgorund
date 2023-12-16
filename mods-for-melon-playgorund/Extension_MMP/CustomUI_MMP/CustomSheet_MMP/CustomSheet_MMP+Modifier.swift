@@ -38,6 +38,8 @@ struct CustomSheetModifier_MMP: ViewModifier {
         switch model.type {
         case .loading:
             CustomSheetView_MMP.loading_MMP()
+        case .loaded:
+            CustomSheetView_MMP.loaded_MMP()
         case .removeFavoutire(let type):
             CustomSheetView_MMP.removeFavourite_MMP(
                 contentType: type,

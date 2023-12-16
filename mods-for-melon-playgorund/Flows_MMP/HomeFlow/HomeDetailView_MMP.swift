@@ -11,13 +11,18 @@ import Resolver
 
 struct HomeDetailView_MMP: View {
 
+    @Environment(\.openURL) private var openURL
     @Environment(\.createSheet_mmp) private var createSheet_mmp
     @EnvironmentObject private var navigator: FlowNavigator<MainRoute_MMP>
+
     @Injected private var saveManager: SaverManager_MMP
     @Injected private var networkManager: NetworkMonitoringManager_MMP
     @Injected private var coreDataStore: CoreDataStore_MMP
+    @Injected private var networkingManager: NetworkMonitoringManager_MMP
 
     @ObservedObject var item: ParentMO
+
+    @State private var imageData: Data?
 
     let contentType: ContentType_MMP
 
@@ -36,6 +41,7 @@ struct HomeDetailView_MMP: View {
             .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
             .ignoresSafeArea(edges: .bottom)
         }
+        .onReceive(saveManager.didDownlaod_MMP, perform: presentDownloadSuccessPopUp)
     }
 }
 
@@ -50,10 +56,14 @@ private extension HomeDetailView_MMP {
 
             HStack(spacing: isIPad ? 40 : 20) {
                 if contentType != .skins {
-                    RectangleButton_MMP(image: .iconShare) {
-                        didTaspToShare()
+                    GeometryReader { geo in
+                        RectangleButton_MMP(image: .iconShare) {
+                            let rect = geo.frame(in: CoordinateSpace.global)
+                            didTaspToShare(rect: rect)
+                        }
+                        .disableWithOpacity_MMP(!item.isLoadedToPhone)
                     }
-                    .disableWithOpacity_MMP(!saveManager.checkIfFileExistInDirectory_MMP(apkFileName: path))
+                    .iosDeviceTypeFrameAspec_mmp(iOSWidth: 38, iOSHeight: 38, iPadWidth: 76, iPadHeight: 76)
                 }
 
                 if contentType == .mods {
@@ -77,7 +87,8 @@ private extension HomeDetailView_MMP {
                         width: .zero,
                         height: imageHeight
                     ),
-                    isNeedFit: contentType == .skins
+                    isNeedFit: contentType == .skins,
+                    imageDidLoad: { self.imageData = $0 }
                 )
                 .clipShape(RoundedRectangle(cornerRadius: isIPad ? 16 : 8))
                 .frame(maxWidth: .infinity)
@@ -114,7 +125,14 @@ private extension HomeDetailView_MMP {
                             )
                             .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
                     }
-                    LargeButton_MMP(text: "Download", isValid: !saveManager.checkIfFileExistInDirectory_MMP(apkFileName: path),  lineWidth: 3)
+                    LargeButton_MMP(
+                        text: "Download",
+                        isValid: !item.isLoadedToPhone,
+                        lineWidth: 3,
+                        asyncAction: {
+                            await download()
+                        }
+                    )
                 }
                 .foregroundStyle(.white)
                 .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
@@ -127,17 +145,20 @@ private extension HomeDetailView_MMP {
         }
     }
 
+
+}
+
+// MARK: - Methods
+private extension HomeDetailView_MMP {
     func download() async {
         guard networkManager.isReachable_MMP else {
             return
         }
         createSheet_mmp?(.init(type: .loading, firstAction: { _ in }, secondAction: {_ in }))
-        await saveManager.downloadDidTap(file: (item.imagePathOrEmpty, item.downloadPathOrEmpty))
+        let path = "\(contentType.folderName)/\(item.downloadPathOrEmpty)"
+        await saveManager.downloadDidTap(file: (path, item.apkFileName))
     }
-}
 
-// MARK: - Methods
-private extension HomeDetailView_MMP {
     func didTapToBookmark() {
         if item.isFavourite {
             createSheet_mmp?(
@@ -163,8 +184,24 @@ private extension HomeDetailView_MMP {
 
     }
 
-    func didTaspToShare() {
+    func didTaspToShare(rect: CGRect) {
+        saveManager.shareApk_MMP(apkFileName: item.apkFileName, rect: rect)
+    }
 
+    func presentDownloadSuccessPopUp(result: Result<SaveType_MMP, any Error>) {
+        Task {
+            switch result {
+            case .success:
+                item.isLoadedToPhone = true
+                coreDataStore.saveChanges_MMP()
+                
+                createSheet_mmp?(.init(type: .loaded, firstAction: { _ in }, secondAction: { _ in }))
+                try? await Task.sleep_MMP(seconds: 1)
+                createSheet_mmp?(nil)
+            case .failure:
+                break
+            }
+        }
     }
 }
 

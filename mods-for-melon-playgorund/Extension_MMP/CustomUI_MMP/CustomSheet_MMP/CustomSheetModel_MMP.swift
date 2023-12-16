@@ -15,6 +15,7 @@ struct CustomSheetModel_MMP {
 
 enum SheetType_MMP {
     case loading
+    case loaded
     case removeFavoutire(ContentType_MMP)
     case removeMOds(String)
 }
