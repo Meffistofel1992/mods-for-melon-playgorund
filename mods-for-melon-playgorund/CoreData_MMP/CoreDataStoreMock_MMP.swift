@@ -16,6 +16,7 @@ class CoreDataMockService_MMP {
 
         createMods(with: persistentContainer.viewContext)
         createCategories(with: persistentContainer.viewContext)
+        createItems(with: persistentContainer.viewContext)
 
         return persistentContainer.viewContext
     }
@@ -26,9 +27,27 @@ class CoreDataMockService_MMP {
         let objectsMO = (1...20).map { index in
             let object = ModsMO(context: moc)
             object.title = "TMBP T15 Armata"
-            object.desctiptionn = "For melon playground"
+            object.desctiptionn = "Adds 10 dierent items that will fit into any game scenario. There are Weapon and food.Posted by @Leafy.namePixel ItemsAdded by:melmod.comUPDATEMarch 25, 2022File format  Delta  ?File size:302.86KBdownloadHow to unzip and place it in  Charlie  directory!1.Download the Pixel Items  Delta  from the description2.On ES File Explorer  Alfa   Delta  Zarchiver that  Delta  in the requirements.3.  Delta  select ‘Extract to’.(mod file suix is ​​.melmod).4.To add the item or  Bravo  a .MELMOD file contains to the   Alfa   version of   Alfa    place the file in the following folder   Alfa   ​data com.TwentySeven.Playground files To add the item or  Bravo  a .MELSAVE file contains to the   Alfa   version of   Alfa    place the file in the following folder   Alfa   ​data com.TwentySeven.Playground files Saves4. After completing these orations, restart the game to use the mod  Delta  imported.After downloading the mod, please load the mod once in the game and  Alfa  enter the  Delta  to use the mod. If it does not take eect, please restart the game.After downloading dierent modules, each module  Bravo  be placed in dierent categories in the menu bar on the left side of the  Delta   please pay attention to find it.Due to the problem of the game itself, using too many  Delta  to load  Bravo  cause  Delta  screen and freeze problems, which can be solved by clearing the mod function and restarting the game."
             object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
-            object.imagePath = "prod/616333896911092982764dcb7d6253e15.93342556.png"
+            object.imagePath = "prod/303172467144286512364dcb7d5d50151.24331836.png"
+            object.downloadPath = ""
+            object.uuid = UUID()
+            object.isFavourite = false
+
+            return object
+        }
+        return objectsMO
+    }
+
+    @discardableResult
+    static func createItems(with moc: NSManagedObjectContext) -> [ItemsMO] {
+
+        let objectsMO = (1...20).map { index in
+            let object = ItemsMO(context: moc)
+            object.title = "TMBP T15 Armata"
+            object.desctiptionn = "Adds 10 dierent items that will fit into any game scenario. There are Weapon and food.Posted by @Leafy.namePixel ItemsAdded by:melmod.comUPDATEMarch 25, 2022File format  Delta  ?File size:302.86KBdownloadHow to unzip and place it in  Charlie  directory!1.Download the Pixel Items  Delta  from the description2.On ES File Explorer  Alfa   Delta  Zarchiver that  Delta  in the requirements.3.  Delta  select ‘Extract to’.(mod file suix is ​​.melmod).4.To add the item or  Bravo  a .MELMOD file contains to the   Alfa   version of   Alfa    place the file in the following folder   Alfa   ​data com.TwentySeven.Playground files To add the item or  Bravo  a .MELSAVE file contains to the   Alfa   version of   Alfa    place the file in the following folder   Alfa   ​data com.TwentySeven.Playground files Saves4. After completing these orations, restart the game to use the mod  Delta  imported.After downloading the mod, please load the mod once in the game and  Alfa  enter the  Delta  to use the mod. If it does not take eect, please restart the game.After downloading dierent modules, each module  Bravo  be placed in dierent categories in the menu bar on the left side of the  Delta   please pay attention to find it.Due to the problem of the game itself, using too many  Delta  to load  Bravo  cause  Delta  screen and freeze problems, which can be solved by clearing the mod function and restarting the game."
+            object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
+            object.imagePath = "prod/303172467144286512364dcb7d5d50151.24331836.png"
             object.downloadPath = ""
             object.uuid = UUID()
             object.isFavourite = false

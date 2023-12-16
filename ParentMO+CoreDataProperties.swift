@@ -27,5 +27,23 @@ extension ParentMO {
 }
 
 extension ParentMO : Identifiable {
+    var titleOrEmpty: String {
+        title ?? ""
+    }
 
+    var descriptionOrEmpty: String {
+        desctiptionn ?? ""
+    }
+
+    var imagePathOrEmpty: String {
+        imagePath ?? ""
+    }
+
+    var downloadPathOrEmpty: String {
+        downloadPath ?? ""
+    }
+
+    var uuidOrEmpty: UUID {
+        uuid ?? UUID()
+    }
 }

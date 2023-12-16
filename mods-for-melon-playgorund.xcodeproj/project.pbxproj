@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		532092C72B2A2BCB0001BB8F /* ModsView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */; };
+		532092C72B2A2BCB0001BB8F /* HomeView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C62B2A2BCB0001BB8F /* HomeView_MMP.swift */; };
 		532092C92B2A2F7F0001BB8F /* ScrollViewFitContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */; };
+		5330CB662B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330CB652B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift */; };
 		5334C1F02B2B1293002A7E40 /* Mitr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5334C1EF2B2B1293002A7E40 /* Mitr-Medium.ttf */; };
 		5334C1F22B2B2450002A7E40 /* OverFullScreenUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334C1F12B2B2450002A7E40 /* OverFullScreenUIKit.swift */; };
 		5334C1F52B2B285B002A7E40 /* ParentMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334C1F32B2B285B002A7E40 /* ParentMO+CoreDataClass.swift */; };
@@ -20,8 +21,9 @@
 		533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */; };
 		533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD912B2A4BE700CC63E4 /* SectionButton.swift */; };
 		533AFD942B2A4CA600CC63E4 /* CategoryGrid_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */; };
-		53793E032B2CC4B100FC161E /* ModDetailView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */; };
+		53793E032B2CC4B100FC161E /* HomeDetailView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */; };
 		53793E052B2CC70500FC161E /* RectangleButton_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */; };
+		53793E082B2CCE9A00FC161E /* HomeListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */; };
 		53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */; };
 		53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */; };
 		53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */; };
@@ -137,8 +139,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsView_MMP.swift; sourceTree = "<group>"; };
+		532092C62B2A2BCB0001BB8F /* HomeView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_MMP.swift; sourceTree = "<group>"; };
 		532092C82B2A2F7F0001BB8F /* ScrollViewFitContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewFitContent.swift; sourceTree = "<group>"; };
+		5330CB652B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledWithOpacity_MMP.swift; sourceTree = "<group>"; };
 		5334C1EF2B2B1293002A7E40 /* Mitr-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Medium.ttf"; sourceTree = "<group>"; };
 		5334C1F12B2B2450002A7E40 /* OverFullScreenUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverFullScreenUIKit.swift; sourceTree = "<group>"; };
 		5334C1F32B2B285B002A7E40 /* ParentMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentMO+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -150,8 +153,9 @@
 		533AFD8F2B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle_MMP.swift; sourceTree = "<group>"; };
 		533AFD912B2A4BE700CC63E4 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
 		533AFD932B2A4CA600CC63E4 /* CategoryGrid_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGrid_MMP.swift; sourceTree = "<group>"; };
-		53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDetailView_MMP.swift; sourceTree = "<group>"; };
+		53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView_MMP.swift; sourceTree = "<group>"; };
 		53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton_MMP.swift; sourceTree = "<group>"; };
+		53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView_MMP.swift; sourceTree = "<group>"; };
 		53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView_MMP+Appearance.swift"; sourceTree = "<group>"; };
 		53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -268,8 +272,9 @@
 		53AA0CA82B290ED100382D92 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
-				532092C62B2A2BCB0001BB8F /* ModsView_MMP.swift */,
-				53793E022B2CC4B100FC161E /* ModDetailView_MMP.swift */,
+				53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */,
+				532092C62B2A2BCB0001BB8F /* HomeView_MMP.swift */,
+				53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				53FE80272B27972C00AAD9B6 /* ReadSize_MMP.swift */,
 				53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */,
 				5334C1F12B2B2450002A7E40 /* OverFullScreenUIKit.swift */,
+				5330CB652B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift */,
 			);
 			path = Modifier_MMP;
 			sourceTree = "<group>";
@@ -721,11 +727,12 @@
 				53FE80952B27A0E100AAD9B6 /* HTTP_MMP.swift in Sources */,
 				53FE80642B27972C00AAD9B6 /* Button_MMP+Style.swift in Sources */,
 				53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */,
-				532092C72B2A2BCB0001BB8F /* ModsView_MMP.swift in Sources */,
-				53793E032B2CC4B100FC161E /* ModDetailView_MMP.swift in Sources */,
+				532092C72B2A2BCB0001BB8F /* HomeView_MMP.swift in Sources */,
+				53793E032B2CC4B100FC161E /* HomeDetailView_MMP.swift in Sources */,
 				53ED78982B28F8DE00952BA8 /* ModsMO+CoreDataProperties.swift in Sources */,
 				53FE804E2B27972C00AAD9B6 /* ViewDidLoadModifier_MMP.swift in Sources */,
 				53FE80472B27972C00AAD9B6 /* UIApplication_MMP+Ext.swift in Sources */,
+				53793E082B2CCE9A00FC161E /* HomeListView_MMP.swift in Sources */,
 				53FE80632B27972C00AAD9B6 /* BarProgress_MMP+Style.swift in Sources */,
 				53FE808C2B279F1500AAD9B6 /* ImageSaverManager_MMP.swift in Sources */,
 				533AFD902B2A4AC300CC63E4 /* RoundedRectangle_MMP.swift in Sources */,
@@ -768,6 +775,7 @@
 				53FE80552B27972C00AAD9B6 /* DevicePaddingModifier_MMP.swift in Sources */,
 				53FE80722B279C6100AAD9B6 /* Logger_MMP.swift in Sources */,
 				53ED78962B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift in Sources */,
+				5330CB662B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift in Sources */,
 				53FE807E2B279E1800AAD9B6 /* CoreDataStoreMock_MMP.swift in Sources */,
 				53FE809B2B27A34B00AAD9B6 /* AppDelegate.swift in Sources */,
 				53FE80742B279C6100AAD9B6 /* SlimLogglyDestination_MMP.swift in Sources */,

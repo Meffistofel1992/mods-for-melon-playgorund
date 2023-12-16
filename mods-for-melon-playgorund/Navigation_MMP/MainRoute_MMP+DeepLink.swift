@@ -9,5 +9,5 @@ import Foundation
 
 enum MainRoute_MMP: Hashable {
     case tabView
-    case second
+    case detailMod(ParentMO, ContentType_MMP)
 }

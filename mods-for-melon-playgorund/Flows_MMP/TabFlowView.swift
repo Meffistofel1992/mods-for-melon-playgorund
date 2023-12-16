@@ -32,8 +32,8 @@ struct TabFlowView: View {
         switch path.wrappedValue {
         case .tabView:
             tabView
-        case .second:
-            Color.red
+        case let .detailMod(mod, contentType):
+            HomeDetailView_MMP(item: mod, contentType: contentType)
         }
     }
 
@@ -41,7 +41,7 @@ struct TabFlowView: View {
         VStack(spacing: 0) {
             TabView(selection: $activeTab) {
                 ZStackWithBackground_MMP {
-                    ModsView_MMP()
+                    HomeView_MMP()
                 }
                 .tag(Tab.home)
                 

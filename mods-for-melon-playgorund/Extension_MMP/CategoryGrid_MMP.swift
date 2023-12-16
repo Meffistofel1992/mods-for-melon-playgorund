@@ -76,13 +76,13 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
                 edge: .top,
                 iOSPadding: containerPadding.top,
                 iPadPadding: containerPadding.top,
-                iPadIsAspect: true
+                iPadIsAspect: false
             )
             .iosDeviceTypePadding_MMP(
                 edge: .bottom,
                 iOSPadding: containerPadding.bottom,
                 iPadPadding: containerPadding.bottom,
-                iPadIsAspect: true
+                iPadIsAspect: false
             )
             .readSize($size.animation())
         }
@@ -91,5 +91,5 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
 }
 
 #Preview {
-    ModsView_MMP()
+    HomeView_MMP()
 }

@@ -24,19 +24,13 @@ struct AsyncLoadingImage_MMP: View {
     var additionalYoffSet: CGFloat?
 
     var imageDidLoad: ValueClosure_MMP<Data>?
+    var isNeedFit: Bool = false
 
     var body: some View {
         VStack {
             if let image {
                 image
                     .resizable()
-                    .iosDeviceTypeFrame_mmp(
-                        iOSWidth: size.width,
-                        iOSHeight: size.height,
-                        iPadWidth: size.width,
-                        iPadHeight: size.height
-                    )
-                    .aspectRatio(contentMode: .fill)
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -59,10 +53,9 @@ struct AsyncLoadingImage_MMP: View {
                 }
             }
         }
+        .if(isNeedFit, transform: { $0.aspectRatio(contentMode: .fit) })
         .iosDeviceTypeFrame_mmp(
-            iOSWidth: size.width,
             iOSHeight: size.height,
-            iPadWidth: size.width,
             iPadHeight: size.height
         )
         .onViewDidLoad(action: {
@@ -94,6 +87,29 @@ struct AsyncLoadingImage_MMP: View {
             }
         } catch {
             Logger.error_MMP(error)
+        }
+    }
+}
+
+#Preview {
+    let moc = CoreDataMockService_MMP.preview
+
+    return HomeView_MMP()
+        .environment(\.managedObjectContext, moc)
+}
+
+
+extension View {
+    /// Applies the given transform if the given condition evaluates to `true`.
+    /// - Parameters:
+    ///   - condition: The condition to evaluate.
+    ///   - transform: The transform to apply to the source `View`.
+    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
+    @ViewBuilder func `if`<Content: View>(_ condition: @autoclosure () -> Bool, transform: (Self) -> Content) -> some View {
+        if condition() {
+            transform(self)
+        } else {
+            self
         }
     }
 }
