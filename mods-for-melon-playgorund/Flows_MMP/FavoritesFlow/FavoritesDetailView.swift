@@ -181,7 +181,11 @@ private extension FavoritesDetailView_MMP {
     }
 
     func didTapToEditor() {
-
+        guard let data = imageData else {
+            return
+        }
+        let myWork = MyWorks(moc: coreDataStore.viewContext, item: item, imageData: data)
+        navigator.push(.editor(myWork))
     }
 
     func didTaspToShare(rect: CGRect) {
