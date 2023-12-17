@@ -7,7 +7,7 @@
 
 import Foundation
 
-private var _MMP1245: String { "_ltlpm" }
+private var _MMP1245: String { "_mmp" }
 private var _MMP12435: Int { 0 }
 
 enum Configurations_MMP {
