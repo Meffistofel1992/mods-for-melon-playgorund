@@ -24,6 +24,7 @@ extension ParentMO {
     @NSManaged public var title: String?
     @NSManaged public var uuid: UUID?
     @NSManaged public var isLoadedToPhone: Bool
+    @NSManaged public var contentType: String?
 }
 
 extension ParentMO : Identifiable {
@@ -52,6 +53,15 @@ extension ParentMO : Identifiable {
             return String(name)
         } else {
             return ""
+        }
+    }
+
+    var contentTypeCP: EditorContentType_MMP {
+        get {
+            return EditorContentType_MMP(rawValue: contentType ?? "") ?? .miscTemplate
+        }
+        set {
+            self.contentType = newValue.rawValue
         }
     }
 }

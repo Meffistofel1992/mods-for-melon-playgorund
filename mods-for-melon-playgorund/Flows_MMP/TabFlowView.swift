@@ -45,7 +45,7 @@ struct TabFlowView: View {
                 }
                 .tag(Tab.home)
                 
-                Text("2")
+                EditorHomeView_MMP()
                     .tag(Tab.editor)
                 FavoritesView_MMP()
                     .tag(Tab.favourites)

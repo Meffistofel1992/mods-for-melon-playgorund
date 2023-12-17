@@ -24,6 +24,10 @@ func homePredicate(with category: String, searchText: String) -> NSPredicate {
     return compoundPredicate
 }
 
+func editorPredicate(contentType: EditorContentType_MMP) -> NSPredicate {
+    NSPredicate(format: "%K == %@", #keyPath(EditorMO.contentType), contentType.rawValue)
+}
+
 extension NSFetchRequest where ResultType == ModsMO {
     static func mods(category: String) -> NSFetchRequest<ModsMO> {
         let request: NSFetchRequest<ModsMO> = ModsMO.fetchRequest()

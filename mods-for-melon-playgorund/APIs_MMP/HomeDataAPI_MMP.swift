@@ -50,7 +50,7 @@ extension HomeDataAPI_MMP {
                     case .mods:
                         models.append(.init(modsObject: object, category: key))
                     case .editor:
-                        models.append(.init(editorObject: object))
+                        models.append(.init(editorObject: object, contentType: Bool.random() ? .living : .miscTemplate))
                     default:
                         break
                     }
@@ -113,6 +113,7 @@ extension HomeDataAPI_MMP {
                 dataMO.downloadPath = object.downloadPath
                 dataMO.imagePath = object.imagePath
                 dataMO.category = object.category
+                dataMO.contentType = object.contentType?.rawValue
             }
             self.coreDataStore.saveChanges_MMP()
             Logger.debug_MMP("\(type) wtire to CoreData success")

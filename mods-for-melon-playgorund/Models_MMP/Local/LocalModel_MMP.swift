@@ -13,6 +13,7 @@ struct LocalModel_MMP {
     var imagePath: String?
     var downloadPath: String?
     var category: String?
+    var contentType: EditorContentType_MMP?
 
     init(modsObject: [String: Any], category: String?) {
         title = modsObject[ModsJsonKeys.title] as? String
@@ -27,8 +28,9 @@ struct LocalModel_MMP {
         imagePath = categoriesObject[CategoriesJsonKeys.imagePath] as? String
     }
 
-    init(editorObject: [String: Any]) {
+    init(editorObject: [String: Any], contentType: EditorContentType_MMP) {
         imagePath = editorObject[EditorJsonKeys.imagePath] as? String
+        self.contentType = contentType
     }
 
     init(itemObject: [String: Any]) {

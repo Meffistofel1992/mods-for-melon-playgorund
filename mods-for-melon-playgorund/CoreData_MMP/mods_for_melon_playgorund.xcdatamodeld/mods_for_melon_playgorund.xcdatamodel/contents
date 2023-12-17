@@ -4,8 +4,10 @@
     <entity name="EditorMO" representedClassName="EditorMO" parentEntity="ParentMO" syncable="YES"/>
     <entity name="ItemsMO" representedClassName="ItemsMO" parentEntity="ParentMO" syncable="YES"/>
     <entity name="ModsMO" representedClassName="ModsMO" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="MyWorks" representedClassName="MyWorks" parentEntity="ParentMO" syncable="YES"/>
     <entity name="ParentMO" representedClassName="ParentMO" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="contentType" optional="YES" attributeType="String"/>
         <attribute name="desctiptionn" optional="YES" attributeType="String"/>
         <attribute name="downloadPath" optional="YES" attributeType="String"/>
         <attribute name="imagePath" optional="YES" attributeType="String"/>
