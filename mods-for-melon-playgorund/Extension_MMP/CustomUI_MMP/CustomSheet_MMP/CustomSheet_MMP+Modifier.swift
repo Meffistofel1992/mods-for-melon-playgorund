@@ -52,7 +52,13 @@ struct CustomSheetModifier_MMP: ViewModifier {
                 firstAction: { model.firstAction(.cancel) },
                 secondAction: { model.secondAction(.mods) }
             )
-
+        case .cancelEditor:
+            CustomSheetView_MMP.cancelEditor_MMP(
+                firstAction: { model.firstAction(.cancel) },
+                secondAction: { model.secondAction(.yes) }
+            )
+        case .saved:
+            CustomSheetView_MMP.saved_MMP()
         }
     }
 }

@@ -73,15 +73,17 @@ private extension EditorMistTemplates_MMP {
 
             let height = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 192/1024 : 96/390)
 
-            Image(.imageMock)
-                .resizable()
-                .scaledToFit()
-                .iosDeviceTypeFrame_mmp(
-                    iOSHeight: height,
-                    iPadHeight: height
-                )
-                .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 15, iPadPadding: 30)
-                .frame(maxWidth: .infinity)
+            if let image = UIImage(data: editorController_MMP.myMod.iconData) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .iosDeviceTypeFrame_mmp(
+                        iOSHeight: height,
+                        iPadHeight: height
+                    )
+                    .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 15, iPadPadding: 30)
+                    .frame(maxWidth: .infinity)
+            }
         }
         .iosDeviceTypePadding_MMP(edge: .all , iOSPadding: 20, iPadPadding: 40)
         .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)

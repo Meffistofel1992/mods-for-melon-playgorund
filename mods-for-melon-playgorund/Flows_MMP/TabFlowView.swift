@@ -35,8 +35,8 @@ struct TabFlowView: View {
             tabView
         case let .detailMod(mod, contentType):
             HomeDetailView_MMP(item: mod, contentType: contentType)
-        case .editor:
-            EditorView_MMP(moc: moc)
+        case .editor(let myMod):
+            EditorView_MMP(myMod: myMod)
         }
     }
 
@@ -48,7 +48,7 @@ struct TabFlowView: View {
                 }
                 .tag(Tab.home)
                 
-                EditorView_MMP(moc: moc)
+                EditorHomeView_MMP()
                     .tag(Tab.editor)
                 FavoritesView_MMP()
                     .tag(Tab.favourites)

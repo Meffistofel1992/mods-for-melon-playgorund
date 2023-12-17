@@ -14,14 +14,17 @@ struct CustomSheetModel_MMP {
 }
 
 enum SheetType_MMP {
+    case cancelEditor
     case loading
     case loaded
+    case saved
     case removeFavoutire(ContentType_MMP)
     case removeMOds(String)
 }
 
 enum CustomSheetAction_MMP {
     case cancel
+    case yes
     case remove
     case mods
 }

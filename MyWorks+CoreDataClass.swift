@@ -11,5 +11,21 @@ import CoreData
 
 @objc(MyWorks)
 public class MyWorks: NSManagedObject {
-
+    convenience init(moc: NSManagedObjectContext, item: ParentMO, imageData: Data) {
+        self.init(context: moc)
+        self.name = item.titleOrEmpty
+        self.imageData = imageData
+        self.type = "type"
+        self.category = "category"
+        self.iconData = imageData
+        self.xValue = "0.0"
+        self.yValue = "0.0"
+        self.heightValue = "0.0"
+        self.widthValue = "0.0"
+        self.pixelValue = "0"
+        self.canBeTaken = false
+        self.canGlow = false
+        self.canBurn = false
+        self.canFloat = false
+    }
 }

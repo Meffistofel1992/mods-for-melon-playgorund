@@ -17,10 +17,10 @@ extension MyWorks {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var imageData: Data?
+    @NSManaged public var imageData: Data
     @NSManaged public var type: String?
     @NSManaged public var category: String?
-    @NSManaged public var iconData: Data?
+    @NSManaged public var iconData: Data
     @NSManaged public var xValue: String?
     @NSManaged public var yValue: String?
     @NSManaged public var heightValue: String?

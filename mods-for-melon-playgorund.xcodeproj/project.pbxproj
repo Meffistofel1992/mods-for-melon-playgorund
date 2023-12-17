@@ -46,6 +46,7 @@
 		53AA0CA62B290ACB00382D92 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */; };
 		53AA0CA72B290ACB00382D92 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */; };
 		53B713B52B2DFE8500F10F56 /* SkinsListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */; };
+		53C2A2522B2F95A400376BD8 /* EditorListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C2A2512B2F95A400376BD8 /* EditorListRowView.swift */; };
 		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
 		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
 		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
@@ -197,6 +198,7 @@
 		53AA0CA12B290ACB00382D92 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		53AA0CA22B290ACB00382D92 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsListView_MMP.swift; sourceTree = "<group>"; };
+		53C2A2512B2F95A400376BD8 /* EditorListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorListRowView.swift; sourceTree = "<group>"; };
 		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				5362C65E2B2F038A000FD37B /* EditorListView_MMP.swift */,
 				533285EE2B2F44C700CD087D /* EditorView */,
 				533285EC2B2F2ECA00CD087D /* EditorHomeMyWorkView_MMP.swift */,
+				53C2A2512B2F95A400376BD8 /* EditorListRowView.swift */,
 			);
 			path = EditorFlow;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				53FE80442B27972C00AAD9B6 /* Closure_MMP+Ext.swift in Sources */,
 				53FE808A2B279F1500AAD9B6 /* DropBoxManager_MMP.swift in Sources */,
 				53FE80B32B27B7F400AAD9B6 /* RepsponseKeys.swift in Sources */,
+				53C2A2522B2F95A400376BD8 /* EditorListRowView.swift in Sources */,
 				5334C1F22B2B2450002A7E40 /* OverFullScreenUIKit.swift in Sources */,
 				53FE80522B27972C00AAD9B6 /* DeviceFrameModifier_MMP.swift in Sources */,
 				5362C6552B2EF4F1000FD37B /* EditorContentType.swift in Sources */,

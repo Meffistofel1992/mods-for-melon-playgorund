@@ -71,38 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD16AA30-3116-427A-A72D-C8326774E5E1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "saveModels(type:data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "85BC0A09-A39A-45C1-B127-1C1944C2F570"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/APIs_MMP/HomeDataAPI_MMP.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "saveModels(type:data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "774F4C1A-6A15-480C-9020-5610F3B1F039"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -418,22 +386,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7149BD35-8A12-4959-83AE-5F7F72464826"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorListView_MMP.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "gridView(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "89D1DADB-C6C9-41AC-8334-3E73644E4741"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -445,6 +397,118 @@
             endingLineNumber = "28"
             landmarkName = "editorPredicate(contentType:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68E2D60D-3A66-4E72-9256-108321E0CED6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "68E2D60D-3A66-4E72-9256-108321E0CED6 - 73153337e5a08289"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (mods_for_melon_playgorund.ImageState) -&gt; SwiftUI._ConditionalContent&lt;mods_for_melon_playgorund.ImagePicker, mods_for_melon_playgorund.ImagePicker&gt; in mods_for_melon_playgorund.EditorView_MMP.body.getter : some"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "68E2D60D-3A66-4E72-9256-108321E0CED6 - 73153337e5a08289"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (mods_for_melon_playgorund.ImageState) -&gt; SwiftUI._ConditionalContent&lt;mods_for_melon_playgorund.ImagePicker, mods_for_melon_playgorund.ImagePicker&gt; in mods_for_melon_playgorund.EditorView_MMP.body.getter : some"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16970229-27C7-490B-B189-667137AB6A45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "16970229-27C7-490B-B189-667137AB6A45 - 73153337e5a082c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (mods_for_melon_playgorund.ImageState) -&gt; SwiftUI._ConditionalContent&lt;mods_for_melon_playgorund.ImagePicker, mods_for_melon_playgorund.ImagePicker&gt; in mods_for_melon_playgorund.EditorView_MMP.body.getter : some"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "968">
+               </Location>
+               <Location
+                  uuid = "16970229-27C7-490B-B189-667137AB6A45 - 73153337e5a082c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (mods_for_melon_playgorund.ImageState) -&gt; SwiftUI._ConditionalContent&lt;mods_for_melon_playgorund.ImagePicker, mods_for_melon_playgorund.ImagePicker&gt; in mods_for_melon_playgorund.EditorView_MMP.body.getter : some"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/EditorFlow/EditorView/EditorView_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "699C5253-A42A-42EE-84BB-267902E915F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Extension_MMP/PhotoPicker_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

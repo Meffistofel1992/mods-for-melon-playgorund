@@ -42,23 +42,23 @@ struct EditorHomeMyWorkView_MMP<T: MyWorks>: View {
     }
 
     func gridView(data: FetchedResults<T>) -> some View {
-        CategoryList_MMP(data: data) { item in
+        CategoryList_MMP(data: data) { (item: MyWorks) in
             VStack(spacing: 0) {
                 let height = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 280/1024 : 144/390)
 
-                Image(.imageMock)
-                    .resizable()
-                    .scaledToFit()
-                    .iosDeviceTypeFrame_mmp(
-                        iOSHeight: height,
-                        iPadHeight: height
-                    )
-                    .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 20, iPadPadding: 40)
-                    .frame(maxWidth: .infinity)
-                    .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)
+                if let image = UIImage(data: item.imageData) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .iosDeviceTypeFrame_mmp(
+                            iOSHeight: height,
+                            iPadHeight: height
+                        )
+                        .frame(maxWidth: .infinity)
+                }
             }
             .onTapGesture {
-//                navigator.push(.detailMod(item, contentType))
+                navigator.push(.editor(item))
             }
             .iosDeviceTypePadding_MMP(edge: [.horizontal], iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
             .frame(maxWidth: .infinity)

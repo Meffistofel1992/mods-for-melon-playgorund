@@ -43,27 +43,19 @@ struct EditorListView_MMP<T: ParentMO>: View {
 
     func gridView(data: FetchedResults<T>) -> some View {
         CategoryList_MMP(data: data) { item in
-            VStack(spacing: 0) {
-                let height = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 280/1024 : 144/390)
+            EditorListRowView_MMP(item: item) { data in
+                guard let data else {
+                    return
+                }
 
-                AsyncLoadingImage_MMP(
-                    path: "/\(item.imagePath ?? "")",
-                    size: .init(
-                        width: .zero,
-                        height: height
-                    ),
-                    isNeedFit: true
+                let mod = MyWorks(
+                    moc: coreDataStore.viewContext,
+                    item: item,
+                    imageData: data
                 )
-                .clipShape(RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
+
+                navigator.push(.editor(mod))
             }
-            .onTapGesture {
-//                navigator.push(.detailMod(item, contentType))
-            }
-            .iosDeviceTypePadding_MMP(edge: [.horizontal], iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
-            .frame(maxWidth: .infinity)
-            .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 12, iPadPadding: 24, iPadIsAspect: true)
-            .addRoundedModifier_MMP(radius: isIPad ? 24 : 12, isNeeedShadow: false)
-            .addShadowToRectangle_mmp()
         }
     }
 }

@@ -82,6 +82,26 @@ class CoreDataMockService_MMP {
     }
 
     @discardableResult
+    static func getMyWorks(with moc: NSManagedObjectContext) -> [MyWorks] {
+
+        let objectsMO = (1...20).map { index in
+            let object = ModsMO(context: moc)
+            object.title = "TMBP T15 Armata"
+            object.desctiptionn = desctiption
+            object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
+            object.imagePath = "Mod_Editor/Mods/tank_5.png"
+            object.downloadPath = ""
+            object.uuid = UUID()
+            object.isFavourite = false
+            object.contentType = Bool.random() ? EditorContentType_MMP.living.rawValue : EditorContentType_MMP.miscTemplate.rawValue
+            let myWork = MyWorks(moc: moc, item: object, imageData: Data())
+
+            return myWork
+        }
+        return objectsMO
+    }
+
+    @discardableResult
     static func createItems(with moc: NSManagedObjectContext) -> [ItemsMO] {
 
         let objectsMO = (1...20).map { index in

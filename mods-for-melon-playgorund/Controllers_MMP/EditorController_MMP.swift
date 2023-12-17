@@ -30,7 +30,7 @@ class EditorController_MMP: ObservableObject {
 
     var dropDownContent: [DropDownSelection]
 
-    init(moc: NSManagedObjectContext) {
+    init(myMod: MyWorks) {
         let dropDownContent: [DropDownSelection] = EditorViewType.allCases.map { DropDownSelection(value: $0) }
 
         self.dropDownContent = dropDownContent
@@ -39,6 +39,6 @@ class EditorController_MMP: ObservableObject {
             self.selectionDropDownContent = selectedCollection
         }
 
-        myMod = .init(context: moc)
+        self.myMod = myMod
     }
 }

@@ -22,6 +22,20 @@ struct CustomSheetView_MMP {
         .disabled(true)
     }
 
+    static func saved_MMP() -> some View {
+        LargeButton_MMP(
+            text: "Saved",
+            borderColor: .cE9E9E9,
+            fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 38 : 19),
+            backgroundColor: .blackOpacity,
+            foregroundColor: .white,
+            height: isIPad ? 72 : 50,
+            lineWidth: 1
+        )
+        .iosDeviceTypeFrameAspec_mmp(iOSWidth: 168, isiOsAspec: true, iPadWidth: 336, isiPadAspec: true)
+        .disabled(true)
+    }
+
     static func loaded_MMP() -> some View {
         LargeButton_MMP(
             text: "Downloaded",
@@ -137,9 +151,60 @@ struct CustomSheetView_MMP {
         .addRoundedModifier_MMP(radius: 12)
         .frame(maxWidth: 700)
     }
+
+    static func cancelEditor_MMP(
+        firstAction: EmptyClosure_MMP? = nil,
+        secondAction: EmptyClosure_MMP? = nil
+    ) -> some View {
+        VStack(spacing: 0) {
+            Text("Are you sure?")
+                .iosDeviceTypeFont_mmp(
+                    iOS: .init(name: .sfProDisplay, style: .black, size: 28),
+                    iPad: .init(name: .sfProDisplay, style: .black, size: 56)
+                )
+                .foregroundColor(.white)
+                .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
+            Text("Are you sure you want to leave with no saving?")
+                .iosDeviceTypeFont_mmp(
+                    iOS: .init(name: .sfProDisplay, style: .medium, size: 20),
+                    iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
+                )
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
+
+            HStack(spacing: isIPad ? 48 : 24) {
+                LargeButton_MMP(
+                    text: "Cancel",
+                    borderColor: .cE9E9E9,
+                    fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 40 : 19),
+                    backgroundColor: .blackOpacity,
+                    foregroundColor: .white,
+                    height: isIPad ? 72 : 50,
+                    lineWidth: 1,
+                    action: {
+                        firstAction?()
+                    }
+                )
+                LargeButton_MMP(
+                    text: "Yes",
+                    fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 40 : 19),
+                    height: isIPad ? 72 : 50,
+                    lineWidth: 3,
+                    action: {
+                        secondAction?()
+                    }
+                )
+            }
+        }
+        .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 16, iPadPadding: 32)
+        .addRoundedModifier_MMP(radius: 12)
+        .frame(maxWidth: 700)
+    }
+
 }
 
 #Preview {
-    CustomSheetView_MMP.removeFavourite_MMP(contentType: .skins)
+    CustomSheetView_MMP.cancelEditor_MMP()
         .preferredColorScheme(.dark)
 }

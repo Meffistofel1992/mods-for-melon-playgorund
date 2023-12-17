@@ -216,8 +216,8 @@ extension View {
 }
 
 
-#Preview {
-    VStack {
-        EditorView_MMP(moc: CoreDataMockService_MMP.preview)
-    }
-}
+//#Preview {
+//    VStack {
+//        EditorView_MMP(moc: CoreDataMockService_MMP.preview)
+//    }
+//}

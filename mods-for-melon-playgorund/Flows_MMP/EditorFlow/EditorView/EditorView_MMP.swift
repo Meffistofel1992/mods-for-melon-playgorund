@@ -8,14 +8,18 @@
 import SwiftUI
 import CoreData
 import FlowStacks
+import Resolver
 
 struct EditorView_MMP: View {
 
+    @Environment(\.createSheet_mmp) private var createSheet_mmp
     @StateObject private var editorController_MMP: EditorController_MMP
     @EnvironmentObject private var navigator: FlowNavigator<MainRoute_MMP>
 
-    init(moc: NSManagedObjectContext) {
-        _editorController_MMP = .init(wrappedValue: EditorController_MMP(moc: moc))
+    @Injected private var coreDataStore: CoreDataStore_MMP
+
+    init(myMod: MyWorks) {
+        _editorController_MMP = .init(wrappedValue: EditorController_MMP(myMod: myMod))
     }
 
     var body: some View {
@@ -23,12 +27,12 @@ struct EditorView_MMP: View {
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
                     RectangleButton_MMP(image: .iconBack) {
-                        navigator.pop()
+                        didTapToBack()
                     }
                     Spacer()
 
                     RectangleButton_MMP(image: .iconChekcmark) {
-
+                        didTapToSave()
                     }
                 }
                 .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
@@ -63,9 +67,9 @@ struct EditorView_MMP: View {
         .sheet(item: $editorController_MMP.imageState) { item in
             switch item {
             case .icon:
-                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.iconData ?? Data())
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.iconData)
             case .image:
-                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.imageData ?? Data())
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.imageData)
             }
         }
     }
@@ -84,22 +88,62 @@ private extension EditorView_MMP {
 
             let height = Utilities_MMP.shared.widthWith_MMP(aspectRatio: isIPad ? 290/1024 : 125/390)
 
-            Image(.imageMock)
-                .resizable()
-                .scaledToFit()
-                .iosDeviceTypeFrame_mmp(
-                    iOSHeight: height,
-                    iPadHeight: height
-                )
-                .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 20, iPadPadding: 40)
-                .frame(maxWidth: .infinity)
-                .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)
+            if let image = UIImage(data: editorController_MMP.myMod.imageData) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .iosDeviceTypeFrame_mmp(
+                        iOSHeight: height,
+                        iPadHeight: height
+                    )
+                    .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 20, iPadPadding: 40)
+                    .frame(maxWidth: .infinity)
+                    .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)
+            }
         }
     }
 }
 
+// MARK: - Methods
+private extension EditorView_MMP {
+    func didTapToSave() {
+        coreDataStore.saveChanges_MMP()
+        createSheet_mmp?(
+            .init(
+                type: .saved,
+                firstAction: { _ in },
+                secondAction: { _ in }
+            )
+        )
+        Task {
+            try? await Task.sleep_MMP(seconds: 0.5)
+            createSheet_mmp?(nil)
+            navigator.pop()
+        }
+    }
+
+    func didTapToBack() {
+        createSheet_mmp?(
+            .init(
+                type: .cancelEditor,
+                firstAction: { _ in
+                    createSheet_mmp?(nil)
+                },
+                secondAction: { _ in
+                    createSheet_mmp?(nil)
+                    navigator.pop()
+                    coreDataStore.rollBack_MMP()
+                }
+            )
+        )
+    }
+}
+
 #Preview {
-    EditorView_MMP(moc: CoreDataMockService_MMP.preview)
+    let moc = CoreDataMockService_MMP.preview
+    let myMod = CoreDataMockService_MMP.getMyWorks(with: moc)[0]
+    
+    return EditorView_MMP(myMod: myMod)
 }
 
 public func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {

@@ -10,5 +10,5 @@ import Foundation
 enum MainRoute_MMP: Hashable {
     case tabView
     case detailMod(ParentMO, ContentType_MMP)
-    case editor
+    case editor(MyWorks)
 }

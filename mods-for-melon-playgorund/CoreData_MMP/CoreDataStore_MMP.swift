@@ -93,4 +93,8 @@ extension CoreDataStore_MMP {
     func MMP_resetContext_MMP() {
         viewContext.reset()
     }
+
+    func rollBack_MMP() {
+        viewContext.rollback()
+    }
 }
