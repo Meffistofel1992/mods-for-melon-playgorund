@@ -8,6 +8,13 @@
 import SwiftUI
 import CoreData
 
+enum ImageState: Identifiable {
+    var id: Self { self }
+
+    case image
+    case icon
+}
+
 enum EditorViewType: String, CaseIterable {
     case miscTemplates = "Misc templates"
     case setCollider = "Set collider"
@@ -18,8 +25,8 @@ enum EditorViewType: String, CaseIterable {
 class EditorController_MMP: ObservableObject {
     @Published var selectionDropDownContent: DropDownSelection = .init()
     @Published var myMod: MyWorks
-    @Published var nameText: String = ""
     @Published var progress: CGFloat = 0.6
+    @Published var imageState: ImageState?
 
     var dropDownContent: [DropDownSelection]
 

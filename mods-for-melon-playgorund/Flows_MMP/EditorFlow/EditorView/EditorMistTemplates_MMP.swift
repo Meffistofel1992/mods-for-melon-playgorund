@@ -31,7 +31,7 @@ private extension EditorMistTemplates_MMP {
                     iOS: .init(name: .sfProDisplay, style: .medium, size: 16),
                     iPad: .init(name: .sfProDisplay, style: .medium, size: 32)
                 )
-            TextField(text: $editorController_MMP.nameText, prompt: Text("Input")) {
+            TextField(text: $editorController_MMP.myMod.name ?? "", prompt: Text("Input")) {
 
             }
             .tint(.white)
@@ -65,7 +65,7 @@ private extension EditorMistTemplates_MMP {
                     height: isIPad ? 64 : 32,
                     lineWidth: isIPad ? 6 : 3,
                     action: {
-
+                        editorController_MMP.imageState = .icon
                     }
                 )
                 .iosDeviceTypeFrame_mmp(iOSWidth: 133, iPadWidth: 266)

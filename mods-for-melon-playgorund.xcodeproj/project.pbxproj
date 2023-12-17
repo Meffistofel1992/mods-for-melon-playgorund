@@ -60,6 +60,7 @@
 		53ED78A22B29028D00952BA8 /* TabFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78A12B29028D00952BA8 /* TabFlowView.swift */; };
 		53EDB83E2B2F52350009E0E5 /* EditorSetTexture_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EDB83D2B2F52350009E0E5 /* EditorSetTexture_MMP.swift */; };
 		53EDB8402B2F56C30009E0E5 /* EditorProperty_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EDB83F2B2F56C30009E0E5 /* EditorProperty_MMP.swift */; };
+		53EDB8422B2F65010009E0E5 /* PhotoPicker_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EDB8412B2F65010009E0E5 /* PhotoPicker_MMP.swift */; };
 		53FE7FE02B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */; };
 		53FE7FE22B2790B700AAD9B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FE7FE12B2790B700AAD9B6 /* ContentView.swift */; };
 		53FE7FE42B2790B800AAD9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FE7FE32B2790B800AAD9B6 /* Assets.xcassets */; };
@@ -210,6 +211,7 @@
 		53ED78A12B29028D00952BA8 /* TabFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFlowView.swift; sourceTree = "<group>"; };
 		53EDB83D2B2F52350009E0E5 /* EditorSetTexture_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSetTexture_MMP.swift; sourceTree = "<group>"; };
 		53EDB83F2B2F56C30009E0E5 /* EditorProperty_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProperty_MMP.swift; sourceTree = "<group>"; };
+		53EDB8412B2F65010009E0E5 /* PhotoPicker_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker_MMP.swift; sourceTree = "<group>"; };
 		53FE7FDC2B2790B700AAD9B6 /* mods-for-melon-playgorund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mods-for-melon-playgorund.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FE7FDF2B2790B700AAD9B6 /* mods_for_melon_playgorundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mods_for_melon_playgorundApp.swift; sourceTree = "<group>"; };
 		53FE7FE12B2790B700AAD9B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				5334E0CE2B2B00F500FF8650 /* FilterView_MMP.swift */,
 				53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */,
 				5362C6662B2F1512000FD37B /* DropDown_MMP.swift */,
+				53EDB8412B2F65010009E0E5 /* PhotoPicker_MMP.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				5334C1F62B2B285B002A7E40 /* ParentMO+CoreDataProperties.swift in Sources */,
 				53FE80532B27972C00AAD9B6 /* DeviceAspectRatioModifier_MMP.swift in Sources */,
 				5362C65D2B2F02B1000FD37B /* EditorSectionButton.swift in Sources */,
+				53EDB8422B2F65010009E0E5 /* PhotoPicker_MMP.swift in Sources */,
 				533AFD922B2A4BE700CC63E4 /* SectionButton.swift in Sources */,
 				53ED789C2B28F9C300952BA8 /* LocalModel_MMP.swift in Sources */,
 				53FE80622B27972C00AAD9B6 /* CustomSheet_MMP.swift in Sources */,

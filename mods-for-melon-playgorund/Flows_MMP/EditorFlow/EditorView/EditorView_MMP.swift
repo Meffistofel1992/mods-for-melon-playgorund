@@ -60,6 +60,14 @@ struct EditorView_MMP: View {
                 .padding(.top, 1)
             }
         }
+        .sheet(item: $editorController_MMP.imageState) { item in
+            switch item {
+            case .icon:
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.iconData ?? Data())
+            case .image:
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.imageData ?? Data())
+            }
+        }
     }
 }
 

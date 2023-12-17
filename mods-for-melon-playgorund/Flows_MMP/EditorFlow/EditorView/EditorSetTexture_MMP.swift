@@ -62,7 +62,7 @@ private extension EditorSetTexture_MMP {
             Spacer()
 
             Button {
-
+                editorController_MMP.imageState = .image
             } label: {
                 Text("Upload")
                     .iosDeviceTypeFont_mmp(
