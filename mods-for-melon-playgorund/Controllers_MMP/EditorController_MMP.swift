@@ -6,20 +6,24 @@
 //
 
 import SwiftUI
+import CoreData
 
 enum EditorViewType: String, CaseIterable {
     case miscTemplates = "Misc templates"
     case setCollider = "Set collider"
-    case selectTexture = "Select texture"
+    case selectTexture = "Set texture"
     case setProperties = "Set proprietes"
 }
 
 class EditorController_MMP: ObservableObject {
     @Published var selectionDropDownContent: DropDownSelection = .init()
+    @Published var myMod: MyWorks
+    @Published var nameText: String = ""
+    @Published var progress: CGFloat = 0.6
 
     var dropDownContent: [DropDownSelection]
 
-    init() {
+    init(moc: NSManagedObjectContext) {
         let dropDownContent: [DropDownSelection] = EditorViewType.allCases.map { DropDownSelection(value: $0) }
 
         self.dropDownContent = dropDownContent
@@ -27,5 +31,7 @@ class EditorController_MMP: ObservableObject {
         if let selectedCollection = dropDownContent.first {
             self.selectionDropDownContent = selectedCollection
         }
+
+        myMod = .init(context: moc)
     }
 }

@@ -42,8 +42,13 @@ struct SearchTextField_MMP: View {
                     )
                     .foregroundStyle(Color.white)
             }
+            .tint(.white)
             .focused($focusedField, equals: .field)
             .foregroundStyle(Color.white)
+            .iosDeviceTypeFont_mmp(
+                iOS: .init(name: .sfProDisplay, style: .regular, size: 16),
+                iPad: .init(name: .sfProDisplay, style: .regular, size: 32)
+            )
 
             VStack {
                 if !focusedField.isNil {

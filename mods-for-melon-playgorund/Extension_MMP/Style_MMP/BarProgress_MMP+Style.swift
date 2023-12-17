@@ -27,7 +27,6 @@ struct BarProgressStyle_MMP: ProgressViewStyle {
                             .frame(maxWidth: geo.size.width * CGFloat(fractionCompleted))
                             .cornerRadius(cornerRadius)
                             .animation(animation, value: fractionCompleted)
-                            .padding(5)
 
                     }
                 }

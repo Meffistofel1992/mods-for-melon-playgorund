@@ -33,6 +33,7 @@ struct SettingsView_MMP: View {
                         text: setting.title,
                         fontStyle: .fontWithName_MMP(.sfProDisplay, style: .bold, size: isIPad ? 32 : 16),
                         backgroundColor: .blackOpacity,
+                        height: isIPad ? 96 : 48,
                         action: {
                             handleTapTo(setting: setting)
                         },

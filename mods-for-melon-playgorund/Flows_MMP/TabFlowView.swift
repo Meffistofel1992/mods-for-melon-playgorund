@@ -12,6 +12,7 @@ import Resolver
 struct TabFlowView: View {
 
     // MARK: - Wrapped Properties
+    @Environment(\.managedObjectContext) private var moc
     @StateObject private var navigationStore: MainNavigationStore_MMP = .init()
 
     @State private var activeTab: Tab = .home
@@ -34,6 +35,8 @@ struct TabFlowView: View {
             tabView
         case let .detailMod(mod, contentType):
             HomeDetailView_MMP(item: mod, contentType: contentType)
+        case .editor:
+            EditorView_MMP(moc: moc)
         }
     }
 
@@ -45,7 +48,7 @@ struct TabFlowView: View {
                 }
                 .tag(Tab.home)
                 
-                EditorHomeView_MMP()
+                EditorView_MMP(moc: moc)
                     .tag(Tab.editor)
                 FavoritesView_MMP()
                     .tag(Tab.favourites)

@@ -36,12 +36,16 @@ struct DropDown_MMP: View {
                             RowView(object, size)
                         }
                     }
+                    .background(
+                        .ultraThinMaterial,
+                        in: RoundedRectangle(cornerRadius: isIPad ? 24 : 12, style: .continuous)
+                    )
+                    .preferredColorScheme(.dark)
                     .background {
                         RoundedRectangle(cornerRadius: isIPad ? 24 : 12)
-                            .customfill_MMP()
+                            .customfill_MMP(Color.c6B7CB8)
                             .addShadowToRectangle_mmp()
                     }
-
                 }
 
                 /// - Moving View Based on the Selection
@@ -51,6 +55,13 @@ struct DropDown_MMP: View {
             .frame(height: height)
             .overlay(alignment: .trailing) {
                 Image(.iconBack)
+                    .resizable()
+                    .iosDeviceTypeFrame_mmp(
+                        iOSWidth: 24,
+                        iOSHeight: 24,
+                        iPadWidth: 44,
+                        iPadHeight: 44
+                    )
                     .rotationEffect(.init(degrees: expandView ? 90 : 270))
                     .iosDeviceTypePadding_MMP(edge: .trailing, iOSPadding: 20, iPadPadding: 40)
             }
@@ -157,8 +168,8 @@ struct DropDown_MMP: View {
             /// - Disabling Outside Taps
             if selection == object {
                 selection.zIndex = 1000.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02){
-                    withAnimation(.easeInOut(duration: 0.35)){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                    withAnimation(.easeInOut(duration: 0.35)) {
                         expandView = true
                     }
                 }
@@ -207,6 +218,6 @@ extension View {
 
 #Preview {
     VStack {
-        EditorView_MMP()
+        EditorView_MMP(moc: CoreDataMockService_MMP.preview)
     }
 }

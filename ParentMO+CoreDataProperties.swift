@@ -25,6 +25,8 @@ extension ParentMO {
     @NSManaged public var uuid: UUID?
     @NSManaged public var isLoadedToPhone: Bool
     @NSManaged public var contentType: String?
+    @NSManaged public var editorIcon: Data?
+    @NSManaged public var editorImage: Data?
 }
 
 extension ParentMO : Identifiable {

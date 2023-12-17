@@ -4,12 +4,29 @@
     <entity name="EditorMO" representedClassName="EditorMO" parentEntity="ParentMO" syncable="YES"/>
     <entity name="ItemsMO" representedClassName="ItemsMO" parentEntity="ParentMO" syncable="YES"/>
     <entity name="ModsMO" representedClassName="ModsMO" parentEntity="ParentMO" syncable="YES"/>
-    <entity name="MyWorks" representedClassName="MyWorks" parentEntity="ParentMO" syncable="YES"/>
+    <entity name="MyWorks" representedClassName="MyWorks" syncable="YES">
+        <attribute name="canBeTaken" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="canBurn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="canFloat" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="canGlow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="heightValue" optional="YES" attributeType="String"/>
+        <attribute name="iconData" optional="YES" attributeType="Binary"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pixelValue" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="widthValue" optional="YES" attributeType="String"/>
+        <attribute name="xValue" optional="YES" attributeType="String"/>
+        <attribute name="yValue" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="ParentMO" representedClassName="ParentMO" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="contentType" optional="YES" attributeType="String"/>
         <attribute name="desctiptionn" optional="YES" attributeType="String"/>
         <attribute name="downloadPath" optional="YES" attributeType="String"/>
+        <attribute name="editorIcon" optional="YES" attributeType="Binary"/>
+        <attribute name="editorImage" optional="YES" attributeType="Binary"/>
         <attribute name="imagePath" optional="YES" attributeType="String"/>
         <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isLoadedToPhone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

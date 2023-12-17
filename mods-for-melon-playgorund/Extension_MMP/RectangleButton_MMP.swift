@@ -22,14 +22,14 @@ struct RectangleButton_MMP: View {
         } label: {
             Image(image)
                 .resizable()
-                .iosDeviceTypeFrameAspec_mmp(
+                .iosDeviceTypeFrame_mmp(
                     iOSWidth: iOsImageSize,
                     iOSHeight: iOsImageSize,
                     iPadWidth: ipaImagedSize,
                     iPadHeight: ipaImagedSize
                 )
         }
-        .iosDeviceTypeFrameAspec_mmp(
+        .iosDeviceTypeFrame_mmp(
             iOSWidth: iOsButtonSize,
             iOSHeight: iOsButtonSize,
             iPadWidth: ipaButtonSize,

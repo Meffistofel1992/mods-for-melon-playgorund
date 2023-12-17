@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(MyWorks)
-public class MyWorks: ParentMO {
+public class MyWorks: NSManagedObject {
 
 }

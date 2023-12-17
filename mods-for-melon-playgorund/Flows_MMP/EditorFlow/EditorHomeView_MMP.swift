@@ -40,7 +40,7 @@ struct EditorHomeView_MMP: View {
                 predicate: editorPredicate(contentType: selectedMenu)
             )
         } else {
-            EditorListView_MMP<MyWorks>(contentType: selectedMenu)
+            EditorHomeMyWorkView_MMP<MyWorks>(contentType: selectedMenu)
         }
     }
 }
