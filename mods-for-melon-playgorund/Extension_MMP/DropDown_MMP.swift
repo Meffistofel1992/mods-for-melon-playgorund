@@ -28,23 +28,23 @@ struct DropDown_MMP: View {
 
                 VStack(alignment: .leading,spacing: 0){
                     if !dynamic {
-                        RowView(selection, size)
+                        RowView(selection, size, isSelected: true)
                             .padding(.bottom, 8)
                     }
                     VStack(alignment: .leading, spacing: 0) {
                         ForEach(content.filter { dynamic ? true : $0.id != selection.id }) { object in
-                            RowView(object, size)
+                            RowView(object, size, isSelected: false)
                         }
                     }
-                    .background(
-                        .ultraThinMaterial,
-                        in: RoundedRectangle(cornerRadius: isIPad ? 24 : 12, style: .continuous)
-                    )
                     .preferredColorScheme(.dark)
                     .background {
                         RoundedRectangle(cornerRadius: isIPad ? 24 : 12)
                             .customfill_MMP(Color.c6B7CB8)
                             .addShadowToRectangle_mmp()
+                    }
+                    .background {
+                        Blur(style: .systemUltraThinMaterial, fractionComplete: 0.65)
+                            .clipShape( RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
                     }
                 }
 
@@ -93,7 +93,7 @@ struct DropDown_MMP: View {
 
     /// - Row View
     @ViewBuilder
-    func RowView(_ object: DropDownSelection,_ size: CGSize) -> some View{
+    func RowView(_ object: DropDownSelection,_ size: CGSize, isSelected: Bool) -> some View{
         let currentIndex = Double(content.firstIndex(of: object) ?? 0)
 
         HStack(spacing: 10) {
@@ -102,8 +102,8 @@ struct DropDown_MMP: View {
             }
             Text(object.value.rawValue)
                 .iosDeviceTypeFont_mmp(
-                    iOS: .init(name: .sfProDisplay, style: .medium, size: 20),
-                    iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
+                    iOS: .init(name: .sfProDisplay, style: .medium, size: isSelected ? 20 : 18),
+                    iPad: .init(name: .sfProDisplay, style: .medium, size: isSelected ? 40 : 36)
                 )
                 .foregroundColor(.white)
         }
@@ -216,8 +216,53 @@ extension View {
 }
 
 
-//#Preview {
-//    VStack {
-//        EditorView_MMP(moc: CoreDataMockService_MMP.preview)
-//    }
-//}
+#Preview {
+    VStack {
+        let myWord = CoreDataMockService_MMP.getMyWorks(with: CoreDataMockService_MMP.preview)[0]
+        EditorView_MMP(myMod: myWord)
+    }
+}
+
+
+class BlurEffectView: UIVisualEffectView {
+
+    var fractionComplete: CGFloat = 1
+    var animator = UIViewPropertyAnimator(duration: 1, curve: .linear)
+
+    override func didMoveToSuperview() {
+        guard let superview = superview else { return }
+        backgroundColor = .clear
+        frame = superview.bounds // Or setup constraints instead
+        setupBlur()
+    }
+
+    private func setupBlur() {
+        animator.stopAnimation(true)
+        effect = nil
+
+        animator.addAnimations { [weak self] in
+            self?.effect = UIBlurEffect(style: .systemChromeMaterialDark)
+        }
+        animator.fractionComplete = fractionComplete
+    }
+
+    deinit {
+        animator.stopAnimation(true)
+    }
+}
+
+struct Blur: UIViewRepresentable {
+    var style: UIBlurEffect.Style = .systemUltraThinMaterial
+    var fractionComplete: CGFloat = 1
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let blur = BlurEffectView()
+        blur.fractionComplete = fractionComplete
+
+        return blur
+    }
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: style)
+
+    }
+}

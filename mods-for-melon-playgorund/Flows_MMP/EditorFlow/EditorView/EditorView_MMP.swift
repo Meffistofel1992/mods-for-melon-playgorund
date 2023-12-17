@@ -41,6 +41,7 @@ struct EditorView_MMP: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         header
+                            .zIndex(1001)
 
                         switch editorController_MMP.selectionDropDownContent.value {
                         case .miscTemplates:

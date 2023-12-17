@@ -15,14 +15,14 @@ public class MyWorks: NSManagedObject {
         self.init(context: moc)
         self.name = item.titleOrEmpty
         self.imageData = imageData
-        self.type = "type"
-        self.category = "category"
+        self.type = ""
+        self.category = ""
         self.iconData = imageData
-        self.xValue = "0.0"
-        self.yValue = "0.0"
-        self.heightValue = "0.0"
-        self.widthValue = "0.0"
-        self.pixelValue = "0"
+        self.xValue = ""
+        self.yValue = ""
+        self.heightValue = ""
+        self.widthValue = ""
+        self.pixelValue = ""
         self.canBeTaken = false
         self.canGlow = false
         self.canBurn = false
