@@ -140,6 +140,6 @@ private extension HomeView_MMP {
 #Preview {
     let moc = CoreDataMockService_MMP.preview
 
-    return HomeView_MMP()
+    return TabFlowView()
         .environment(\.managedObjectContext, moc)
 }

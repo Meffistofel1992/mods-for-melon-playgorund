@@ -41,21 +41,17 @@ struct TabFlowView: View {
     }
 
     var tabView: some View {
-        VStack(spacing: 0) {
-            TabView(selection: $activeTab) {
-                ZStackWithBackground_MMP {
-                    HomeView_MMP()
-                }
+        TabView(selection: $activeTab) {
+            HomeView_MMP()
                 .tag(Tab.home)
-                
-                EditorHomeView_MMP()
-                    .tag(Tab.editor)
-                FavoritesView_MMP()
-                    .tag(Tab.favourites)
-                SettingsView_MMP()
-                    .tag(Tab.settings)
-            }
-
+            EditorHomeView_MMP()
+                .tag(Tab.editor)
+            FavoritesView_MMP()
+                .tag(Tab.favourites)
+            SettingsView_MMP()
+                .tag(Tab.settings)
+        }
+        .safeAreaInset(edge: .bottom) {
             CustomTabBar()
         }
     }
@@ -73,12 +69,15 @@ struct TabFlowView: View {
                 )
             }
         }
-        .padding(.vertical, 10)
+
+        .iosDeviceTypeFrame_mmp(iOSHeight: 70, iPadHeight: 90)
         .background(content: {
             Color.blackMmp.ignoresSafeArea()
         })
         /// Adding Animation
         .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: activeTab)
+        .if(isIPad, transform: { $0.clipShape(Capsule()) })
+        .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 0, iPadPadding: 85, iPadIsAspect: true)
     }
 }
 
@@ -92,28 +91,34 @@ struct TabItem: View {
     /// Each Tab Item Position on the Screen
     @State private var tabPosition: CGPoint = .zero
     var body: some View {
-        VStack(spacing: 5) {
-            Image(tab.image)
-                .foregroundColor(activeTab == tab ? tint : inactiveTint)
-                /// Increasing Size for the Active Tab
-                .frame(width: 24, height: 24)
-                .background {
-//                    if activeTab == tab {
-//                        Circle()
-//                            .fill(tint.gradient)
-//                            .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
-//                    }
+        Group {
+            if isIPad {
+                HStack {
+                    content
                 }
-
-            Text(tab.rawValue)
-                .font(.fontWithName_MMP(.sfProDisplay, style: activeTab == tab ? .bold : .regular, size: 12))
-                .foregroundColor(activeTab == tab ? tint : inactiveTint)
+            } else {
+                VStack(spacing: 5) {
+                    content
+                }
+            }
         }
         .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
             activeTab = tab
         }
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        Image(tab.image)
+            .foregroundColor(activeTab == tab ? tint : inactiveTint)
+            /// Increasing Size for the Active Tab
+            .frame(width: 24, height: 24)
+
+        Text(tab.rawValue)
+            .font(.fontWithName_MMP(.sfProDisplay, style: activeTab == tab ? .bold : .regular, size: isIPad ? 16 : 12))
+            .foregroundColor(activeTab == tab ? tint : inactiveTint)
     }
 }
 

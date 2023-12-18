@@ -34,6 +34,7 @@ struct EditorHomeMyWorkView_MMP<T: MyWorks>: View {
                             iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
                         )
                         .multilineTextAlignment(.center)
+                        .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 90, iPadPadding: 70)
                 } else {
                     gridView(data: items)
                 }

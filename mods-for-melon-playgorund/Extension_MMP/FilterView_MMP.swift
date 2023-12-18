@@ -46,7 +46,11 @@ struct FilterView_MMP: View {
                 .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
                 .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
 
-            CategoryList_MMP(data: categories, isFitHeight: true) { category in
+            CategoryList_MMP(
+                data: categories,
+                bottom: isIPad ? 32 : 16,
+                isFitHeight: true
+            ) { category in
                 LargeButton_MMP(
                     text: category.title ?? "",
                     borderColor: borderColor(type: category),

@@ -15,6 +15,8 @@ struct HomeListView_MMP<T: ParentMO>: View {
     @EnvironmentObject var navigator: FlowNavigator<MainRoute_MMP>
     @Injected private var coreDataStore: CoreDataStore_MMP
 
+    @State private var size: CGSize = .init()
+
     var searchText: String = ""
     let contentType: ContentType_MMP
     var predicate: NSPredicate?
@@ -42,6 +44,7 @@ struct HomeListView_MMP<T: ParentMO>: View {
                         iPad: .init(name: .sfProDisplay, style: .medium, size: 40)
                     )
                     .multilineTextAlignment(.center)
+                    .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 90, iPadPadding: 70)
                 } else {
                     gridView(data: mods)
                 }
@@ -104,7 +107,6 @@ struct HomeListView_MMP<T: ParentMO>: View {
                 .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 16, iPadIsAspect: true)
 
             }
-            .addShadowToRectangle_mmp()
         }
     }
 }

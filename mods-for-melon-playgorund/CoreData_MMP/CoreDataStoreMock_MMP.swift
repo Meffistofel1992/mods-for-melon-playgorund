@@ -32,7 +32,7 @@ class CoreDataMockService_MMP {
             let object = ModsMO(context: moc)
             object.title = "TMBP T15 Armata"
             object.desctiptionn = desctiption
-            object.category = ["Animals", "Cat", "Tank"].randomElement() ?? "Animals"
+            object.category = "Animals"
             object.imagePath = "prod/303172467144286512364dcb7d5d50151.24331836.png"
             object.downloadPath = ""
             object.uuid = UUID()

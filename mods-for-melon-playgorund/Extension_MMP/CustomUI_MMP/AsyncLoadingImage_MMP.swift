@@ -32,10 +32,12 @@ struct AsyncLoadingImage_MMP: View {
                 image
                     .resizable()
             } else {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .tint(.gray)
-
+                ZStack {
+                    Color.white.opacity(0.0001)
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .tint(.gray)
+                }
             }
         }
         .onChange(of: path, perform: { newValue in
