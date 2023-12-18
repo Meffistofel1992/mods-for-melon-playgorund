@@ -182,22 +182,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "47492D2D-4D26-4588-9F48-66A2237CD8FF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_MMP.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "contentList"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "68E2D60D-3A66-4E72-9256-108321E0CED6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -335,6 +319,133 @@
             endingLineNumber = "44"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "991DC820-6A3F-40A2-AEA1-DADE00516C2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "firstDownloading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CD78FC6-2A5A-4662-8F91-A44B10999CC0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "firstDownloading()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3CD78FC6-2A5A-4662-8F91-A44B10999CC0 - d6a0ce95415e2fb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.firstDownloading() async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "640">
+               </Location>
+               <Location
+                  uuid = "3CD78FC6-2A5A-4662-8F91-A44B10999CC0 - 54ff4d87575a2bee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.firstDownloading() async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "3CD78FC6-2A5A-4662-8F91-A44B10999CC0 - 9583adb7250ba7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.firstDownloading() async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "downloadingStream_MMP()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE - 557694aabc1759fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.downloadingStream_MMP() async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE - bce6d1d389c2bbfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.downloadingStream_MMP() async -&gt; ()"
+                  moduleName = "mods-for-melon-playgorund"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

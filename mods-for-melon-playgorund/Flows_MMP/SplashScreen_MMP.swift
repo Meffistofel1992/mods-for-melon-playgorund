@@ -10,6 +10,10 @@ import Resolver
 
 struct SplashScreen_MMP: View {
     @Injected private var apiManager: HomeDataAPI_MMP
+    @Injected private var networkManager: NetworkMonitoringManager_MMP
+
+    @FetchRequest<SkinsMO>(fetchRequest: .skins())
+    private var skins
 
     @State private var progress: CGFloat = 0
     @Binding var splashScreenIsShow: Bool
@@ -25,9 +29,22 @@ struct SplashScreen_MMP: View {
 private extension SplashScreen_MMP {
 
     func firstDownloading() async {
+        if networkManager.isReachable_MMP {
+            await downloadingStream_MMP()
+        } else {
+            if skins.isEmpty {
+                await downloadingStream_MMP()
+            } else {
+                splashScreenIsShow = true
+                Logger.debug_MMP("All downloaded success")
+            }
+        }
+    }
+
+    func downloadingStream_MMP() async {
         let operations: [ContentType_MMP] = ContentType_MMP.allCases
 
-        let stream = downloadingStream_MMP(type: operations)
+        let stream = _downloadingStream_MMP(type: operations)
 
         var downloadedFile = 0
 
@@ -43,7 +60,7 @@ private extension SplashScreen_MMP {
         splashScreenIsShow = true
     }
 
-    func downloadingStream_MMP(type: [ContentType_MMP]) -> AsyncStream<Void> {
+    func _downloadingStream_MMP(type: [ContentType_MMP]) -> AsyncStream<Void> {
         let stream = AsyncStream(Void.self) { continuation in
             Task {
                 do {

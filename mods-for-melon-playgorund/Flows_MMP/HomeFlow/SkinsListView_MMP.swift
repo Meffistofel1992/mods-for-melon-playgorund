@@ -182,7 +182,6 @@ private extension SkinsListView_MMP {
         await saveManager.downloadDidTap(file: (path, item))
     }
 
-    #warning("Доробити isLoadedToPhone")
     func presentDownloadSuccessPopUp(result: Result<SaveType_MMP, any Error>) {
         Task {
             switch result {
