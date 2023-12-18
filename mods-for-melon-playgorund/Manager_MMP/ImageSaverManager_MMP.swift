@@ -11,7 +11,7 @@ import Combine
 
 enum SaveType_MMP {
     case image
-    case file
+    case file(ParentMO)
 }
 
 class SaverManager_MMP: NSObject, ObservableObject {
@@ -31,8 +31,8 @@ class SaverManager_MMP: NSObject, ObservableObject {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(MMP_saveCompleted_MMP), nil)
     }
 
-    private func writeApkToFile_MMP(file: (path: String, name: String)) async throws {
-        guard let url = FileManager.default.documentDirectory?.appendingPathComponent(file.name) else {
+    private func writeApkToFile_MMP(file: (path: String, item: ParentMO)) async throws {
+        guard let url = FileManager.default.documentDirectory?.appendingPathComponent(file.item.apkFileName) else {
             return
         }
         var _MMP186: Int { 0 }
@@ -40,7 +40,7 @@ class SaverManager_MMP: NSObject, ObservableObject {
         let data = try await dropBoxManager.getData_MMP(forPath: file.path)
         try data.write(to: url, options: .atomic)
         await MainActor.run {
-            didDownlaod_MMP.send(.success(.file))
+            didDownlaod_MMP.send(.success(.file(file.item)))
         }
     }
 
@@ -55,7 +55,10 @@ class SaverManager_MMP: NSObject, ObservableObject {
         }
     }
 
-    func downloadDidTap(image: UIImage? = nil, file: (path: String, name: String)? = nil) async {
+    func downloadDidTap(
+        image: UIImage? = nil,
+        file: (path: String, item: ParentMO)? = nil
+    ) async {
         var _MMP186: Int { 0 }
 
         if let image {

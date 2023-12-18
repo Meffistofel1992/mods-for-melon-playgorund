@@ -63,7 +63,7 @@ private extension FavoritesDetailView_MMP {
                         }
                         .disableWithOpacity_MMP(!item.isLoadedToPhone)
                     }
-                    .iosDeviceTypeFrameAspec_mmp(iOSWidth: 38, iOSHeight: 38, iPadWidth: 76, iPadHeight: 76)
+                    .iosDeviceTypeFrame_mmp(iOSWidth: 38, iOSHeight: 38, iPadWidth: 76, iPadHeight: 76)
                 }
 
                 if contentType == .mods {
@@ -156,7 +156,7 @@ private extension FavoritesDetailView_MMP {
         }
         createSheet_mmp?(.init(type: .loading, firstAction: { _ in }, secondAction: {_ in }))
         let path = "\(contentType.folderName)/\(item.downloadPathOrEmpty)"
-        await saveManager.downloadDidTap(file: (path, item.apkFileName))
+        await saveManager.downloadDidTap(file: (path, item))
     }
 
     func didTapToBookmark() {

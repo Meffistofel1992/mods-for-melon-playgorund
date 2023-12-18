@@ -105,17 +105,30 @@ struct SkinsListView_MMP<T: ParentMO>: View {
                             didTapToBookmark(item: item)
                         }
 
-                        RectangleButton_MMP(
-                            image: .iconDownload,
-                            iOsImageSize: 20,
-                            iOsButtonSize: 28,
-                            ipaImagedSize: 40,
-                            ipaButtonSize: 56
-                        ) {
-                            Task {
-                                await download(item: item)
+                        GeometryReader { geo in
+                            RectangleButton_MMP(
+                                image: .iconDownload,
+                                iOsImageSize: 20,
+                                iOsButtonSize: 28,
+                                ipaImagedSize: 40,
+                                ipaButtonSize: 56
+                            ) {
+                                Task {
+                                    let rect = geo.frame(in: CoordinateSpace.global)
+                                    if !item.isLoadedToPhone {
+                                        Task {
+                                            await download(item: item)
+                                            try? await Task.sleep_MMP(seconds: 1)
+                                            didTaspToShare(rect: rect, item: item)
+                                        }
+                                    } else {
+                                        didTaspToShare(rect: rect, item: item)
+                                    }
+                                }
                             }
                         }
+                        .iosDeviceTypeFrame_mmp(iOSWidth: 28, iOSHeight: 28, iPadWidth: 56, iPadHeight: 56)
+
                         Spacer()
                     }
                 }
@@ -134,7 +147,7 @@ struct SkinsListView_MMP<T: ParentMO>: View {
 }
 
 // MARK: - Methods
-extension SkinsListView_MMP {
+private extension SkinsListView_MMP {
     func didTapToBookmark(item: ParentMO) {
         if item.isFavourite {
             createSheet_mmp?(
@@ -156,26 +169,36 @@ extension SkinsListView_MMP {
         }
     }
 
+    func didTaspToShare(rect: CGRect, item: ParentMO) {
+        saveManager.shareApk_MMP(apkFileName: item.apkFileName, rect: rect)
+    }
+
     func download(item: ParentMO) async {
         guard networkManager.isReachable_MMP else {
             return
         }
         createSheet_mmp?(.init(type: .loading, firstAction: { _ in }, secondAction: {_ in }))
         let path = "\(contentType.folderName)/\(item.downloadPathOrEmpty)"
-        await saveManager.downloadDidTap(file: (path, item.apkFileName))
+        await saveManager.downloadDidTap(file: (path, item))
     }
 
     #warning("Доробити isLoadedToPhone")
     func presentDownloadSuccessPopUp(result: Result<SaveType_MMP, any Error>) {
         Task {
             switch result {
-            case .success:
-//                item.isLoadedToPhone = true
-//                coreDataStore.saveChanges_MMP()
+            case .success(let type):
+                switch type {
+                case .file(let item) :
+                    item.isLoadedToPhone = true
+                    coreDataStore.saveChanges_MMP()
 
-                createSheet_mmp?(.init(type: .loaded, firstAction: { _ in }, secondAction: { _ in }))
-                try? await Task.sleep_MMP(seconds: 1)
-                createSheet_mmp?(nil)
+                    createSheet_mmp?(.init(type: .loaded, firstAction: { _ in }, secondAction: { _ in }))
+                    try? await Task.sleep_MMP(seconds: 1)
+                    createSheet_mmp?(nil)
+                default:
+                    break
+                }
+
             case .failure:
                 break
             }
