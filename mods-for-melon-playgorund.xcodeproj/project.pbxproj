@@ -70,6 +70,7 @@
 		53D7EAD42B30F60D005534EB /* pad.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 53D7EACA2B30F60D005534EB /* pad.mp4 */; };
 		53D7EAD52B30F60D005534EB /* Bitter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53D7EACB2B30F60D005534EB /* Bitter-Regular.ttf */; };
 		53D7EAD72B30F60D005534EB /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53D7EACD2B30F60D005534EB /* SFProText-Bold.ttf */; };
+		53D7EADA2B30FBC4005534EB /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7EAD92B30FBC4005534EB /* CustomTabBar.swift */; };
 		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
 		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
 		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
@@ -287,6 +288,7 @@
 		53D7EACA2B30F60D005534EB /* pad.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pad.mp4; sourceTree = "<group>"; };
 		53D7EACB2B30F60D005534EB /* Bitter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Regular.ttf"; sourceTree = "<group>"; };
 		53D7EACD2B30F60D005534EB /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
+		53D7EAD92B30FBC4005534EB /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -533,6 +535,15 @@
 				53D7EACD2B30F60D005534EB /* SFProText-Bold.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		53D7EAD82B30FBA4005534EB /* TabFlow */ = {
+			isa = PBXGroup;
+			children = (
+				53ED78A12B29028D00952BA8 /* TabFlowView.swift */,
+				53D7EAD92B30FBC4005534EB /* CustomTabBar.swift */,
+			);
+			path = TabFlow;
 			sourceTree = "<group>";
 		};
 		53ED78812B28F8DE00952BA8 /* Models */ = {
@@ -841,7 +852,7 @@
 				5362C64C2B2E3E68000FD37B /* FavoritesFlow */,
 				53AA0CA82B290ED100382D92 /* HomeFlow */,
 				53FE80AE2B27B33F00AAD9B6 /* SplashScreen_MMP.swift */,
-				53ED78A12B29028D00952BA8 /* TabFlowView.swift */,
+				53D7EAD82B30FBA4005534EB /* TabFlow */,
 			);
 			path = Flows_MMP;
 			sourceTree = "<group>";
@@ -1115,6 +1126,7 @@
 				5362C65F2B2F038A000FD37B /* EditorListView_MMP.swift in Sources */,
 				53FE80722B279C6100AAD9B6 /* Logger_MMP.swift in Sources */,
 				5362C6652B2F146B000FD37B /* EditorView_MMP.swift in Sources */,
+				53D7EADA2B30FBC4005534EB /* CustomTabBar.swift in Sources */,
 				53ED78962B28F8DE00952BA8 /* ModsMO+CoreDataClass.swift in Sources */,
 				5330CB662B2DBEE90054EC33 /* DisabledWithOpacity_MMP.swift in Sources */,
 				53FE807E2B279E1800AAD9B6 /* CoreDataStoreMock_MMP.swift in Sources */,

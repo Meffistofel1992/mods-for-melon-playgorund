@@ -15,11 +15,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-//            if splashScreenIsShow {
+            if splashScreenIsShow {
                 TabFlowView()
-//            } else {
-//                SplashScreen_MMP(splashScreenIsShow: $splashScreenIsShow)
-//            }
+            } else {
+                SplashScreen_MMP(splashScreenIsShow: $splashScreenIsShow)
+            }
         }
         .showCustomSheet(sheetType: $sheetType)
         .onCreateSheet_mmp { type in
