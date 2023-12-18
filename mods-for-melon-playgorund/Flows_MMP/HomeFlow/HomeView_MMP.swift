@@ -16,6 +16,7 @@ struct HomeView_MMP: View {
     // MARK: - Wrapped Properties
 
     @Injected private var coreDataStore: CoreDataStore_MMP
+    @Injected private var homApiManager: HomeDataAPI_MMP
 
     @FetchRequest<CategoriesMO>(fetchRequest: .categories())
     private var categoriesMO
@@ -84,16 +85,25 @@ struct HomeView_MMP: View {
                 predicate: homePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
                 sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
             )
+//            .task {
+//                try? await homApiManager.getModels(type: selectedMenu)
+//            }
         case .items:
             HomeListView_MMP<ItemsMO>(
                 contentType: .items,
                 sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
             )
+//            .task {
+//                try? await homApiManager.getModels(type: selectedMenu)
+//            }
         case .skins:
             SkinsListView_MMP<SkinsMO>(
                 contentType: .skins,
                 sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
             )
+//            .task {
+//                try? await homApiManager.getModels(type: selectedMenu)
+//            }
         default: EmptyView()
         }
     }

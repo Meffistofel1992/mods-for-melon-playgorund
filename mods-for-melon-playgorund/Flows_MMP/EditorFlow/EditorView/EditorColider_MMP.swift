@@ -63,6 +63,7 @@ private extension EditorColider_MMP {
             TextField(text: text ?? "", prompt: Text("Input")) {
 
             }
+            .keyboardType(.numberPad)
             .tint(.white)
             .multilineTextAlignment(.center)
             .iosDeviceTypeFont_mmp(

@@ -70,9 +70,9 @@ struct EditorHomeMyWorkView_MMP<T: MyWorks>: View {
                 } label: {
                     Image(.iconTrash)
                         .resizable()
-                        .iosDeviceTypeFrameAspec_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: 40, iPadHeight: 40)
+                        .iosDeviceTypeFrameAspec_mmp(iOSWidth: 26, iOSHeight: 26, iPadWidth: 52, iPadHeight: 52)
                 }
-                .iosDeviceTypeFrameAspec_mmp(iOSWidth: 28, iOSHeight: 28, iPadWidth: 50, iPadHeight: 50)
+                .iosDeviceTypeFrameAspec_mmp(iOSWidth: 28, iOSHeight: 28, iPadWidth: 56, iPadHeight: 56)
                 .addRoundedModifier_MMP(radius: 8, isNeeedShadow: false)
                 .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 7, iPadPadding: 16, iPadIsAspect: true)
 

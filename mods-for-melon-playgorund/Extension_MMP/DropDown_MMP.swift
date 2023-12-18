@@ -32,7 +32,7 @@ struct DropDown_MMP: View {
                             .padding(.bottom, 8)
                     }
                     VStack(alignment: .leading, spacing: 0) {
-                        ForEach(content.filter { dynamic ? true : $0.id != selection.id }) { object in
+                        ForEach(content) { object in
                             RowView(object, size, isSelected: false)
                         }
                     }
@@ -67,7 +67,7 @@ struct DropDown_MMP: View {
             }
             .mask(alignment: .top){
                 RoundedRectangle(cornerRadius: isIPad ? 24 : 12)
-                    .frame(height: expandView ? CGFloat(content.count) * height + (isIPad ? 20 : 10) : height)
+                    .frame(height: expandView ? CGFloat(content.count + 1) * height + (isIPad ? 20 : 10) : height)
                 /// - Moving the Mask Based on the Selection, so that Every Content Will be Visible
                 /// - Visible Only When Content is Expanded
                     .offset(y: expandView ? (CGFloat(content.firstIndex(of: selection) ?? 0) * -height) : 0)
