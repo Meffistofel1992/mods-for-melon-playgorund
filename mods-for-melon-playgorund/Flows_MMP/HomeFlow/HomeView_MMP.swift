@@ -85,9 +85,15 @@ struct HomeView_MMP: View {
                 sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
             )
         case .items:
-            HomeListView_MMP<ItemsMO>(contentType: .items)
+            HomeListView_MMP<ItemsMO>(
+                contentType: .items,
+                sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
+            )
         case .skins:
-            SkinsListView_MMP<SkinsMO>(contentType: .skins)
+            SkinsListView_MMP<SkinsMO>(
+                contentType: .skins,
+                sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
+            )
         default: EmptyView()
         }
     }

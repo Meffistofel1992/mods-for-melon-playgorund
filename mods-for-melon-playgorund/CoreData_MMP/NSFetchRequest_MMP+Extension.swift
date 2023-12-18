@@ -7,13 +7,8 @@
 
 import CoreData
 
-func favoritePredicate(with category: String, searchText: String) -> NSPredicate {
-    let categoryPredicate = NSPredicate(format: "%K == %@", #keyPath(ParentMO.category), category)
-    let searchPredicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-    let favouritePredicate = NSPredicate(format: "isFavourite == %@", NSNumber(value: true))
-    let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, favouritePredicate] + (searchText.isEmpty ? [] : [searchPredicate]) )
-
-    return compoundPredicate
+var favoritePredicate: NSPredicate {
+     NSPredicate(format: "isFavourite == %@", NSNumber(value: true))
 }
 
 func homePredicate(with category: String, searchText: String) -> NSPredicate {

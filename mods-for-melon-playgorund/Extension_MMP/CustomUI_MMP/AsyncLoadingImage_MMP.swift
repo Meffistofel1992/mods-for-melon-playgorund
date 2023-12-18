@@ -23,7 +23,7 @@ struct AsyncLoadingImage_MMP: View {
     let size: CGSize
     var additionalYoffSet: CGFloat?
 
-    var isNeedFit: Bool = false
+    var isNeedFit: Bool = true
     var imageDidLoad: ValueClosure_MMP<Data>?
 
     var body: some View {

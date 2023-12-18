@@ -10,11 +10,11 @@ import SwiftUI
 struct HomeDetailCardView_MMP: View {
 
     @ObservedObject var item: ParentMO
-    @Binding  var imageData: Data?
+    @Binding var imageData: Data?
 
     let contentType: ContentType_MMP
 
-    var didTapDownload: AsyncEmptyClosure_MMP
+    var action: ValueClosure_MMP<DetailAction>
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -64,14 +64,20 @@ struct HomeDetailCardView_MMP: View {
                             .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
                     }
                     if contentType != .skins {
-                        LargeButton_MMP(
-                            text: "Download",
-                            isValid: !item.isLoadedToPhone,
-                            lineWidth: 3,
-                            asyncAction: {
-                                await didTapDownload()
-                            }
-                        )
+                        GeometryReader { geo in
+                            let rect = geo.frame(in: CoordinateSpace.global)
+                            let state = buttonState(rect: rect)
+
+                            LargeButton_MMP(
+                                text: state.title,
+                                isValid: largeButtonIsValid,
+                                lineWidth: 3,
+                                action: {
+                                    action(state)
+                                }
+                            )
+                        }
+                        .iosDeviceTypeFrame_mmp(iOSHeight: 56, iPadHeight: 72)
                         .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
                     }
                 }
@@ -89,6 +95,23 @@ struct HomeDetailCardView_MMP: View {
 
 // MARK: - computed property
 private extension HomeDetailCardView_MMP {
+
+    var largeButtonIsValid: Bool {
+        if contentType == .items {
+            return true
+        } else {
+            return !item.isLoadedToPhone
+        }
+    }
+
+    func buttonState(rect: CGRect) -> DetailAction {
+        if contentType == .items {
+            return item.isLoadedToPhone ? .share(rect) : .download
+        } else {
+            return .download
+        }
+    }
+
     var imageHeight: CGFloat {
         switch contentType {
         case .mods:
@@ -113,6 +136,20 @@ private extension HomeDetailCardView_MMP {
                 .init(name: .sfProDisplay, style: .bold, size: 16),
                 .init(name: .sfProDisplay, style: .bold, size: 32)
             )
+        }
+    }
+}
+
+enum DetailAction {
+    case download
+    case share(CGRect)
+
+    var title: String {
+        switch self {
+        case .download:
+            return "Download"
+        case .share:
+            return "Share"
         }
     }
 }

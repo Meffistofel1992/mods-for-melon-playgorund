@@ -39,7 +39,7 @@ struct HomeDetailView_MMP: View {
                     item: item,
                     imageData: $imageData,
                     contentType: contentType,
-                    didTapDownload: download
+                    action: handleLargeButton
                 )
                 Spacer(minLength: 0)
             }
@@ -166,6 +166,17 @@ private extension HomeDetailView_MMP {
             case .failure:
                 break
             }
+        }
+    }
+
+    func handleLargeButton(action: DetailAction) {
+        switch action {
+        case .download:
+            Task {
+                await download()
+            }
+        case .share(let rect):
+            didTaspToShare(rect: rect)
         }
     }
 }

@@ -34,38 +34,11 @@ struct FavoritesView_MMP: View {
             VStack(spacing: 0) {
                 categoriesView
                     .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
-
-                VStack(spacing: 0) {
-                    if selectedMenu == .mods {
-                        searchAndFilerView
-                            .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
-                            .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
-                            .transition(.asymmetric(insertion: .opacity, removal: .identity))
-                    }
-                }
-                .animation(.default, value: selectedMenu)
                 contentList
             }
             .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
             .blur(radius: filterIsShowing ? 5 : 0)
         }
-        .presentModelWithUIKit(element: $filterIsShowing,
-                               presentationStyle: .overCurrentContext,
-                               transitionStyle: .crossDissolve,
-                               backgroundColor: .clear,
-                               content: {
-            BottomSheetView_MMP(
-                isShowing: $filterIsShowing,
-                isAppear: $isAppear,
-                content: FilterView_MMP(
-                    selectedCategories: $selectedCategories,
-                    filterIsShowing: $filterIsShowing,
-                    isAppear: $isAppear
-                )
-            )
-            .environment(\.managedObjectContext, coreDataStore.viewContext)
-//            .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
-        })
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
                 selectedCategories = categoriesMO[0]
@@ -80,20 +53,22 @@ struct FavoritesView_MMP: View {
             HomeListView_MMP<ModsMO>(
                 searchText: searchText,
                 contentType: .mods,
-                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
-                sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)],
+                predicate: favoritePredicate,
+                sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)],
                 isFavourite: true
             )
         case .items:
             HomeListView_MMP<ItemsMO>(
                 contentType: .items,
-                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                predicate: favoritePredicate,
+                sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)],
                 isFavourite: true
             )
         case .skins:
             SkinsListView_MMP<SkinsMO>(
                 contentType: .skins,
-                predicate: favoritePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                predicate: favoritePredicate,
+                sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)],
                 isFavourite: true
             )
         default: EmptyView()
@@ -108,21 +83,6 @@ private extension FavoritesView_MMP {
             ForEach(menus) { menu in
                 SectionButton(selectedType: $selectedMenu, type: menu)
             }
-        }
-    }
-    var searchAndFilerView: some View {
-        HStack(spacing: isIPad ? 24 : 12) {
-            SearchTextField_MMP(searchText: $searchText)
-
-            Button {
-                filterIsShowing.toggle()
-            } label: {
-                Image(.iconFilter)
-                    .resizable()
-                    .iosDeviceTypeFrameAspec_mmp(iOSWidth: 24, iOSHeight: 24, iPadWidth: 48, iPadHeight: 48)
-            }
-            .iosDeviceTypeFrameAspec_mmp(iOSWidth: 48, iOSHeight: 48, iPadWidth: 92, iPadHeight: 92)
-            .addRoundedModifier_MMP(radius: isIPad ? 16 : 8)
         }
     }
 }
