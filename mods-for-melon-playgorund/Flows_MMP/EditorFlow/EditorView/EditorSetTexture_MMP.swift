@@ -23,15 +23,7 @@ struct EditorSetTexture_MMP: View {
                 .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 12, iPadPadding: 24)
             uploadView
 
-            ProgressView(value: editorController_MMP.progress)
-                .progressViewStyle(
-                    BarProgressStyle_MMP(
-                        color: .c7636C9,
-                        bgColor: .gray,
-                        height: isIPad ? 12 : 6,
-                        cornerRadius: isIPad ? 24 : 12
-                    )
-                )
+            CustomSlider(sliderValue: $editorController_MMP.myMod.pixelValue, maxValue: 1000)
                 .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 20, iPadPadding: 40)
                 .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)
                 .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 12, iPadPadding: 24)
@@ -51,7 +43,7 @@ private extension EditorSetTexture_MMP {
                         iOS: .init(name: .sfProDisplay, style: .regular, size: 16),
                         iPad: .init(name: .sfProDisplay, style: .regular, size: 32)
                     )
-                Text(editorController_MMP.myMod.pixelValue ?? "")
+                Text(String(Int(editorController_MMP.myMod.pixelValue)))
                     .iosDeviceTypeFont_mmp(
                         iOS: .init(name: .sfProDisplay, style: .bold, size: 12),
                         iPad: .init(name: .sfProDisplay, style: .bold, size: 24)
@@ -84,4 +76,5 @@ private extension EditorSetTexture_MMP {
 
 #Preview {
     EditorSetTexture_MMP()
+        .environmentObject(EditorController_MMP(myMod: CoreDataMockService_MMP.getMyWorks(with: CoreDataMockService_MMP.preview)[0]))
 }

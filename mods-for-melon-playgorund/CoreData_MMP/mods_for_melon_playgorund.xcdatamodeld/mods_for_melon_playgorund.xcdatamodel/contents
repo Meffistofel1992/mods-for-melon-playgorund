@@ -14,7 +14,7 @@
         <attribute name="iconData" optional="YES" attributeType="Binary"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="pixelValue" optional="YES" attributeType="String"/>
+        <attribute name="pixelValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="widthValue" optional="YES" attributeType="String"/>
         <attribute name="xValue" optional="YES" attributeType="String"/>

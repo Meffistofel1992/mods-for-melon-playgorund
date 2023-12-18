@@ -25,7 +25,7 @@ extension MyWorks {
     @NSManaged public var yValue: String?
     @NSManaged public var heightValue: String?
     @NSManaged public var widthValue: String?
-    @NSManaged public var pixelValue: String?
+    @NSManaged public var pixelValue: Double
     @NSManaged public var canBeTaken: Bool
     @NSManaged public var canGlow: Bool
     @NSManaged public var canBurn: Bool

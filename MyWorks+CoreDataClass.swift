@@ -22,7 +22,7 @@ public class MyWorks: NSManagedObject {
         self.yValue = ""
         self.heightValue = ""
         self.widthValue = ""
-        self.pixelValue = ""
+        self.pixelValue = 0
         self.canBeTaken = false
         self.canGlow = false
         self.canBurn = false

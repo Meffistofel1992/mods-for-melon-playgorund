@@ -48,6 +48,7 @@
 		53B713B52B2DFE8500F10F56 /* SkinsListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */; };
 		53C2A2522B2F95A400376BD8 /* EditorListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C2A2512B2F95A400376BD8 /* EditorListRowView.swift */; };
 		53C2A2552B308C2700376BD8 /* HomeDetailCardView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C2A2542B308C2700376BD8 /* HomeDetailCardView_MMP.swift */; };
+		53C5589A2B30CC720051F342 /* CustomSlider_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C558992B30CC720051F342 /* CustomSlider_MMP.swift */; };
 		53ED788E2B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */; };
 		53ED788F2B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */; };
 		53ED78902B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */; };
@@ -201,6 +202,7 @@
 		53B713B42B2DFE8500F10F56 /* SkinsListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsListView_MMP.swift; sourceTree = "<group>"; };
 		53C2A2512B2F95A400376BD8 /* EditorListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorListRowView.swift; sourceTree = "<group>"; };
 		53C2A2542B308C2700376BD8 /* HomeDetailCardView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCardView_MMP.swift; sourceTree = "<group>"; };
+		53C558992B30CC720051F342 /* CustomSlider_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider_MMP.swift; sourceTree = "<group>"; };
 		53ED78822B28F8DE00952BA8 /* CategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78832B28F8DE00952BA8 /* SkinsMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SkinsMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		53ED78842B28F8DE00952BA8 /* EditorMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */,
 				5362C6662B2F1512000FD37B /* DropDown_MMP.swift */,
 				53EDB8412B2F65010009E0E5 /* PhotoPicker_MMP.swift */,
+				53C558992B30CC720051F342 /* CustomSlider_MMP.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				53FE80622B27972C00AAD9B6 /* CustomSheet_MMP.swift in Sources */,
 				53FE80762B279C6100AAD9B6 /* SlimLoggerConfig_MMP.swift in Sources */,
 				53FE808E2B279F6800AAD9B6 /* AppConstants_MMP.swift in Sources */,
+				53C5589A2B30CC720051F342 /* CustomSlider_MMP.swift in Sources */,
 				53FE80542B27972C00AAD9B6 /* DeviceFontModifier_MMP.swift in Sources */,
 				53FE804B2B27972C00AAD9B6 /* Data_MMP+Ext .swift in Sources */,
 				53FE80992B27A20200AAD9B6 /* Font_MMP+Ext.swift in Sources */,
