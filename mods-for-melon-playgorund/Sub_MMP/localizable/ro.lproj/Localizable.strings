@@ -1,0 +1,67 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"trialDetailText"="* Această perioadă de încercare se reînnoiește automat într-un abonament plătit și va continua să se reînnoiască automat până când îl anulați. * Trebuie să fiți abonat pentru a utiliza această aplicație. Fără conținut gratuit. * Plățile abonamentului vor fi taxate în contul tău iTunes la confirmarea achiziției. * Abonamentele se vor reînnoi automat, iar plata va fi taxată în contul tău iTunes, cu excepția cazului în care reînnoirea automată este dezactivată cu cel puțin 24 de ore înainte de sfârșitul perioadei curente. Costul reînnoirii depinde de Planul de abonament. Planurile noastre standard de abonament sunt: ​​* Abonament pe o săptămână (4,99 USD) Pentru alte valute, prețul corespunde aceluiași nivel de preț din Matricea de prețuri App Store. * Abonamentul cu o perioadă de probă gratuită se va reînnoi automat la un abonament plătit. Puteți anula sau gestiona reînnoirea automată a perioadei de încercare gratuită din Setările contului după cumpărare. Anularea va intra în vigoare la 24 de ore după ultima zi a perioadei curente de abonament și veți fi retrogradat la serviciul gratuit. * Vă rugăm să rețineți: orice parte neutilizată a unei perioade de probă gratuită de 3 zile (dacă este oferită) va fi renunțată la achiziționarea unui abonament premium în timpul perioadei de probă gratuită. Pentru mai multe informații, vă rugăm să consultați Politica noastră de confidențialitate și Termenii de utilizare.";
+/**/
+"continueText"="CONTINUA";
+/**/
+"iOSStart3daysTitleID"="ÎNCEPEȚI 3 ZILE GRATUIT ȘI 5,99 USD/SĂPTĂMÂNĂ";
+
+/**/
+"LoadingID"="SE ÎNCARCĂ";
+
+/**/
+"PrivacyID"="Politica de confidențialitate";
+
+/**/
+"restore"="Restabili";
+
+/**/
+"TermsID"="Termeni de utilizare";
+
+/**/
+"ThirdStageTitle1"="OBȚINEȚI LOCAȚIA DE ARMURĂ A DEITĂȚII FIEROSE";
+/**/
+"ThirdStageTitle2"="GĂSIȚI 5 ABILITĂȚI ALE ÎNȚEPȚIILOR ȘI PĂDURII KOROK";
+/**/
+"ThirdStageTitle3"="TOATE Peșterile și Fântânile de pe HARTĂ";
+/**/
+"ThirdStageSubTitle1"="TOATE CELE 152 DE LANTARE DE PE HARTA INTERACTIVĂ";
+/**/
+"ThirdStageSubTitle2"="COLECTAȚI TOATE SETURILE DE ARMUTURĂ PE LOCAȚII";
+
+/**/
+"TextTitle1"="ALEGEȚI-VĂ SETUL DE ARMUTURĂ";
+
+/**/
+"TextTitle2"="ALEGE CAPACITATEA DORINTA";
+
+/**/
+"cell1_1Text"="Abilitatea amiibo";
+
+/**/
+"cell1_2Text"="Capacitatea de fuzibile";
+
+/**/
+"cell1_3Text"="Abilitatea de ascensiune";
+
+/**/
+"cell1_4Text"="Abilitatea de a reaminti";
+
+/**/
+"cell1_5Text"="Capacitatea camerei";
+
+/**/
+
+"connectivityIssue"="Problemă de conectivitate";
+"connectivityAlert"="Conexiunea la internet pare să fie offline ☹️";
+
+
+
+

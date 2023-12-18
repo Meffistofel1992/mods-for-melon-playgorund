@@ -1,0 +1,187 @@
+{
+  "identifier" : "0867DCBB",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "7694750D",
+      "localizations" : [
+
+      ],
+      "name" : "subscribes",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "8B7E448F",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "main_sub",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "main",
+          "subscriptionGroupID" : "7694750D",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "97906005",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerOne",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "4435F9AA",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockOne",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "unlock1",
+          "subscriptionGroupID" : "97906005",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "8BD3E525",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerThree",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "DC23061F",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockThree",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "unlock3",
+          "subscriptionGroupID" : "8BD3E525",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "025285A5",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerTwo",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "A75EEDED",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockTwo",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "unlock2",
+          "subscriptionGroupID" : "025285A5",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

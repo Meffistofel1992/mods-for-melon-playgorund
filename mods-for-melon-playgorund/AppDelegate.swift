@@ -28,12 +28,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("Error setting up AVAudioSession: \(error.localizedDescription)")
         }
 
-        ThirdPartyServicesManager_MMP.shared.initializeAdjust_MMP()
         ThirdPartyServicesManager_MMP.shared.initializePushwoosh_MMP(delegate: self)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-            ThirdPartyServicesManager_MMP.shared.makeATT_MMP()
-        }
 
         return true
     }

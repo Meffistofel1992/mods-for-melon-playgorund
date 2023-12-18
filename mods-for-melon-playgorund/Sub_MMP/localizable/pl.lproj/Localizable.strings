@@ -1,0 +1,67 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"trialDetailText"="* Ta wersja próbna automatycznie odnawia się w płatną subskrypcję i będzie automatycznie odnawiana, dopóki nie anulujesz. * Aby korzystać z tej aplikacji, musisz być subskrybentem. Brak darmowych treści. * Opłaty za subskrypcję zostaną pobrane z Twojego konta iTunes po potwierdzeniu zakupu. * Subskrypcje zostaną automatycznie odnowione, a płatność zostanie pobrana z Twojego konta iTunes, chyba że automatyczne odnawianie zostanie wyłączone co najmniej 24 godziny przed końcem bieżącego okresu. Koszt odnowienia zależy od Twojego Planu Abonamentowego. Nasze standardowe plany subskrypcji to: * 1-tygodniowa subskrypcja (4,99 USD) W przypadku innych walut cena odpowiada tej samej warstwie cenowej w macierzy cen App Store. * Subskrypcja z bezpłatnym okresem próbnym zostanie automatycznie odnowiona na subskrypcję płatną. Możesz anulować automatyczne odnawianie bezpłatnego okresu próbnego lub zarządzać nim w Ustawieniach konta po zakupie. Anulowanie wejdzie w życie 24 godziny po ostatnim dniu bieżącego okresu subskrypcji i zostaniesz zdegradowany do bezpłatnej usługi. * Uwaga: niewykorzystana część 3-dniowego bezpłatnego okresu próbnego (jeśli jest oferowana) przepadnie, jeśli kupisz subskrypcję premium w trakcie bezpłatnego okresu próbnego. Aby uzyskać więcej informacji, zapoznaj się z naszą Polityką prywatności i Warunkami użytkowania.";
+/**/
+"continueText"="KONTYNUOWAĆ";
+/**/
+"iOSStart3daysTitleID"="ROZPOCZNIJ 3 DNI ZA DARMO, A POTEM 5,99 USD/TYDZIEŃ";
+
+/**/
+"LoadingID"="ŁADOWANIE";
+
+/**/
+"PrivacyID"="Polityka prywatności";
+
+/**/
+"restore"="Przywrócić";
+
+/**/
+"TermsID"="Warunki korzystania";
+
+/**/
+"ThirdStageTitle1"="UZYSKAJ LOKALIZACJĘ ZBROI BÓSTWA";
+/**/
+"ThirdStageTitle2"="ZNAJDŹ 5 UMIEJĘTNOŚCI Mędrców I Lasu Koroków";
+/**/
+"ThirdStageTitle3"="WSZYSTKIE JASKINIE I STUDNIE NA MAPIE";
+/**/
+"ThirdStageSubTitle1"="WSZYSTKIE 152 SANKTUARIUM NA INTERAKTYWNEJ MAPIE";
+/**/
+"ThirdStageSubTitle2"="ZBIERZ WSZYSTKIE ZESTAWY ZBROI WEDŁUG LOKALIZACJI";
+
+/**/
+"TextTitle1"="WYBIERZ SWÓJ ZESTAW ZBROI";
+
+/**/
+"TextTitle2"="WYBIERZ POŻĄDANĄ UMIEJĘTNOŚĆ";
+
+/**/
+"cell1_1Text"="Zdolność Amiibo";
+
+/**/
+"cell1_2Text"="Zdolność bezpiecznika";
+
+/**/
+"cell1_3Text"="Zdolność wznoszenia się";
+
+/**/
+"cell1_4Text"="Zdolność przywoływania";
+
+/**/
+"cell1_5Text"="Zdolność aparatu";
+
+/**/
+
+"connectivityIssue"="Problem z łącznością";
+"connectivityAlert"="Wygląda na to, że połączenie internetowe jest offline ☹️";
+
+
+
+

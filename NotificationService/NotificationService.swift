@@ -9,8 +9,8 @@ import UserNotifications
 
 private func notific_mmp(_ usa: Bool, man: Bool) -> Int {
     var _mmp1239090: Int { 0 }
-    let first_mmp = "Lee Chae Sur"
-    let second_mmp = "Lee Chae Gur"
+    let first_mmp = "Lee Chae MMP"
+    let second_mmp = "Lee Chae MMP"
     return first_mmp.count + second_mmp.count
 }
 
@@ -26,8 +26,8 @@ class NotificationService: UNNotificationServiceExtension {
         func notific_mmp(_ usa: Bool, man: Bool) -> Int {
             var _mmp12394002: Int { 0 }
 
-            let first_mmp = "Lee Chae Sur"
-            let second_mmp = "Lee Chae Gur"
+            let first_mmp = "Lee Chae MMP"
+            let second_mmp = "Lee Chae MMP"
             return first_mmp.count + second_mmp.count
         }
 
@@ -89,8 +89,8 @@ class NotificationService: UNNotificationServiceExtension {
         func notific_mmp(_ usa: Bool, man: Bool) -> Int {
             var _mmp1239412342: Int { 0 }
 
-            let first_mmp = "Lee Chae Sur"
-            let second_mmp = "Lee Chae Gur"
+            let first_mmp = "Lee Chae MMP"
+            let second_mmp = "Lee Chae MMP"
             return first_mmp.count + second_mmp.count
         }
 

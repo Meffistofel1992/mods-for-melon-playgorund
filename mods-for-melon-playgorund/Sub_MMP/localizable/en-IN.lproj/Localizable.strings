@@ -1,0 +1,105 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"trialDetailText" = "* This trial automatically renews into a paid subscription and will continue to automatically renew until you cancel. * You need to be subscribed to use this app. No free content. * Subscription payments will be charged to your iTunes account at confirmation of your purchase. * Subscriptions will automatically renew and payment will be charged to your iTunes account unless auto-renew is turned off at least 24 hours prior to the end of the current period. The cost of the renewal depends on your Subscription Plan. Our standard Subscription Plans are: * 1-week Subscription ($4.99) For other currencies, the price corresponds to the same price tier on the App Store Pricing Matrix. * Subscription with a free trial period will automatically renew to a paid subscription. You can cancel or manage your free trial’s auto-renewal in your Account Settings after purchase. The cancellation will take effect 24-hours after the last day of the current subscription period and you will be downgraded to the free service. * Please note: any unused portion of a free trial period of 3 days(if offered) will be forfeited when you purchase a premium subscription during the free trial period. Please, for more information see our Privacy Policy and Terms of Use.";
+/**/
+"continueText" = "CONTINUE";
+/**/
+"iOSStart3daysTitleID" = "START 3-DAYS FOR FREE \nTHEN $4.99/WEEK";
+
+/**/
+"LoadingID" = "LOADING";
+
+/**/
+"PrivacyID" = "Privacy Policy";
+
+/**/
+"restore" = "Restore";
+
+/**/
+"TermsID" = "Terms of Use";
+
+/**/
+"ThirdStageTitle1" = "TEXT TEXT TEXT TEXT TEXT TEXT";
+/**/
+"ThirdStageTitle2" = "TEXT TEXT TEXT TEXT TEXT TEXT";
+/**/
+"ThirdStageTitle3" = "TEXT TEXT TEXT TEXT TEXT TEXT";
+/**/
+"ThirdStageSubTitle1" = "text text text text text text text";
+/**/
+"ThirdStageSubTitle2" = "text text text text text text text";
+/**/
+"ThirdStageSubTitle3" = "text text text text text text text";
+
+/**/
+"TextTitle1" = "TEXT TEXT TEXT \n TEXT TEXT TEXT TEXT";
+
+/**/
+"TextTitle2" = "TEXT TEXT TEXT \n TEXT TEXT TEXT TEXT";
+
+/**/
+"TextTitle3" = "TEXT TEXT TEXT TEXT \nTEXT TEXT TEXT TEXT ";
+
+/**/
+"cell1_1Text" = "CARD NAME";
+
+/**/
+"cell1_2Text" = "CARD NAME";
+
+/**/
+"cell1_3Text" = "CARD NAME";
+
+/**/
+"cell1_4Text" = "CARD NAME";
+
+/**/
+"cell1_5Text" = "CARD NAME";
+
+/**/
+"cell1_6Text" = "CARD NAME";
+
+/**/
+"cell1_7Text" = "CARD NAME";
+
+/**/
+"cell1_8Text" = "CARD NAME";
+
+/**/
+"cell2_1Text" = "CARD NAME";
+
+/**/
+"cell2_2Text" = "CARD NAME";
+
+/**/
+"cell2_3Text" = "CARD NAME";
+
+/**/
+"cell2_4Text" = "CARD NAME";
+
+/**/
+"cell2_5Text" = "CARD NAME";
+
+/**/
+"cell2_6Text" = "CARD NAME";
+
+/**/
+"cell2_7Text" = "CARD NAME";
+
+/**/
+"cell2_8Text" = "CARD NAME";
+
+/**/
+
+"connectivityIssue" = "Connectivity Issue";
+"connectivityAlert" = "Internet connection appears to be offline ☹️";
+
+
+
+
