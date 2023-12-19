@@ -10,4 +10,5 @@ import FlowStacks
 
 final class MainNavigationStore_MMP: ObservableObject {
     @Published var routes: Routes<MainRoute_MMP> = [.root(.tabView, embedInNavigationView: true)]
+    @Published var activeTab: Tab = .home
 }
