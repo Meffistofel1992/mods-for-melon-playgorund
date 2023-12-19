@@ -13,8 +13,9 @@ struct TabFlowView: View {
 
     // MARK: - Wrapped Properties
     @Environment(\.managedObjectContext) private var moc
-    @InjectedObject var navigationStore: MainNavigationStore_MMP
+
     @InjectedObject private var homeController: HomeController
+    @InjectedObject private var navigationStore: MainNavigationStore_MMP
 
     init() {
         UITabBar.appearance().isHidden = true
@@ -50,13 +51,11 @@ struct TabFlowView: View {
             SettingsView_MMP()
                 .tag(Tab.settings)
         }
-        .environmentObject(navigationStore)
-        .safeAreaInset(edge: .bottom) {
-            CustomTabBar()
-                .environmentObject(navigationStore)
-        }
         .fullScreenCover(item: $navigationStore.productType) { item in
             SubscriptionView(SubViewModel_MMP: SubViewModel_MMP(productType: item))
+        }
+        .safeAreaInset(edge: .bottom) {
+            CustomTabBar()
         }
         .overlay(alignment: .bottom) {
             VStack {
@@ -74,6 +73,7 @@ struct TabFlowView: View {
             }
             .animation(.default, value: homeController.filterIsShowing)
         }
+
     }
 }
 
@@ -91,6 +91,6 @@ extension MMP_View {
 
 
 #Preview {
-    TabFlowView()
+    ContentView()
         .environmentObject(IAPManager_MMP())
 }

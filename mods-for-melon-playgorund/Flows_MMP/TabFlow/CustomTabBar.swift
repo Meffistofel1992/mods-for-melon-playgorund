@@ -1,5 +1,3 @@
-//
-//  CustomTabBar.swift
 //  mods-for-melon-playgorund
 //
 //  Created by Александр Ковалев on 19.12.2023.
