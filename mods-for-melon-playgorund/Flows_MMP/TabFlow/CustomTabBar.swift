@@ -112,7 +112,7 @@ struct TabItem: View {
 enum Tab: String, CaseIterable {
     case home = "Home"
     case editor = "Editor"
-    case favourites = "Favourites"
+    case favourites = "Favorites"
     case settings = "Settings"
 
     var image: ImageResource {

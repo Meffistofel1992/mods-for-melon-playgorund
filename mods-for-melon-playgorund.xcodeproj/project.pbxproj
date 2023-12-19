@@ -39,6 +39,8 @@
 		53793E032B2CC4B100FC161E /* HomeDetailView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */; };
 		53793E052B2CC70500FC161E /* RectangleButton_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */; };
 		53793E082B2CCE9A00FC161E /* HomeListView_MMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */; };
+		539627612B31FFB00012BF3A /* Binding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539627602B31FFB00012BF3A /* Binding+Ext.swift */; };
+		539627632B3203270012BF3A /* TempEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539627622B3203270012BF3A /* TempEditorModel.swift */; };
 		53AA0C9D2B29060500382D92 /* TabView_MMP+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */; };
 		53AA0CA32B290ACB00382D92 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */; };
 		53AA0CA42B290ACB00382D92 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */; };
@@ -215,6 +217,8 @@
 		53793E022B2CC4B100FC161E /* HomeDetailView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView_MMP.swift; sourceTree = "<group>"; };
 		53793E042B2CC70500FC161E /* RectangleButton_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton_MMP.swift; sourceTree = "<group>"; };
 		53793E072B2CCE9A00FC161E /* HomeListView_MMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView_MMP.swift; sourceTree = "<group>"; };
+		539627602B31FFB00012BF3A /* Binding+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Ext.swift"; sourceTree = "<group>"; };
+		539627622B3203270012BF3A /* TempEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempEditorModel.swift; sourceTree = "<group>"; };
 		53AA0C9C2B29060500382D92 /* TabView_MMP+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabView_MMP+Appearance.swift"; sourceTree = "<group>"; };
 		53AA0C9E2B290ACB00382D92 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		53AA0C9F2B290ACB00382D92 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -579,6 +583,7 @@
 			children = (
 				53ED789B2B28F9C300952BA8 /* LocalModel_MMP.swift */,
 				5362C6542B2EF4F1000FD37B /* EditorContentType.swift */,
+				539627622B3203270012BF3A /* TempEditorModel.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 				5362C6662B2F1512000FD37B /* DropDown_MMP.swift */,
 				53EDB8412B2F65010009E0E5 /* PhotoPicker_MMP.swift */,
 				53C558992B30CC720051F342 /* CustomSlider_MMP.swift */,
+				539627602B31FFB00012BF3A /* Binding+Ext.swift */,
 			);
 			path = Extension_MMP;
 			sourceTree = "<group>";
@@ -1095,6 +1101,7 @@
 				53FE80602B27972C00AAD9B6 /* CustomSheet_MMP+Modifier.swift in Sources */,
 				533285EB2B2F2E6800CD087D /* MyWorks+CoreDataProperties.swift in Sources */,
 				53FE80932B27A01A00AAD9B6 /* HomeDataAPI_MMP.swift in Sources */,
+				539627632B3203270012BF3A /* TempEditorModel.swift in Sources */,
 				53FE80512B27972C00AAD9B6 /* DeviceFrameAspectModifier_MMP.swift in Sources */,
 				53D7EABE2B30F516005534EB /* Helpers_MMP.swift in Sources */,
 				53FE80502B27972C00AAD9B6 /* CornerRadius_MMP+Corner.swift in Sources */,
@@ -1114,6 +1121,7 @@
 				53FE80762B279C6100AAD9B6 /* SlimLoggerConfig_MMP.swift in Sources */,
 				53FE808E2B279F6800AAD9B6 /* AppConstants_MMP.swift in Sources */,
 				53C5589A2B30CC720051F342 /* CustomSlider_MMP.swift in Sources */,
+				539627612B31FFB00012BF3A /* Binding+Ext.swift in Sources */,
 				53FE80542B27972C00AAD9B6 /* DeviceFontModifier_MMP.swift in Sources */,
 				53FE804B2B27972C00AAD9B6 /* Data_MMP+Ext .swift in Sources */,
 				53D7EAC02B30F516005534EB /* validateLocalizable.swift in Sources */,
@@ -1453,6 +1461,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1481,6 +1490,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save the image";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

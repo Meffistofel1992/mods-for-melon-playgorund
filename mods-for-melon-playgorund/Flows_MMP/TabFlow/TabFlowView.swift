@@ -54,9 +54,10 @@ struct TabFlowView: View {
         .fullScreenCover(item: $navigationStore.productType) { item in
             SubscriptionView(SubViewModel_MMP: SubViewModel_MMP(productType: item))
         }
-        .safeAreaInset(edge: .bottom) {
+        .overlay(alignment: .bottom) {
             CustomTabBar()
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .overlay(alignment: .bottom) {
             VStack {
                 if homeController.filterIsShowing {
@@ -73,7 +74,6 @@ struct TabFlowView: View {
             }
             .animation(.default, value: homeController.filterIsShowing)
         }
-
     }
 }
 

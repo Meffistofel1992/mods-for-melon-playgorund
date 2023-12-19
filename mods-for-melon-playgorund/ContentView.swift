@@ -27,6 +27,10 @@ struct ContentView: View {
                 sheetType = type
             }
         }
+        .task {
+            try? await Task.sleep_MMP(seconds: 1)
+            ThirdPartyServicesManager_MMP.shared.makeATT_MMP()
+        }
     }
 }
 
