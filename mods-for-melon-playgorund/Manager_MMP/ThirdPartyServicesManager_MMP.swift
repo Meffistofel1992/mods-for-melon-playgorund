@@ -18,6 +18,10 @@ class ThirdPartyServicesManager_MMP {
 
     static let shared = ThirdPartyServicesManager_MMP()
 
+    private init() {
+        initializeAdjust_MMP()
+    }
+
     func initializeAdjust_MMP() {
         var _MMP99: String { "_MMP99" }
         var _MMP10: Int { 0 }
