@@ -15,10 +15,12 @@ struct HomeDetailView_MMP: View {
     @Environment(\.createSheet_mmp) private var createSheet_mmp
     @EnvironmentObject private var navigator: FlowNavigator<MainRoute_MMP>
 
+    @Injected private var iapManager: IAPManager_MMP
     @Injected private var saveManager: SaverManager_MMP
     @Injected private var networkManager: NetworkMonitoringManager_MMP
     @Injected private var coreDataStore: CoreDataStore_MMP
     @Injected private var networkingManager: NetworkMonitoringManager_MMP
+    @Injected private var navigationStore: MainNavigationStore_MMP
 
     @ObservedObject var item: ParentMO
 
@@ -48,6 +50,8 @@ struct HomeDetailView_MMP: View {
             .ignoresSafeArea(edges: .bottom)
         }
         .onReceive(saveManager.didDownlaod_MMP, perform: presentDownloadSuccessPopUp)
+        .onReceive(iapManager.subscribedSuccess, perform: hangleSuccessSub)
+
     }
 }
 
@@ -75,7 +79,22 @@ private extension HomeDetailView_MMP {
                     .iosDeviceTypeFrame_mmp(iOSWidth: 38, iOSHeight: 38, iPadWidth: 76, iPadHeight: 76)
 
                     RectangleButton_MMP(image: .iconPencil) {
-                        didTapToEditor()
+                        if !iapManager.boughtProducts.contains(.funcType) {
+                            navigationStore.productType = .funcType
+                        } else {
+                            didTapToEditor()
+                        }
+                    }
+                    .opacity(!iapManager.boughtProducts.contains(.funcType) ? 0.4 : 1)
+                    .overlay(alignment: .topTrailing) {
+                        if !iapManager.boughtProducts.contains(.funcType) {
+                            let sizeIPad = Utilities_MMP.shared.heightAspectRatioDevice_MMP(height: 40)
+
+                            Image(.iconLock)
+                                .resizable()
+                                .iosDeviceTypeFrame_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: sizeIPad, iPadHeight: sizeIPad)
+                                .offset(x: isIPad ? 20 : 10, y: isIPad ? -16 : -8)
+                        }
                     }
                 case .skins:
                     GeometryReader { geo in
@@ -177,6 +196,16 @@ private extension HomeDetailView_MMP {
             }
         case .share(let rect):
             didTaspToShare(rect: rect)
+        }
+    }
+
+    private func hangleSuccessSub(_ sub: ProductType_MMP) {
+        navigationStore.productType = nil
+
+        switch sub {
+        case .funcType:
+            didTapToEditor()
+        default: break
         }
     }
 }

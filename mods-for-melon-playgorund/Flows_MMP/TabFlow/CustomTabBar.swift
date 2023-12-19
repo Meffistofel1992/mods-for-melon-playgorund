@@ -48,7 +48,7 @@ struct CustomTabBar: View {
         navigationStore.productType = nil
 
         switch sub {
-        case .funcType:
+        case .funcType where navigationStore.activeTab == .editor:
             navigationStore.activeTab = .editor
         default: break
         }

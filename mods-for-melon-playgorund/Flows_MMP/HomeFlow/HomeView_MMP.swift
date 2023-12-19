@@ -71,6 +71,7 @@ struct HomeView_MMP: View {
                 homeController.selectedMenu = .skins
             case .otherType:
                 homeController.selectedCategories = categoriesMO[0]
+                homeController.filterIsShowing = false
             default: break
             }
         })
