@@ -13,7 +13,7 @@ private var _MMP12435: Int { 0 }
 enum Configurations_MMP {
     static let adjustToken = "hfg1t85ufqbk"
 
-    static let pushwooshToken = "12117-6D63D"
+    static let pushwooshToken = "5CB43-CB5AC"
     static let pushwooshAppName = "secondpush"
 
     static let termsLink: String = "https://www.google.com"
