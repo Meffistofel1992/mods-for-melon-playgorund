@@ -81,6 +81,7 @@ private extension EditorMistTemplates_MMP {
                         iOSHeight: height,
                         iPadHeight: height
                     )
+                    .clipShape(RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
                     .iosDeviceTypePadding_MMP(edge: .vertical, iOSPadding: 15, iPadPadding: 30)
                     .frame(maxWidth: .infinity)
             }
