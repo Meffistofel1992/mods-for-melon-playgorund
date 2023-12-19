@@ -12,11 +12,11 @@ struct SectionButton: View {
     @Binding var selectedType: ContentType_MMP
     let type: ContentType_MMP
 
+    var didTap: EmptyClosure_MMP
+
     var body: some View {
         Button {
-            if selectedType != type {
-                selectedType = type
-            }
+            didTap()
         } label: {
             Text(type.rawValue)
                 .frame(maxWidth: .infinity)

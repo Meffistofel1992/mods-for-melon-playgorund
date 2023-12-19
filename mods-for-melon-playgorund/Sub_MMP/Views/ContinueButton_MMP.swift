@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ContinueButton: View {
     
-    @EnvironmentObject var iapViewModel: IAPManager_MMP
-    
+    @Injected private var iapManager: IAPManager_MMP
+
     @ObservedObject var SubViewModel_MMP: SubViewModel_MMP
     
     @State private var isScaled: Bool = false
@@ -19,7 +20,7 @@ struct ContinueButton: View {
         Button(action: {
             withAnimation(Animation.easeIn(duration: 0.5)) {
                 if SubViewModel_MMP.currentStage == .third {
-                    iapViewModel.purchaseProduct(of: SubViewModel_MMP.productType)
+                    iapManager.purchaseProduct(of: SubViewModel_MMP.productType)
                 } else {
                     SubViewModel_MMP.continueButtonAction_MMP()
                 }
@@ -32,7 +33,7 @@ struct ContinueButton: View {
             }
             .cornerRadius(16)
         })
-        .disabled(iapViewModel.isPurchasing)
+        .disabled(iapManager.isPurchasing)
         .font(Font.custom(Configurations_MMP.MMP_getSubFontName(), size: 25))
         .foregroundColor(.white)
         .scaleEffect(isScaled ? 1 : 0.75)

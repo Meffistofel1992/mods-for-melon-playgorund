@@ -15,6 +15,9 @@ struct FavoritesView_MMP: View {
     // MARK: - Wrapped Properties
 
     @Injected private var coreDataStore: CoreDataStore_MMP
+    @Injected private var navigationStore: MainNavigationStore_MMP
+
+    @InjectedObject private var iapManager: IAPManager_MMP
 
     @FetchRequest<CategoriesMO>(fetchRequest: .categories())
     private var categoriesMO
@@ -42,6 +45,15 @@ struct FavoritesView_MMP: View {
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
                 selectedCategories = categoriesMO[0]
+            }
+        })
+        .onReceive(iapManager.subscribedSuccess, perform: { type in
+            navigationStore.productType = nil
+
+            switch type {
+            case .contentType where navigationStore.activeTab == .favourites:
+                selectedMenu = .skins
+            default: break
             }
         })
     }
@@ -80,8 +92,29 @@ struct FavoritesView_MMP: View {
 private extension FavoritesView_MMP {
     var categoriesView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
+            let isNeedSub = !iapManager.boughtProducts.contains(.contentType)
+
             ForEach(menus) { menu in
-                SectionButton(selectedType: $selectedMenu, type: menu)
+                SectionButton(selectedType: $selectedMenu, type: menu) {
+                    if isNeedSub && menu == .skins {
+                        navigationStore.productType = .contentType
+                        return
+                    }
+                    if selectedMenu != menu {
+                        selectedMenu = menu
+                    }
+                }
+                .opacity(isNeedSub && menu == .skins ? 0.5 : 1)
+                .overlay(alignment: .topTrailing) {
+                    if isNeedSub && menu == .skins {
+                        let sizeIPad = Utilities_MMP.shared.heightAspectRatioDevice_MMP(height: 40)
+
+                        Image(.iconLock)
+                            .resizable()
+                            .iosDeviceTypeFrame_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: sizeIPad, iPadHeight: sizeIPad)
+                            .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 3, iPadPadding: 6)
+                    }
+                }
             }
         }
     }

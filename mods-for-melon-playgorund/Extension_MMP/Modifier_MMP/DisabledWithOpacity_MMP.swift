@@ -10,16 +10,17 @@ import SwiftUI
 struct DisabledCombineWithOpacity_MMP: ViewModifier {
 
     let disabled: Bool
+    let disabledOpacity: CGFloat
 
     func body(content: Content) -> some View {
          content
             .disabled(disabled)
-            .opacity(disabled ? 0.4 : 1)
+            .opacity(disabled ? disabledOpacity : 1)
     }
 }
 
 extension View {
-    func disableWithOpacity_MMP(_ disabled: Bool) -> some View {
-        modifier(DisabledCombineWithOpacity_MMP(disabled: disabled))
+    func disableWithOpacity_MMP(_ disabled: Bool, disabledOpacity: CGFloat = 0.4) -> some View {
+        modifier(DisabledCombineWithOpacity_MMP(disabled: disabled, disabledOpacity: disabledOpacity))
     }
 }

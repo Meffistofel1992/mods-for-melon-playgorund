@@ -7,12 +7,13 @@
 
 import SwiftUI
 import AVFoundation
+import Resolver
 
 struct SubscriptionView: View {
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var iapViewModel: IAPManager_MMP
-    
+    @InjectedObject private var iapManager: IAPManager_MMP
+
     @StateObject var SubViewModel_MMP: SubViewModel_MMP
     
     @State private var player = AVQueuePlayer()
@@ -40,12 +41,12 @@ struct SubscriptionView: View {
                 }
             }
             .onAppear {
-                SubViewModel_MMP.updateProductPrice_MMP(with: iapViewModel.getPrice(of: SubViewModel_MMP.productType))
-                if !iapViewModel.error.isEmpty {
+                SubViewModel_MMP.updateProductPrice_MMP(with: iapManager.getPrice(of: SubViewModel_MMP.productType))
+                if !iapManager.error.isEmpty {
                     showError = true
                 }
             }
-            .onChange(of: iapViewModel.error, perform: { newValue in
+            .onChange(of: iapManager.error, perform: { newValue in
                 if !newValue.isEmpty {
                     showError = true
                 }
@@ -53,12 +54,12 @@ struct SubscriptionView: View {
             .alert("", isPresented: $showError, actions: {
                 Button(action: {
                     showError = false
-                    iapViewModel.resetError()
+                    iapManager.resetError()
                 }, label: {
                     Text("OK")
                 })
             }, message: {
-                Text(iapViewModel.error)
+                Text(iapManager.error)
             })
         }
         .ignoresSafeArea()
@@ -81,7 +82,7 @@ struct SubscriptionView: View {
                 }
                 Spacer()
                 Button(action: {
-                    iapViewModel.restore()
+                    iapManager.restore()
                 }, label: {
                     Text(NSLocalizedString("restore", comment: ""))
                 })

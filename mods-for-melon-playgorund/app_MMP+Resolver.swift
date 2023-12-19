@@ -16,5 +16,8 @@ extension Resolver: ResolverRegistering {
         register { SaverManager_MMP() }.scope(.application)
         register { Dropbox_MMP() }.scope(.application)
         register { HomeDataAPI_MMP() }.scope(.application)
+        register { IAPManager_MMP() }.scope(.application)
+        register { HomeController() }.scope(.application)
+        register { MainNavigationStore_MMP() }.scope(.application)
     }
 }

@@ -13,9 +13,8 @@ struct TabFlowView: View {
 
     // MARK: - Wrapped Properties
     @Environment(\.managedObjectContext) private var moc
-    @StateObject private var navigationStore: MainNavigationStore_MMP = .init()
-
-    @State private var activeTab: Tab = .home
+    @InjectedObject var navigationStore: MainNavigationStore_MMP
+    @InjectedObject private var homeController: HomeController
 
     init() {
         UITabBar.appearance().isHidden = true
@@ -41,7 +40,7 @@ struct TabFlowView: View {
     }
 
     var tabView: some View {
-        TabView(selection: $activeTab) {
+        TabView(selection: $navigationStore.activeTab) {
             HomeView_MMP()
                 .tag(Tab.home)
             EditorHomeView_MMP()
@@ -51,12 +50,29 @@ struct TabFlowView: View {
             SettingsView_MMP()
                 .tag(Tab.settings)
         }
+        .environmentObject(navigationStore)
         .safeAreaInset(edge: .bottom) {
-            CustomTabBar(activeTab: $activeTab)
+            CustomTabBar()
                 .environmentObject(navigationStore)
         }
         .fullScreenCover(item: $navigationStore.productType) { item in
             SubscriptionView(SubViewModel_MMP: SubViewModel_MMP(productType: item))
+        }
+        .overlay(alignment: .bottom) {
+            VStack {
+                if homeController.filterIsShowing {
+                    BottomSheetView_MMP(
+                        isShowing: $homeController.filterIsShowing,
+                        isAppear: $homeController.isAppear,
+                        content: FilterView_MMP(
+                            selectedCategories: $homeController.selectedCategories,
+                            filterIsShowing: $homeController.filterIsShowing,
+                            isAppear: $homeController.isAppear
+                        )
+                    )
+                }
+            }
+            .animation(.default, value: homeController.filterIsShowing)
         }
     }
 }

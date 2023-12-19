@@ -403,49 +403,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE"
+            uuid = "23728F6D-E949-40F1-9B59-8F7658475C19"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
+            filePath = "mods-for-melon-playgorund/Extension_MMP/FilterView_MMP.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "downloadingStream_MMP()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE - 557694aabc1759fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.downloadingStream_MMP() async -&gt; ()"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "216">
-               </Location>
-               <Location
-                  uuid = "D0B816D4-BC3E-4EC7-AA3B-F1EC0E940EAE - bce6d1d389c2bbfa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for mods_for_melon_playgorund.SplashScreen_MMP.downloadingStream_MMP() async -&gt; ()"
-                  moduleName = "mods-for-melon-playgorund"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksandrkovalev/Documents/Noname/Melman/mods-for-melon-playgorund/mods-for-melon-playgorund/Flows_MMP/SplashScreen_MMP.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D8D1E31-2E3C-41BC-9DC1-69706C1D7700"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/TabFlow/TabFlowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "tabView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8C2356B-340A-481C-BF24-6F9AA3F29858"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Extension_MMP/FilterView_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "965F7F4D-0C24-424D-9588-E71B33276D87"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mods-for-melon-playgorund/Flows_MMP/HomeFlow/HomeView_MMP.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "categoriesView"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

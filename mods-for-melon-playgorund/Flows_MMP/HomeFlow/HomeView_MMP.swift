@@ -8,8 +8,19 @@
 
 import SwiftUI
 import Resolver
+import FlowStacks
 
 // MARK: - HomeView
+
+class HomeController: ObservableObject {
+    @Published var selectedCategories: CategoriesMO?
+    @Published var searchText: String = ""
+
+    @Published var menus: [ContentType_MMP] = ContentType_MMP.home
+    @Published var selectedMenu: ContentType_MMP = .mods
+    @Published var filterIsShowing: Bool = false
+    @Published var isAppear: Bool = false
+}
 
 struct HomeView_MMP: View {
 
@@ -17,17 +28,12 @@ struct HomeView_MMP: View {
 
     @Injected private var coreDataStore: CoreDataStore_MMP
     @Injected private var homApiManager: HomeDataAPI_MMP
+    @Injected private var navigationStore: MainNavigationStore_MMP
+    @InjectedObject private var iapManager: IAPManager_MMP
+    @InjectedObject private var homeController: HomeController
 
     @FetchRequest<CategoriesMO>(fetchRequest: .categories())
     private var categoriesMO
-
-    @State private var selectedCategories: CategoriesMO?
-    @State private var searchText: String = ""
-
-    @State private var menus: [ContentType_MMP] = ContentType_MMP.home
-    @State private var selectedMenu: ContentType_MMP = .mods
-    @State private var filterIsShowing: Bool = false
-    @State private var isAppear: Bool = false
 
     // MARK: - body View
 
@@ -38,55 +44,50 @@ struct HomeView_MMP: View {
                     .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
 
                 VStack(spacing: 0) {
-                    if selectedMenu == .mods {
+                    if homeController.selectedMenu == .mods {
                         searchAndFilerView
                             .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
                             .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 20, iPadPadding: 85, iPadIsAspect: true)
                             .transition(.asymmetric(insertion: .opacity, removal: .identity))
                     }
                 }
-                .animation(.default, value: selectedMenu)
+                .animation(.default, value: homeController.selectedMenu)
                 contentList
             }
             .iosDeviceTypePadding_MMP(edge: .top, iOSPadding: 20, iPadPadding: 40)
-            .blur(radius: filterIsShowing ? 5 : 0)
+            .blur(radius: homeController.filterIsShowing ? 5 : 0)
         }
-        .presentModelWithUIKit(element: $filterIsShowing,
-                               presentationStyle: .overCurrentContext,
-                               transitionStyle: .crossDissolve,
-                               backgroundColor: .clear,
-                               content: {
-            BottomSheetView_MMP(
-                isShowing: $filterIsShowing,
-                isAppear: $isAppear,
-                content: FilterView_MMP(
-                    selectedCategories: $selectedCategories,
-                    filterIsShowing: $filterIsShowing,
-                    isAppear: $isAppear
-                )
-            )
-            .environment(\.managedObjectContext, coreDataStore.viewContext)
-//            .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
-        })
         .onViewDidLoad(action: {
             if !categoriesMO.isEmpty {
-                selectedCategories = categoriesMO[0]
+                let index = !iapManager.boughtProducts.contains(.otherType) ? 1 : 0
+                homeController.selectedCategories = categoriesMO[index]
+            }
+        })
+        .onReceive(iapManager.subscribedSuccess, perform: { type in
+            navigationStore.productType = nil
+
+            switch type {
+            case .contentType where navigationStore.activeTab == .home:
+                homeController.selectedMenu = .skins
+            case .otherType:
+                homeController.selectedCategories = categoriesMO[0]
+            default: break
             }
         })
     }
 
     @ViewBuilder
     var contentList: some View {
-        switch selectedMenu {
+        switch homeController.selectedMenu {
         case .mods:
             HomeListView_MMP<ModsMO>(
-                searchText: searchText,
+                searchText: homeController.searchText,
                 contentType: .mods,
-                predicate: homePredicate(with: selectedCategories?.title ?? "", searchText: searchText),
+                predicate: homePredicate(with: homeController.selectedCategories?.title ?? "", searchText: homeController.searchText),
                 sortDescriptors: [NSSortDescriptor(keyPath: \CategoriesMO.title, ascending: true)]
             )
             .task {
-                try? await homApiManager.getModels(type: selectedMenu)
+                try? await homApiManager.getModels(type: homeController.selectedMenu)
             }
         case .items:
             HomeListView_MMP<ItemsMO>(
@@ -94,7 +95,7 @@ struct HomeView_MMP: View {
                 sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
             )
             .task {
-                try? await homApiManager.getModels(type: selectedMenu)
+                try? await homApiManager.getModels(type: homeController.selectedMenu)
             }
         case .skins:
             SkinsListView_MMP<SkinsMO>(
@@ -102,7 +103,7 @@ struct HomeView_MMP: View {
                 sortDescriptors: [NSSortDescriptor(keyPath: \ParentMO.title, ascending: true)]
             )
             .task {
-                try? await homApiManager.getModels(type: selectedMenu)
+                try? await homApiManager.getModels(type: homeController.selectedMenu)
             }
         default: EmptyView()
         }
@@ -113,17 +114,37 @@ struct HomeView_MMP: View {
 private extension HomeView_MMP {
     var categoriesView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
-            ForEach(menus) { menu in
-                SectionButton(selectedType: $selectedMenu, type: menu)
+            let isNeedSub = !iapManager.boughtProducts.contains(.contentType)
+            ForEach(homeController.menus) { menu in
+                SectionButton(selectedType: $homeController.selectedMenu, type: menu) {
+                    if isNeedSub && menu == .skins {
+                        navigationStore.productType = .contentType
+                        return
+                    }
+                    if homeController.selectedMenu != menu {
+                        homeController.selectedMenu = menu
+                    }
+                }
+                .opacity(isNeedSub && menu == .skins ? 0.5 : 1)
+                .overlay(alignment: .topTrailing) {
+                    if isNeedSub && menu == .skins {
+                        let sizeIPad = Utilities_MMP.shared.heightAspectRatioDevice_MMP(height: 40)
+
+                        Image(.iconLock)
+                            .resizable()
+                            .iosDeviceTypeFrame_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: sizeIPad, iPadHeight: sizeIPad)
+                            .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 3, iPadPadding: 6)
+                    }
+                }
             }
         }
     }
     var searchAndFilerView: some View {
         HStack(spacing: isIPad ? 24 : 12) {
-            SearchTextField_MMP(searchText: $searchText)
+            SearchTextField_MMP(searchText: $homeController.searchText)
 
             Button {
-                filterIsShowing.toggle()
+                homeController.filterIsShowing.toggle()
             } label: {
                 Image(.iconFilter)
                     .resizable()
@@ -140,6 +161,7 @@ private extension HomeView_MMP {
 #Preview {
     let moc = CoreDataMockService_MMP.preview
 
-    return TabFlowView()
+    return HomeView_MMP()
         .environment(\.managedObjectContext, moc)
+        .environmentObject(IAPManager_MMP())
 }

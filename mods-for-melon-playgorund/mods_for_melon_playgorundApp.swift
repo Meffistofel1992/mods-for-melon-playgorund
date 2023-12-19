@@ -13,8 +13,7 @@ struct mods_for_melon_playgorundApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
-    @StateObject private var iapManager = IAPManager_MMP()
-
+    @InjectedObject private var iapManager: IAPManager_MMP
     @Injected private var dropBox: Dropbox_MMP
     @Injected private var coreDataStore: CoreDataStore_MMP
 
@@ -30,11 +29,9 @@ struct mods_for_melon_playgorundApp: App {
                     ContentView()
                         .onAppear { basicSetup() }
                         .environment(\.managedObjectContext, coreDataStore.viewContext)
-                        .environmentObject(iapManager)
                         .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .identity))
                 } else {
                     SubscriptionView(SubViewModel_MMP: subViewModel)
-                        .environmentObject(iapManager)
                         .transition(.asymmetric(insertion: .identity, removal: .move(edge: .top)))
                 }
             }

@@ -155,6 +155,17 @@ final class Utilities_MMP {
         }
         return controller
     }
+
+    func rootVC() -> UIViewController? {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return nil
+        }
+        guard let rootViewController = windowScene.windows.first?.rootViewController else {
+            return nil
+        }
+
+        return rootViewController
+    }
 }
 
 // MARK: - Image & PDFImage

@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct CustomTabBar: View {
 
-    @EnvironmentObject private var iapManager: IAPManager_MMP
-    @EnvironmentObject private var navigationStore: MainNavigationStore_MMP
-
-    @Binding var activeTab: Tab
+    @InjectedObject private var iapManager: IAPManager_MMP
+    @InjectedObject private var navigationStore: MainNavigationStore_MMP
 
     var tint: Color = .white
     var inactiveTint: Color = Color.c66656A
@@ -22,7 +21,7 @@ struct CustomTabBar: View {
         HStack(alignment: .bottom, spacing: 0) {
             ForEach(Tab.allCases, id: \.rawValue) { tab in
                 TabItem(
-                    activeTab: $activeTab,
+                    activeTab: $navigationStore.activeTab,
                     tint: tint,
                     inactiveTint: inactiveTint,
                     tab: tab,
@@ -32,7 +31,7 @@ struct CustomTabBar: View {
                         navigationStore.productType = .funcType
                         return
                     }
-                    activeTab = tab
+                    navigationStore.activeTab = tab
                 }
             }
         }
@@ -41,7 +40,7 @@ struct CustomTabBar: View {
             Color.blackMmp.ignoresSafeArea()
         })
         /// Adding Animation
-        .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: activeTab)
+        .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: navigationStore.activeTab)
         .if(isIPad, transform: { $0.clipShape(Capsule()) })
         .iosDeviceTypePadding_MMP(edge: .horizontal, iOSPadding: 0, iPadPadding: 85, iPadIsAspect: true)
         .onReceive(iapManager.subscribedSuccess, perform: hangleSuccessSub)
@@ -52,7 +51,7 @@ struct CustomTabBar: View {
 
         switch sub {
         case .funcType:
-            activeTab = .editor
+            navigationStore.activeTab = .editor
         default: break
         }
     }
@@ -83,6 +82,14 @@ struct TabItem: View {
                 }
             }
         }
+        .overlay(alignment: .topTrailing) {
+            if isNeedLock {
+                Image(.iconLock)
+                    .resizable()
+                    .iosDeviceTypeFrame_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: 28, iPadHeight: 28)
+                    .offset(x: isIPad ? 32 : 17, y: isIPad ? -13 : -7)
+            }
+        }
         .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
@@ -96,12 +103,7 @@ struct TabItem: View {
             .foregroundColor(activeTab == tab ? tint : inactiveTint)
             /// Increasing Size for the Active Tab
             .frame(width: 24, height: 24)
-            .overlay(alignment: .topTrailing) {
-                if isNeedLock {
-                    Image(.iconLock)
-                        .offset(x: 17, y: -7)
-                }
-            }
+
 
         Text(tab.rawValue)
             .font(.fontWithName_MMP(.sfProDisplay, style: activeTab == tab ? .bold : .regular, size: isIPad ? 16 : 12))
@@ -135,5 +137,5 @@ enum Tab: String, CaseIterable {
 
 
 #Preview {
-    CustomTabBar(activeTab: .constant(.home))
+    CustomTabBar()
 }

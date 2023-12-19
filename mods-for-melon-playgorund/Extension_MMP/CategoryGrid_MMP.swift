@@ -31,7 +31,7 @@ struct CategoryList_MMP<Content: View, Data: RandomAccessCollection>: View where
         vStackSpacing: CGFloat = isIPad ? Utilities_MMP.shared.widthAspectRatioDevice_MMP(width: 24) : 14,
         isFitHeight: Bool = false,
         numberOfColumns: Int = isIPad ? 3 : 2,
-        content: @escaping BuilderClosureValue_MMP<Data.Element, Content>
+        @ViewBuilder content: @escaping BuilderClosureValue_MMP<Data.Element, Content>
     ) {
         self.top = top
         self.leading = leading

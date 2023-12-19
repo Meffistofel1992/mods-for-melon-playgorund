@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct FilterView_MMP: View {
 
+    @InjectedObject private var iapManager: IAPManager_MMP
+    @Injected private var navigator: MainNavigationStore_MMP
     @FetchRequest<CategoriesMO>(fetchRequest: .categories())
     private var categories
 
@@ -51,6 +54,8 @@ struct FilterView_MMP: View {
                 bottom: isIPad ? 32 : 16,
                 isFitHeight: true
             ) { category in
+                let isNeedSub = categories.first == category && !iapManager.boughtProducts.contains(.otherType)
+
                 LargeButton_MMP(
                     text: category.title ?? "",
                     borderColor: borderColor(type: category),
@@ -60,12 +65,27 @@ struct FilterView_MMP: View {
                     height: isIPad ? 76 : 38,
                     lineWidth: lineWidth(type: category),
                     action: {
+                        if isNeedSub {
+                            navigator.productType = .otherType
+                            return
+                        }
                         if selectedCategories != category {
                             selectedCategories = category
                         }
                     }
                 )
+                .opacity(isNeedSub ? 0.5 : 1)
                 .addShadowToRectangle_mmp()
+                .overlay(alignment: .topTrailing) {
+                    if isNeedSub {
+                        let sizeIPad = Utilities_MMP.shared.heightAspectRatioDevice_MMP(height: 40)
+
+                        Image(.iconLock)
+                            .resizable()
+                            .iosDeviceTypeFrame_mmp(iOSWidth: 20, iOSHeight: 20, iPadWidth: sizeIPad, iPadHeight: sizeIPad)
+                            .iosDeviceTypePadding_MMP(edge: [.top, .trailing], iOSPadding: 3, iPadPadding: 6)
+                    }
+                }
             }
         }
         .iosDeviceTypePadding_MMP(edge: .bottom, iOSPadding: 20, iPadPadding: 40)
@@ -105,5 +125,6 @@ private extension FilterView_MMP {
             isAppear: .constant(true)
         )
         .environment(\.managedObjectContext, CoreDataMockService_MMP.preview)
+        .environmentObject(IAPManager_MMP())
     )
 }

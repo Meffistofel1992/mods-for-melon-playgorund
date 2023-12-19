@@ -42,7 +42,7 @@ extension View {
                 presentableContent.view.backgroundColor = backgroundColor
             }
 
-            Utilities_MMP.shared.topViewController_MMP()?.present(presentableContent, animated: true)
+            Utilities_MMP.shared.rootVC()?.present(presentableContent, animated: true)
         } else {
             if let controller = presentingController {
                 controller.dismiss(animated: true)
