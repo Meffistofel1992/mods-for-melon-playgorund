@@ -97,6 +97,7 @@ private extension EditorView_MMP {
                         iOSHeight: height,
                         iPadHeight: height
                     )
+                    .clipShape(RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
                     .iosDeviceTypePadding_MMP(edge: .all, iOSPadding: 20, iPadPadding: 40)
                     .frame(maxWidth: .infinity)
                     .addRoundedModifier_MMP(radius: isIPad ? 24 : 12)

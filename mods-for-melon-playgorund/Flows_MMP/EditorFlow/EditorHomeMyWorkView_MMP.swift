@@ -56,6 +56,7 @@ struct EditorHomeMyWorkView_MMP<T: MyWorks>: View {
                             iPadHeight: height
                         )
                         .frame(maxWidth: .infinity)
+                        .clipShape(RoundedRectangle(cornerRadius: isIPad ? 24 : 12))
                 }
             }
             .onTapGesture {
