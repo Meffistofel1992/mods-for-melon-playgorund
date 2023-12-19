@@ -49,9 +49,11 @@ struct TabFlowView: View {
             SettingsView_MMP()
                 .tag(Tab.settings)
         }
-        .safeAreaInset(edge: .bottom) {
+        .overlay(alignment: .bottom) {
             CustomTabBar()
+
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 

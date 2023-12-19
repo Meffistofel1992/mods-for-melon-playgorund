@@ -28,6 +28,8 @@ class EditorController_MMP: ObservableObject {
     @Published var progress: CGFloat = 0.6
     @Published var imageState: ImageState?
 
+    let tempModel: TempEditorModel
+
     var dropDownContent: [DropDownSelection]
 
     init(myMod: MyWorks) {
@@ -40,5 +42,10 @@ class EditorController_MMP: ObservableObject {
         }
 
         self.myMod = myMod
+        self.tempModel = .init(myWorks: myMod)
+    }
+
+    func isDataEqual() -> Bool {
+        tempModel.isDataEqual(rhs: myMod)
     }
 }

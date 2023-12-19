@@ -56,7 +56,9 @@ private extension HomeDetailView_MMP {
     var headerButtons: some View {
         HStack(spacing: 0) {
             RectangleButton_MMP(image: .iconBack) {
-                navigator.pop()
+                if navigator.routes.count > 0 {
+                    navigator.pop()
+                }
             }
             Spacer()
 

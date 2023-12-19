@@ -16,6 +16,8 @@ struct EditorView_MMP: View {
     @StateObject private var editorController_MMP: EditorController_MMP
     @EnvironmentObject private var navigator: FlowNavigator<MainRoute_MMP>
 
+    @State private var alert: AlertType?
+
     @Injected private var coreDataStore: CoreDataStore_MMP
 
     init(myMod: MyWorks) {
@@ -73,6 +75,14 @@ struct EditorView_MMP: View {
                 ImagePicker(sourceType: .photoLibrary, selectedImage: $editorController_MMP.myMod.imageData)
             }
         }
+        .alert(
+            alertTitle(),
+            isPresented: $alert.mappedToBool(),
+            actions: {
+                alertButtons()
+            }, message: {
+                Text(alertMessage())
+            })
     }
 }
 
@@ -109,35 +119,81 @@ private extension EditorView_MMP {
 // MARK: - Methods
 private extension EditorView_MMP {
     func didTapToSave() {
-        coreDataStore.saveChanges_MMP()
-        createSheet_mmp?(
-            .init(
-                type: .saved,
-                firstAction: { _ in },
-                secondAction: { _ in }
+        if editorController_MMP.isDataEqual() {
+            alert = .nothingToSave
+        } else {
+            coreDataStore.saveChanges_MMP()
+            createSheet_mmp?(
+                .init(
+                    type: .saved,
+                    firstAction: { _ in },
+                    secondAction: { _ in }
+                )
             )
-        )
-        Task {
-            try? await Task.sleep_MMP(seconds: 0.5)
-            createSheet_mmp?(nil)
-            navigator.pop()
+            Task {
+                try? await Task.sleep_MMP(seconds: 0.5)
+                createSheet_mmp?(nil)
+                navigator.pop()
+            }
         }
     }
 
     func didTapToBack() {
-        createSheet_mmp?(
-            .init(
-                type: .cancelEditor,
-                firstAction: { _ in
-                    createSheet_mmp?(nil)
-                },
-                secondAction: { _ in
-                    createSheet_mmp?(nil)
-                    navigator.pop()
-                    coreDataStore.rollBack_MMP()
+        alert = .leaveWithoutSaving
+    }
+}
+
+extension EditorView_MMP {
+    enum AlertType {
+        case nothingToSave
+        case leaveWithoutSaving
+    }
+
+    @ViewBuilder
+    private func alertButtons() -> some View {
+        switch alert {
+        case .nothingToSave:
+            Button("Ok") { }
+
+            Button("Back") {
+                navigator.pop()
+            }
+        case .leaveWithoutSaving:
+            Button("Yes") {
+                navigator.pop()
+            }
+
+            Button("Save") {
+                Task {
+                    try? await Task.sleep_MMP(seconds: 0.2)
+                    didTapToSave()
                 }
-            )
-        )
+            }
+        default:
+            EmptyView()
+        }
+    }
+
+    func alertTitle() -> String {
+        switch alert {
+        case .nothingToSave:
+            return "Nothing to save"
+        case .leaveWithoutSaving:
+            return "Are you sure?"
+        default:
+            return ""
+        }
+    }
+
+    func alertMessage() -> String {
+        switch alert {
+        case .nothingToSave:
+            return "Are your sure u want to leave?"
+        case .leaveWithoutSaving:
+            return "Are your sure u want to leave with no saving?"
+        default:
+            return ""
+        }
     }
 }
 
@@ -146,11 +202,4 @@ private extension EditorView_MMP {
     let myMod = CoreDataMockService_MMP.getMyWorks(with: moc)[0]
     
     return EditorView_MMP(myMod: myMod)
-}
-
-public func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
-    Binding(
-        get: { lhs.wrappedValue ?? rhs },
-        set: { lhs.wrappedValue = $0 }
-    )
 }

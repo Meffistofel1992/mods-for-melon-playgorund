@@ -28,4 +28,22 @@ public class MyWorks: NSManagedObject {
         self.canBurn = false
         self.canFloat = false
     }
+
+    convenience init(moc: NSManagedObjectContext, itemMO: MyWorks) {
+        self.init(context: moc)
+        self.name = itemMO.name
+        self.imageData = itemMO.imageData
+        self.type = itemMO.name
+        self.category = itemMO.category
+        self.iconData = itemMO.iconData
+        self.xValue = itemMO.xValue
+        self.yValue = itemMO.yValue
+        self.heightValue = itemMO.heightValue
+        self.widthValue = itemMO.widthValue
+        self.pixelValue = itemMO.pixelValue
+        self.canBeTaken = itemMO.canBeTaken
+        self.canGlow = itemMO.canGlow
+        self.canBurn = itemMO.canBurn
+        self.canFloat = itemMO.canFloat
+    }
 }
